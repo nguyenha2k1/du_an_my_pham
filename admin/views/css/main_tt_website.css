@@ -1,0 +1,86 @@
+*{
+    box-sizing: border-box;
+}
+.clr{
+	clear: both;
+}
+.bot{
+	position: relative;
+	width: 100%;
+}
+.container {
+	position: absolute;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/**/
+.row .form-add{
+    width: 50%;
+    margin: 0 auto;
+    padding:20px 70px;
+    font-size: 14px;
+}
+.form-add h2{
+    font-size: 19px;
+    border: 1px solid #555;
+    border-radius: 7px 7px 0 0;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+}
+.submit{
+    padding: 13px;
+    border: none;
+    color: #00c5cd;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: black;
+    float: right;
+    border-radius: 0 0 7px 0;
+}
+.all-item{
+    border: 1px solid black;
+    border-radius: 0 0 7px 7px;
+}
+.item{
+    padding: 30px 0 0px 50px;
+}
+.item label{
+    width: 150px;
+    display: inline-block;
+    float: left;
+    padding: 5px;
+}
+.item button{
+    background-color: #555;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    float: right;
+    position: relative;
+    right: 100px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.item button:hover{
+    background-color: black;
+}
+.content{
+    padding: 4px;
+    outline: none;
+    width: 250px;
+}
+.item input[type=text]:focus{
+    border: 2px solid #555;
+}

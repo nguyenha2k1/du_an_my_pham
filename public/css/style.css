@@ -1,0 +1,210 @@
+.box-none-card a:hover{
+    color: white;
+}
+.imgth{
+    display: block;
+    margin: 10px;
+    padding: 10px 25px;
+    border: 1px solid #ddd;
+
+}
+
+/**/
+.ul-menu li:last-child {
+    margin-bottom: inherit;
+}
+.ul-mega li:hover>.ul-menu {
+    display: block;
+}
+
+.li-parent-first:hover > .ul-menu-lagi{
+	display: block;
+}
+.ul-menu-lagi li:hover > ul{
+	display: block;
+}
+.ul-menu li.li-parent:hover>.out-menu {
+    visibility: visible;
+    top: 50px;
+}
+/**/
+.addshow{
+    display: block;
+}
+/**/
+.box-Sform .my-form {
+    font-size: 14px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-right: none;
+    padding: 6px 25px 6px 7px;
+    height: 40px;
+    border-color: #eee;
+    color: #777;
+}
+.box-Sform .btn-search {
+    border-top-left-radius: 0;
+    border: 1px solid #eee;
+    height: 40px;
+    padding: 5px 10px;
+    border-bottom-left-radius: 0;
+    color: /*#eb6090; */#4eaf4e;
+    width: 40px;
+}
+.box-Sform .btn-search:hover{
+    color: black;
+}
+/**/
+/*form đăng nhập 2*/
+
+/*kt*/
+/*.box-menu{
+    background-color: #eb6090;
+}
+.ul-menu li:hover .ul-menu .li-parent a{
+    background-color: #ffb6c1;
+}
+.ul-right li a {
+    display: inline-block;
+    background: #eb6090;
+    height: 50px;
+    width: 50px;
+    color: #fff;
+    font-size: 20px;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+.left-head {
+    display: inline-block;
+    background: #eb6090;
+    color: #fff;
+    float: left;
+    height: 50px;
+    padding: 11px 10px;
+}
+.head-box-category {
+    border-bottom: 2px solid #eb6090;
+    position: relative;
+}
+.title-box a {
+    color: #333;
+    display: block;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 34px;
+    padding: 4px 10px 0;
+    text-transform: uppercase;
+    border-bottom: 3px solid #eb6090;
+    margin-bottom: -1px;
+}
+.shop_cart {
+    background: #eb6090;
+    color: #fff !important;
+    margin-left: 15px;
+}
+.ul-lg li a {
+    display: block;
+    text-align: center;
+    border: 1px solid #eb6090;
+    border-radius: 5px;
+    color: #eb6090;
+    padding: 7px 0;
+    font-weight: 600;
+}
+
+.box-content div span:first-child {
+    font-size: 16px;
+    color: #eb6090;
+    font-weight: 700;
+    margin-bottom: 2px;
+    line-height: 1;
+    padding-top: 5px;
+    display: inline-block;
+    margin-right: 5px;
+}
+.pd-box:hover > .box-images,.pd-box:hover > .box-content {
+    border-color: #eb6090;
+}
+.btn-addlike:hover {
+    background: #eb6090;
+}
+.ul-category li.active a::before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #eb6090;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.ul-category li.active a::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 4px 8px;
+    border-color: transparent transparent #eb6090;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -4px;
+}
+.ul-card li a span {
+    border-radius: 50%;
+    background: #eb6090;
+    color: #fff;
+    height: 18px;
+    width: 18px;
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 1px;
+    margin-left: 5px;
+    text-align: center;
+}
+.ul-card li a:hover {
+    text-decoration: none;
+    border-color: #ffb6c1;
+}
+.ul-lg li a:hover {
+    color: #fff;
+    background: #eb6090;
+    text-decoration: none;
+}
+.box-pdseen a:hover {
+    color: #ffb6c1;
+}
+.ul-social li a:hover {
+    color: #ffb6c1;
+}
+.ul-hotline li a.just-hl span {
+    color: #eb6090;
+}
+.box-info span {
+    display: block;
+    font-size: 13px;
+    color: #eb6090;
+    text-transform: uppercase;
+    margin-top: 12px;
+    background: url(/lib/images/dash-double-footer.png) bottom repeat-x;
+    font-weight: 700;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+.box-brand h2 {
+    color: #eb6090;
+    font-size: 16px;
+    font-weight: 600;
+    display: table;
+    margin: auto;
+        margin-bottom: auto;
+    position: relative;
+    padding-bottom: 13px;
+    background: #fff;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: Arial,serif;
+    border-bottom: 1px solid #000;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}*/

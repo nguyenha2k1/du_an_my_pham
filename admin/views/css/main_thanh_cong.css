@@ -1,0 +1,39 @@
+/*dung chung*/
+.clr{
+	clear: both;
+}
+.bot{
+	position: relative;
+	width: 100%;
+}
+.container {
+	position: absolute;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.content{
+	width: 20%;
+	margin: 0 auto;
+}
+.content h1{
+	padding: 30px;
+	color: red;
+	text-align: center;
+}
+.content a{
+	display: inline-block;
+	padding: 10px;
+	background-color: #555;
+	color: white;
+	border-radius: 5px;
+	font-size: 15px;
+	float: right;
+	position: relative;
+	right: 70px;
+}

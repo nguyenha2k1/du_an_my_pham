@@ -1,0 +1,95 @@
+*{
+    box-sizing: border-box;
+}
+.clr{
+	clear: both;
+}
+.bot{
+	position: relative;
+	width: 100%;
+}
+.container {
+	position: absolute;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/**/
+.row .form-add{
+    width: 90%;
+    margin: 0 auto;
+    padding:20px 70px;
+    font-size: 14px;
+    color: #555;
+}
+.form-add h2{
+    font-size: 19px;
+    border: 1px solid #555;
+    border-radius: 7px 7px 0 0;
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+}
+.all-item{
+    border: 1px solid #555;
+    border-radius: 0 0 7px 7px;
+
+}
+.items-top h3{
+    color: #555;
+    padding: 5px 0 20px 0;
+    text-align: center;
+}
+.items-top .border{
+    border-right: 1px solid #555;
+}
+.items{
+    float: left;
+    width: 28%;
+    padding: 10px 5px 5px 10px;
+}
+.itemss{
+    float: left;
+    width: 44%;
+    padding: 10px 5px 5px 10px;
+}
+
+
+.item{
+    margin: 0 0 20px 0;
+
+}
+.item label{
+    font-weight: bold;
+    color: #555;
+    width: 140px;
+    display: inline-block;
+    float: left;
+}
+
+.items-bot{
+    margin: 0px auto 20px auto;
+    padding: 20px 0 10px 0;
+    border-collapse: collapse;
+    width: 70%;
+    font-size: 14px;
+}
+
+table th{
+    color: #555;
+    height: 35px;
+}
+table, td, th {
+    border: 1px solid black;
+}
+table tr td{
+    padding: 5px 0;
+    text-align: center;
+}

@@ -1,0 +1,119 @@
+/*dung chung*/
+.clr{
+	clear: both;
+}
+.bot{
+	position: relative;
+	width: 100%;
+}
+.container {
+	position: absolute;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/**/
+/*menu action*/
+.row .menu-action{
+	list-style-type: none;
+	/*background-color: #333;*/
+	/*padding: 20px;*/
+	text-align: center;
+}
+.row .menu-action li{
+	float: left;
+	border: none;
+	margin-left: 10px;
+}
+/*.row .menu-action li input,.row .menu-action li select{
+	height: 30px;
+}*/
+.ul-search {
+	margin: 30px auto 0 auto;
+}
+.ul-search li {
+	position: relative;
+}
+.ul-search li a {
+	padding: 0px;
+}
+
+.menu-form button,.ul-search li a button{
+	border: none;
+	display: inline-block;
+	color: white;
+	padding: 10px 20px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 14px;
+	background-color: #555;
+	border-radius: 4px;
+}
+.menu-form select:hover,.menu-form button:hover{
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+.menu-form input[type=text]{
+	width: 100%;
+	padding: 8px 20px;
+	box-sizing: border-box;
+	outline: none;
+	/*border-radius: 7px;*/
+}
+.menu-form input[type=text]:focus{
+	border: 2px solid black;
+}
+.menu-form select{
+	border: none;
+	background-color: #555;
+	outline: none;
+	padding: 9px 8px;
+	color: white;
+	border-radius: 4px;
+}
+
+/*kt*/
+
+table {
+	font-size: 14px;
+  	border-collapse: collapse;
+  	width: 90%;
+  	margin: 30px auto;
+}
+table, td, th {
+  	border-top:1px solid #ccc;
+    border-bottom:1px solid #ccc;
+}
+
+.row table tr td{
+	padding: 10px 0;
+	text-align: center;
+}
+.row table tr:hover{
+	background-color: #767676;
+	color: white;
+	transition:  all 0.3s;
+}
+table th{
+	background-color: #555;
+	color: white;
+	height: 35px;
+}
+.row a{
+	padding: 9px;
+}
+.row a i{
+	color: #f66;
+
+}
+.row a:hover i{
+	color: red;
+}
+
+

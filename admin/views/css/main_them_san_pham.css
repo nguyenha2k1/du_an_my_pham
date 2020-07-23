@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+}
+.clr{
+	clear: both;
+}
+.bot{
+	position: relative;
+	width: 100%;
+}
+.container {
+	position: absolute;
+    width: 100%;
+    margin-top: 35px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+/**/
+.row .form-add{
+    width: 100%;
+    padding:20px 70px;
+    font-size: 14px;
+}
+.form-add h2{
+    font-size: 19px;
+    border: 1px solid #555;
+    border-radius: 7px 7px 0 0;
+    background-color: #888;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+
+}
+.submit{
+    padding: 13px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    background-color: #555;
+    float: right;
+    position: absolute;
+    top: 20px;
+    right: 100px
+}
+.submit:hover{
+    background-color: black;
+}
+
+.form-left{
+    float: left;
+    padding: 40px 10px 40px 40px;
+}
+.form-right{
+    float: left;
+    padding: 40px 0 40px 10px;
+}
+.all-item{
+    border: 1px solid #555;
+    border-radius: 0 0 7px 7px;
+
+}
+.form-left{
+    width: 35%;
+}
+.form-right{
+    width: 65%;
+}
+.form-item,.form-ite{
+    margin: 0 0 25px 0;
+
+}
+.form-item label{
+    width: 150px;
+    display: inline-block;
+    float: left;
+    padding: 5px 0;
+    margin-top: 5px;
+}
+.form-item input[type="text"]{
+    width: 100px;
+    padding: 5px 15px;
+    margin-top: 5px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-item input[type="number"]{
+    width: 80px;
+    padding: 5px 13px;
+    box-sizing: border-box;
+    outline: none;
+}
+.form-item input[type="file"]{
+    width: auto;
+    padding: 5px 13px;
+    margin-top: 5px;
+    outline: none;
+    background-color: #a3a3a3;
+    color: white;
+    border-radius: 4px;
+}
+@media screen and (max-width: 1111px) {
+    .form-item input[type="file"]{
+        width: 100%;
+    }
+}
+.form-item input[type=text]:focus,.form-item input[type="number"]:focus{
+    border: 2px solid #555;
+}
+.form-item select:hover,.form-item input[type="file"]:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.form-item select{
+    border: none;
+    background-color: #a3a3a3;
+    outline: none;
+    padding: 9px 8px;
+    color: white;
+    border-radius: 4px;
+}
+.form-item img{
+    width: 150px;
+    height: auto;
+    border: 1px solid #f1f1f1;
+    margin: 10px 0;
+}
+/**/
+label{
+    color: #3574dc;
+}
+.form-item2{
+}
+.form-item2 label{
+    width: 150px;
+    height: 30px;
+    padding: 10px 0;
+    display: inline-block;
+}
+
+.form-item2 textarea{
+    width: 95%;
+    height: 300px;
+    padding: 10px 0;
+    display: inline-block;
+}

@@ -1,0 +1,203 @@
+*{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+.clr{
+  clear: both;
+}
+body {
+  font-family: 'Roboto', sans-serif,"Helvetica Neue",Arial,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+.sidebar {
+  z-index: 111;
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #f1f1f1;
+  transition: all .5s ease;
+}
+.sidebar header {
+  font-size: 22px;
+  color: white;
+  line-height: 70px;
+  text-align: center;
+  background: black;
+  user-select: none;
+}
+.menu2{
+    display:none ;
+    padding-left: 20px;
+}
+.menu1 li a{
+    display: block;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+.menu1 li:hover .menu2{
+    display: block;
+
+}
+.sidebar .menu2 li:hover a{
+  padding-left: 30px;
+}
+.menu1 li a:hover,.menu1 li a:hover i{
+    background-color: #555;
+    color: white;
+
+}
+.menu1 i {
+  font-size: 12px;
+  transition: .4s;
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  font-size: 15px;
+  color: black;
+  padding-left: 20px;
+  box-sizing: border-box;
+  border-bottom: 1px solid black;
+  border-top: 1px solid rgba(255,255,255,.1);
+  transition: .4s;
+}
+.sidebar ul li:hover a{
+  padding-left: 10px;
+
+}
+.sidebar ul a i{
+  margin-right: 16px;
+}
+#check{
+  display: none;
+}
+label #btn,label #cancel{
+  position: fixed;
+  background: black;
+  cursor: pointer;
+}
+
+label #btn{
+  z-index: 111;
+  left: 0;
+  top: 35px;
+  font-size: 25px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 0px;
+  font-size: 25px;
+  color: white;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 215px;
+}
+#check:checked ~ section{
+  margin-left: 250px;
+}
+
+
+/**/
+.top{
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 35px;
+  margin-right: 250px;
+  background-color: #d7d7d7;
+}
+.menu-left{
+  width: 35%;
+  float: left;
+  list-style-type: none;
+  padding: 5px 0;
+}
+
+.menu-right{
+  width: 65%;
+  float: right;
+  list-style-type: none;
+  padding: 5px 0;
+}
+.menu-left i,.menu-right i {
+  font-size: 12px;
+}
+.menu-right li,.menu-left li{
+  display: inline-block;
+  padding: 5px 0;
+}
+.menu-right li{
+  float: right;
+  padding: 5px 10px;
+}
+.menu-right li a,.menu-left li a{
+  font-size: 12px;
+  color: black;
+  display: block;
+  text-decoration: none;
+}
+.menu-right li a:hover,.menu-left li a:hover{
+  color: #ff3232;
+}
+.menu{
+  height: 100%;
+  width: 250px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+/*css main san pham*/
+
+/*kt css main sản pham*/
+/*phân trang*/
+.pagination{
+  font-size: 14px;
+  width: 90%;
+  margin: 0px auto 30px auto;
+}
+.pagination .page{
+  float: right;
+
+}
+.pagination .page-item{
+  border: 1px solid #555;
+  color: white;
+  background-color: #555;
+}
+.pagination .page-item i{
+  color: white;
+}
+.pagination .page-item:hover{
+  background-color: black;
+  color: white;
+}
+.pagination .page-item:hover i{
+  color: white;
+}
+.pagination .current-page{
+  border: 1px solid #555;
+  color: white;
+  background-color: black;
+}
+/**/
