@@ -81,16 +81,16 @@ if (!isset($_SESSION['admin'])) {
                             <a class="" href="?page=images"><i class="fas fa-images"></i> Images sản phẩm</a>
                         </li>
                         <li>
-                            <a href="?page=account&select=khachhang"><i class="fas fa-users"></i> Thông tin users</a>
+                            <a href="?page=account&account=customer"><i class="fas fa-users"></i> Thông tin users</a>
                             <ul class="menu2">
                                 <li>
-                                    <a href="?page=account&select=khachhang">
+                                    <a href="?page=account&account=customer">
                                         <i class="fa fa-arrow-right"></i>
                                         Khách hàng
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="?page=account&select=nhanvien">
+                                    <a href="?page=account&account=staff">
                                         <i class="fa fa-arrow-right"></i>
                                         Nhân viên
                                     </a>

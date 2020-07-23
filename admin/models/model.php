@@ -302,14 +302,15 @@ class imagesSp extends disconnect
 class account extends disconnect
 {
 	
-	public function get($item_per_page,$offset){
+	public function get($item_per_page,$offset,$cap){
 		global $conn;
 		$this->item_per_page=$item_per_page;
 		$this->offset=$offset;
-		$sql = "SELECT sanpham.ma_sp, sanpham.ten_sp, sanpham.date_tao,sanpham.gia_ban, sanpham.gia_thi_truong, sanpham.sl_trong_kho,thuonghieu.ten_thuong_hieu, phanloaisp.ten_loai_sp, sanpham.sl_da_ban,sanpham.hien_thi
-			FROM `sanpham` 
-			INNER JOIN thuonghieu ON sanpham.ma_th = thuonghieu.ma_th
-			INNER JOIN phanloaisp ON sanpham.ma_pl = phanloaisp.ma_pl
+		$this->cap=$cap;
+		$sql = "SELECT taikhoan.ngay_tao, taikhoan.hoat_dong, thongtintk.id, thongtintk.ho_va_ten, thongtintk.gioi_tinh,thongtintk.ngay_sinh,thongtintk.sdt,thongtintk.dia_chi,thongtintk.email
+			FROM `taikhoan` 
+			INNER JOIN thongtintk ON taikhoan.id = thongtintk.id
+			WHERE taikhoan.cap = $this->cap
 			LIMIT $this->item_per_page OFFSET $this->offset ";
 		$query = mysqli_query($conn,$sql);
 		return $query;
@@ -327,21 +328,10 @@ class account extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
-	public function getTh(){
-		global $conn;
-		$sql = "SELECT * FROM `thuonghieu` ";
-		$query = mysqli_query($conn,$sql);
-		return $query;
-	}
-	public function getPl(){
-		global $conn;
-		$sql = "SELECT * FROM `phanloaisp` ";
-		$query = mysqli_query($conn,$sql);
-		return $query;
-	}
+	
 	public function getNum_rows(){
 		global $conn;
-		$totalRecords = mysqli_query($conn, "SELECT * FROM `sanpham`");
+		$totalRecords = mysqli_query($conn, "SELECT * FROM `taikhoan`");
 		$totalRecords = $totalRecords->num_rows;
 		return $totalRecords;
 	}

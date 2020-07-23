@@ -15,19 +15,19 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account">
 			                <i class="fas fa-chevron-right"></i>
 			                User
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account&account=customer">
 			                <i class="fas fa-chevron-right"></i>
 			                Khách hàng
 			            </a>
@@ -54,7 +54,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -115,15 +115,28 @@
 						<th width="50">Hoạt động <input type="checkbox" id="checkAll" name=""></th>
 						<th width="70">Tác vụ</th>
 					</tr>
+					<?php while ($result = mysqli_fetch_assoc($query)) {
+						
+					?>
 					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
+						<td><?php echo $result['id']; ?></td>
+						<td><?php echo $result['ho_va_ten']; ?></td>
+						<td><?php echo $result['gioi_tinh']; ?></td>
+						<td><?php 
+							$date = date("d-m-Y g:i A", strtotime($result['ngay_sinh']));
+								echo $date; 
+							?>
+							
+						</td>
+						<td><?php echo $result['sdt']; ?></td>
+						<td><?php echo $result['dia_chi']; ?></td>
+						<td><?php echo $result['email']; ?></td>
+						<td><?php 
+							$date = date("d-m-Y g:i A", strtotime($result['date_tao']));
+								echo $date; 
+						 	?>
+						 	
+						 </td>
 						
 						<td>
 							<input type="checkbox" class="checkItem" name="">
@@ -133,114 +146,8 @@
 							<a href=""><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
+					<?php } ?>
+					
 
 					
 					
