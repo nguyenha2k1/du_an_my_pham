@@ -1,0 +1,58 @@
+﻿1,Kem che khuyết điểm,1
+2,Cushion,1
+3,Kem nền,1
+4,Kem BB - CC - DD,1
+5,Primer - Kem lót,1
+6,Phấn phủ - Phấn nền,1
+7,Phấn má hồng,1
+8,Tạo khối,1
+9,Xịt khoáng nền,1
+10,Phấn mắt,1
+11,Kem lót mắt,1
+12,Kẻ mày,1
+13,Kẻ mắt,1
+14,Mascara,1
+15,Che khuyết điểm môi,1
+16,Son môi,1
+17,Son dưỡng,1
+18,Lót môi - Khóa môi,1
+19,Son high-end,1
+20,Mặt nạ lột mụn,2
+21,Mask đất sét,2
+22,Mask giấy,2
+23,Mask Đắp - Rửa,2
+24,Mask ngủ,2
+25,Mask Thiên nhiên,2
+26,Sữa rửa mặt,2
+27,Tẩy trang,2
+28,Tẩy tế bào chết,2
+29,Dưỡng da mặt,2
+30,Hỗ trợ,2
+31,Dưỡng vùng mắt,2
+32,Kem dưỡng da,2
+33,Essence - Serum - Ampoule,2
+34,Lotion - Sữa dưỡng,2
+35,Toner - Nước hoa hồng,2
+36,Kem chống nắng,2
+37,Set dưỡng tóc,3
+38,Dầu gội ,3
+39,Dầu xả,3
+40,Dầu gội khô,3
+41,Kem ủ tóc,3
+42,Serum dưỡng tóc,3
+43,Dụng cụ trang điểm,4
+44,Phụ kiện làm đẹp,4
+45,Sơn móng - Rửa,4
+46,Móng,4
+47,Nước hoa nữ,5
+48,Nước hoa nam,5
+49,Xịt thơm body,5
+50,Dưỡng thể,6
+51,Sữa tắm,6
+52,Kem dưỡng toàn thân,6
+53,Dưỡng da tay,6
+54,Tẩy tế bào chết,6
+55,Tẩy lông,6
+56,Khữ mùi,6
+57,Giảm sẹo - Giảm thâm - Giảm nám,6
+58,Chăm sóc răng miệng,6

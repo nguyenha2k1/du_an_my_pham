@@ -1,0 +1,7 @@
+﻿1,logo,1,1,images/products/24-07-2020/logo.png
+2,Banner logo,2,1,images/products/24-07-2020/logo.jpg
+3,Quyền lợi đặc biệt,2,1,images/products/24-07-2020/3.jpg
+4,Chính thức có mặt tại shoppe,2,1,images/products/24-07-2020/4.png
+5,Chương trình Freeship,2,1,images/products/24-07-2020/5.jpg
+6,Chương trình tích điểm,2,1,images/products/24-07-2020/2.png
+7,Hệ thống cửa hàng,2,1,images/products/24-07-2020/6.png

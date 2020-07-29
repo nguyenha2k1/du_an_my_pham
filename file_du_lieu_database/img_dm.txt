@@ -1,0 +1,6 @@
+﻿1,1,images/products/24-07-2020/banner-danh-muc-trang-diem-01.png
+2,2,images/products/24-07-2020/banner-danh-muc-cham-soc-da-02(1)(1).jpg
+3,3,images/products/24-07-2020/banner-danh-muc-cham-soc-toc-01.png
+4,4,images/products/24-07-2020/banner-danh-muc-cham-soc-da-02(1)(1).jpg
+5,5,images/products/24-07-2020/banner-danh-muc-nuoc-hoa-02.png
+6,6,images/products/24-07-2020/banner-danh-muc-body-care-02.png
