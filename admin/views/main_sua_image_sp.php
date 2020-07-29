@@ -14,18 +14,23 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=images&img=imgsp">
+			                <i class="fas fa-chevron-right"></i>
+			                Images
+			            </a>
+					</li>
+					<li>
+						<a href="?page=images&img=imgsp">
 			                <i class="fas fa-chevron-right"></i>
 			                Images sản phẩm
 			            </a>
 					</li>
-					
 					<li>
 						<a href="">
 			                <i class="fas fa-chevron-right"></i>
@@ -54,7 +59,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -71,7 +76,7 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" action="?page=images&select=update&id=<?php echo $id?>" method="post">
+				<form class="form-add" action="?page=images&img=imgsp&select=update&id=<?php echo $id?>" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Sửa images sản phẩm</h2>
 					
 					<div class="all-item">
@@ -82,7 +87,7 @@
 						<div class="item">
 							<label>Image sản phẩm:</label>
 							<img class="myImages" id="myImg" src="../<?php echo $result['img']; ?>">
-							<input type="file" name="img">
+							<input type="file" name="file_upload[]">
 						</div>	
 						<!-- <div class="item">
 							<label>Image công dụng:</label>

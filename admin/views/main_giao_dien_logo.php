@@ -14,20 +14,20 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=show&img=logo">
 			                <i class="fas fa-chevron-right"></i>
 			                Giao diện
 			            </a>
 					</li>
 					
 					<li>
-						<a href="">
+						<a href="?page=show&img=logo">
 			                <i class="fas fa-chevron-right"></i>
 			                Logo
 			            </a>
@@ -55,7 +55,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -72,16 +72,14 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=show&img=logo&select=update" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Logo website</h2>
 					
 					<div class="all-item">
 						<div class="item">
-							<img class="myImages" id="myImg" src="img/logo.png">
-							<form>
-								<label>Chọn tệp Image:</label>
-								<input type="file" name="">
-							</form>
+							<img style="max-width:600px;height: auto;" class="myImages" id="myImg" src="../<?php echo $result['img'] ?>">
+							<label>Chọn tệp Image:</label>
+							<input type="file" name="file_upload[]">
 							<button>Thay đổi</button>
 						</div>
 						<div class="item">

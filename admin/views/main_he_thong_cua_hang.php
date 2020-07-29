@@ -12,13 +12,13 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=store">
 			                <i class="fas fa-chevron-right"></i>
 			                Hệ thống cửa hàng
 			            </a>
@@ -28,7 +28,7 @@
 				</ul>
 				<ul class="menu-right">
 					<li>
-						<a href="">
+						<a href="?page=logout">
 			                <i class="fa fa-window-close"></i>
 			                Đăng xuất
 			            </a>
@@ -46,7 +46,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -65,7 +65,7 @@
 		<div class="container">
 			<div class="row">
 				<ul class="ul-search menu-action">
-					<li>
+					<!-- <li>
 						<form>
 							<ul class="menu-form">
 								<li>
@@ -84,148 +84,49 @@
 							</ul>
 						</form>
 					</li>
-					<li>
+ -->					<!-- <li>
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
-					</li>
+					</li> -->
 					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
+						<a href="?page=store&select=add"><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li>
 				</ul>
 			</div>
 			<div class="row">
 				<table width="100%">
 					<tr>
-						<th width="30">
-							<input type="checkbox" id="checkAll" name="">
-						</th>
-						<th width="40">STT</th>
+						<th width="50">STT</th>
 						<th width="300">Địa chỉ</th>
-						<th width="60">Ngày tạo</th>
-						<th width="60">SĐT</th>
-						<th width="30">Hiển thị <input type="checkbox" id="checkAll1" name=""></th>
+						<th width="70">Ngày tạo</th>
+						<th width="70">SĐT</th>
 						<th width="70">Tác vụ</th>
 					</tr>
+					<?php while ($result = mysqli_fetch_assoc($query)) {
+						
+					?>
 					<tr>
+						<td><?php echo $result['stt']; ?></td>
+						<td style="text-align: left;"><?php echo $result['dia_chi']; ?></td>
 						<td>
-							<input type="checkbox" class="checkItem" name="">
+							<?php
+								$date = date("d-m-Y g:i A", strtotime($result['ngay_tao']));
+								echo $date; 
+							?>
 						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
 						<td>
-							<input type="checkbox" class="checkItem1" name="">
+							<?php 
+								$format_number = number_format($result['sdt'], 0, "",".") ;
+								echo '0'.$format_number;
+							?>
+							
 						</td>
 						
 						<td>
 							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
+							<a href="?page=store&select=delete&id=<?php echo $result['stt'] ?>"><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>01</td>
-						<td>Lê Văn Thiêm, Thanh Xuân, Hà Nội</td>
-						<td>03/07/2020</td>
-						<td>0999 888 777</td>
-						<td>
-							<input type="checkbox" class="checkItem1" name="">
-						</td>
-						
-						<td>
-							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					
-					
+					<?php }?>				
 					
 					
 				</table>

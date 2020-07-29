@@ -14,26 +14,26 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=show&img=logo">
 			                <i class="fas fa-chevron-right"></i>
 			                Giao diện
 			            </a>
 					</li>
 					
 					<li>
-						<a href="">
+						<a href="?page=show&img=slide">
 			                <i class="fas fa-chevron-right"></i>
 			                Slideshow
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=show&img=slide&select=add">
 			                <i class="fas fa-chevron-right"></i>
 			                Thêm mới slideshow
 			            </a>
@@ -60,7 +60,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -77,21 +77,21 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=show&img=slide&select=getadd" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Thêm mới slideshow</h2>
 					
 					<div class="all-item">
 						<div class="item">
-							<label>Tên slideshow:</label>
-							<input type="text" name="">
+							<label>Thông tin slideshow:</label>
+							<input type="text" name="thong_tin">
 						</div>
 						<div class="item">
 							<label>Image:</label>
-							<input type="file" name="">
+							<input type="file" multiple name="file_upload[]">
 						</div>
 						<div class="item">
 							<label>Hiện:</label>
-							<input type="checkbox" name="">
+							<input type="checkbox" checked name="hien_thi">
 						</div>	
 						
 						<button class="submit">Thêm</button>

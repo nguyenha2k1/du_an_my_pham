@@ -78,7 +78,22 @@ if (!isset($_SESSION['admin'])) {
                             </ul>                            
                         </li>
                         <li>
-                            <a class="" href="?page=images"><i class="fas fa-images"></i> Images sản phẩm</a>
+                            <a class="" href="?page=images"><i class="fas fa-images"></i> Images</a>
+                            <ul class="menu2">
+                                <li>
+                                    <a href="?page=images&img=imgsp">
+                                        <i class="fa fa-arrow-right"></i>
+                                        Images sản phẩm
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="?page=images&img=imgspbs">
+                                        <i class="fa fa-arrow-right"></i>
+                                        Images sản phẩm bổ sung
+                                    </a>
+                                </li>
+                               
+                            </ul>  
                         </li>
                         <li>
                             <a href="?page=account&account=customer"><i class="fas fa-users"></i> Thông tin users</a>
@@ -99,16 +114,16 @@ if (!isset($_SESSION['admin'])) {
                             </ul>  
                         </li>
                         <li>
-                            <a href="?page=show&select=logo"><i class="fas fa-tv"></i> Giao diện</a>
+                            <a href="?page=show&img=logo"><i class="fas fa-tv"></i> Giao diện</a>
                             <ul class="menu2">
                                 <li>
-                                    <a href="?page=show&select=logo">
+                                    <a href="?page=show&img=logo">
                                         <i class="fa fa-arrow-right"></i>
                                         Logo
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="?page=show&select=slide">
+                                    <a href="?page=show&img=slide">
                                         <i class="fa fa-arrow-right"></i>
                                         Slide show
                                     </a>

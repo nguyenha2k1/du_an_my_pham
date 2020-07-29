@@ -14,26 +14,26 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account&account=customer">
 			                <i class="fas fa-chevron-right"></i>
 			                Thông tin users
 			            </a>
 					</li>
 					
 					<li>
-						<a href="">
+						<a href="?page=account&account=staff">
 			                <i class="fas fa-chevron-right"></i>
 			                Nhân viên
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account&account=staff&select=add">
 			                <i class="fas fa-chevron-right"></i>
 			                Thêm TK nhân viên
 			            </a>
@@ -77,48 +77,48 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=account&account=staff&select=getadd" method="post">
 					<h2>Thêm mới TK nhân viên</h2>
 					
 					<div class="all-item">
 						<div class="item">
 							<label>Họ và tên:</label>
-							<input type="text" name="">
+							<input type="text" name="ho_va_ten">
 						</div>
 						<div class="item">
 							<label>Giới tính:</label>
-							<select>
-								<option>Nam</option>
-								<option>Nữ</option>
+							<select name="gioi_tinh">
+								<option value="1">Nam</option>
+								<option value="0">Nữ</option>
 							</select>
 						</div>	
 						<div class="item">
 							<label>Ngày sinh:</label>
-							<input type="date" name="">
+							<input type="date" name="ngay_sinh">
 						</div>	
 						<div class="item">
 							<label>SĐT:</label>
-							<input type="text" name="">
+							<input type="text" name="sdt">
 						</div>	
 						<div class="item">
 							<label>Email:</label>
-							<input type="email" name="">
+							<input type="email" name="email">
 						</div>	
 						<div class="item">
 							<label>Địa chỉ:</label>
-							<textarea></textarea>
+							<textarea name="dia_chi"></textarea>
 						</div>	
 						<div class="item">
 							<label>Tên tài khoản:</label>
-							<input type="text" name="">
+							<input type="text" name="ten_tk">
 						</div>	
 						<div class="item">
 							<label>Mật khẩu:</label>
-							<input type="password" name="">
+							<input type="password" name="mk">
 						</div>	
 						<div class="item" style="padding-bottom: 20px">
 							<label>Quyền:</label>
-							<select>
+							<select name="cap">
 								<option value="1">ADMIN</option>
 								<option value="2">Nhân viên</option>
 							</select>

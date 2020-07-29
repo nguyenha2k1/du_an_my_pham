@@ -14,20 +14,20 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=store">
 			                <i class="fas fa-chevron-right"></i>
 			                Hệ thống cửa hàng
 			            </a>
 					</li>
 					
 					<li>
-						<a href="">
+						<a href="?page=store&select=add">
 			                <i class="fas fa-chevron-right"></i>
 			                Thêm mới cửa hàng
 			            </a>
@@ -55,7 +55,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -72,17 +72,17 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=store&select=getadd" method="post">
 					<h2>Thêm mới cửa hàng</h2>
 					
 					<div class="all-item">
 						<div class="item">
 							<label>Địa chỉ:</label>
-							<input type="text" name="">
+							<input type="text" name="address">
 						</div>
 						<div class="item">
 							<label>SĐT:</label>
-							<input type="number" name="">
+							<input type="number" name="sdt">
 						</div>	
 						
 						<button class="submit">Thêm</button>

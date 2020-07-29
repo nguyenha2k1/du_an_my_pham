@@ -15,19 +15,19 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account&account=customer">
 			                <i class="fas fa-chevron-right"></i>
 			                User
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=account&account=staff">
 			                <i class="fas fa-chevron-right"></i>
 			                Nhân viên
 			            </a>
@@ -54,7 +54,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -74,17 +74,18 @@
 			<div class="row">
 				<ul class="ul-search menu-action">
 					<li>
-						<form>
+						<form action="?page=account&account=staff&select=search" method="post">
 							<ul class="menu-form">
 								<li>
 									<input type="text" name="search" placeholder="Tìm kiếm">
 								</li>
 								<li>
-									<select>
-										<option required value="0">--Tìm theo--</option>
-										<option value="1">Họ và tên</option>
-										<option value="2">SĐT</option>
-										<option>Email</option>
+									<select name="sort">
+										<option value="id">ID</option>
+										<option value="ho_va_ten">Họ và tên</option>
+										<option value="sdt">Số ĐT</option>
+										<option value="dia_chi">Địa chỉ</option>
+										<option value="email">Email</option>
 									</select>
 								</li>
 								<li>
@@ -97,7 +98,7 @@
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
 					</li> -->
 					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
+						<a href="?page=account&account=staff&select=add"><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li>
 				</ul>
 				
@@ -116,118 +117,100 @@
 						<th width="50">Hoạt động <input type="checkbox" id="checkAll" name=""></th>
 						<th width="70">Tác vụ</th>
 					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Nguyễn Ngọc Hà</td>
-						<td>Nam</td>
-						<td>03/07/2001</td>
-						<td>035464384</td>
-						<td>Làng sinh viên Hacinco, quận Thanh Xuân, Hà Nội</td>
-						<td>nguyenha0354643484@gmail.com</td>
-						<td>20/05/2020</td>
-						
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-
 					
-					
+					<?php while ($result = mysqli_fetch_assoc($query)) {
+						
+					?>
+					<tr>
+						<td><?php echo $result['id']; ?></td>
+						<td><?php echo $result['ho_va_ten']; ?></td>
+						<td><?php 
+							if ($result['gioi_tinh']==1) {
+								echo "Nam";
+							}else{
+								echo "Nữ";
+							}
+							?>
+							
+						</td>
+						<td><?php 
+							$date = date("d-m-Y", strtotime($result['ngay_sinh']));
+								echo $date; 
+							?>
+							
+						</td>
+						<td>0<?php echo $result['sdt']; ?></td>
+						<td><?php echo $result['dia_chi']; ?></td>
+						<td><?php echo $result['email']; ?></td>
+						<td><?php 
+							$date = date("d-m-Y g:i A", strtotime($result['ngay_tao']));
+								echo $date; 
+						 	?>
+						 	
+						 </td>
+						
+						<td>
+							<input type="checkbox" class="checkItem" name="" <?php if ($result['hoat_dong'] == 1) {echo "checked";} ?>>
+						</td>
+						<td>
+							<!-- <a href="?page=account&account=staff&select=edit&id=<?php echo $result['id']; ?>"><i class="fas fa-edit"></i></a> -->
+							<a href="?page=account&account=staff&select=delete&id=<?php echo $result['id']; ?>" onclick=" return kiemTra()"><i class="fas fa-trash-alt"></i></a>
+						</td>
+					</tr>
+					<?php } ?>
+<script type="text/javascript">
+	function kiemTra(){
+		if (confirm('Bạn thực sự muốn xóa tài khoản!!!')==true) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+</script>	
 				</table>
+				<!--  -->
+				<!-- phân trang -->
+				<div class="pagination">
+					<div class="page">
+						<?php
+						if ($current_page > 3) {
+						    $first_page = 1;
+						    ?>
+						    <a class="page-item" href="?page=account&account=staff&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+						    <?php
+						}
+						if ($current_page > 1) {
+						    $prev_page = $current_page - 1;
+						    ?>
+						    <a class="page-item" href="?page=account&account=staff&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+						<?php }
+						?>
+						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
+						    <?php if ($num != $current_page) { ?>
+						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
+						            <a class="page-item" href="?page=account&account=staff&pagination=<?= $num ?>"><?= $num ?></a>
+						        <?php } ?>
+						    <?php } else { ?>
+						        <a class="current-page page-item"><?= $num ?></a>
+						    <?php } ?>
+						<?php } ?>
+						<?php
+						if ($current_page < $totalPages - 1) {
+						    $next_page = $current_page + 1;
+						    ?>
+						    <a class="page-item" href="?page=account&account=staff&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+						<?php
+						}
+						if ($current_page < $totalPages - 3) {
+						    $end_page = $totalPages;
+						    ?>
+						    <a class="page-item" href="?page=account&account=staff&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+						    <?php
+						}
+						?>
+					</div>
+				</div>
 				<!--  -->
 			</div>
 		</div>

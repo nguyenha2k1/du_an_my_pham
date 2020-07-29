@@ -7,7 +7,22 @@ switch ($select) {
 		$page='product';
 		break;
 	case 'images':
-		$page='images';
+		$img = $_GET['img'];
+		$page='images&img='.$img;
+		break;
+	case 'account':
+		$user = $_GET['user'];
+		$page='account&account='.$user;
+		break;
+	case 'show':
+		$img = $_GET['img'];
+		$page='show&img='.$img;
+		break;
+	case 'trademark':
+		$page ='trademark';
+		break;
+	case 'store':
+		$page ='store';
 		break;
 	default:
 		# code...

@@ -14,13 +14,13 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=trademark">
 			                <i class="fas fa-chevron-right"></i>
 			                Thương hiệu
 			            </a>
@@ -53,7 +53,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -70,22 +70,22 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=trademark&select=getadd" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Thêm mới thương hiệu</h2>
 					
 					<div class="all-item">
 						<div class="item">
 							<label>Tên thương hiệu:</label>
-							<input type="text" name="">
+							<input type="text" name="ttt">
 						</div>
 						<div class="item">
 							<label>Image:</label>
-							<input type="file" name="">
+							<input type="file" name="file_upload[]">
 						</div>
-						<div class="item">
+						<!-- <div class="item">
 							<label>Hiện:</label>
 							<input type="checkbox" name="">
-						</div>	
+						</div>	 -->
 						
 						<button class="submit">Thêm</button>
 						<div class="clr"></div>

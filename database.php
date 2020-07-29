@@ -9,7 +9,8 @@
 	//tạo bảng thuonghieu
 	$sqlTHUONGH = "CREATE table if not exists thuonghieu("; 
 	$sqlTHUONGH.= "ma_th int(10) AUTO_INCREMENT PRIMARY KEY,";
-	$sqlTHUONGH.= "ten_thuong_hieu varchar(30) NOT NULL );";
+	$sqlTHUONGH.= "ten_thuong_hieu varchar(30) NOT NULL,";
+	$sqlTHUONGH.= "img varchar(1000) NOT NULL );";
 
 	mysqli_query($conn,$sqlTHUONGH) or die ("Lỗi tạo bảng thuonghieu");
 
@@ -161,13 +162,48 @@
 	$sqlIMG.= "ma_sp int(10) NOT NULL ,";
 	$sqlIMG.= "img varchar(1000) NOT NULL ,";
 	$sqlIMG.= "FOREIGN KEY (ma_sp) REFERENCES sanpham(ma_sp) ON DELETE CASCADE  );";
-
 	mysqli_query($conn,$sqlIMG) or die ("Lỗi tạo bảng img_sp");
+	//tạo bảng img_sp_bs
+	$sqlIMGbs = "CREATE table if not exists img_sp_bs("; 
+	$sqlIMGbs.= "stt int(10) AUTO_INCREMENT PRIMARY KEY,";
+	$sqlIMGbs.= "ma_sp int(10) NOT NULL ,";
+	$sqlIMGbs.= "img varchar(1000) NOT NULL ,";
+	$sqlIMGbs.= "FOREIGN KEY (ma_sp) REFERENCES sanpham(ma_sp) ON DELETE CASCADE  );";
+	mysqli_query($conn,$sqlIMGbs) or die ("Lỗi tạo bảng img_sp_bs");
 
-	//tạo bảng img_chung
-	$sqlIMGc = "CREATE table if not exists img_chung("; 
+	//tạo bảng img_show
+	$sqlIMGc = "CREATE table if not exists img_show("; 
 	$sqlIMGc.= "ma_img int(10) AUTO_INCREMENT PRIMARY KEY,";
+	$sqlIMGc.= "thong_tin varchar(300) NULL,";
+	$sqlIMGc.= "loai_anh int(2) NOT NULL,";
+	$sqlIMGc.= "hien_thi tinyint(5) NOT NULL default 1,";
 	$sqlIMGc.= "img varchar(1000) NOT NULL) ;";
+	mysqli_query($conn,$sqlIMGc) or die ("Lỗi tạo bảng img_show");
 
-	mysqli_query($conn,$sqlIMGc) or die ("Lỗi tạo bảng img_chung");
+
+	//tạo bảng img_dm
+	$sqlIMGdm = "CREATE table if not exists img_dm("; 
+	$sqlIMGdm.= "stt int(10) AUTO_INCREMENT PRIMARY KEY,";
+	$sqlIMGdm.= "ma_dm int(10) NOT NULL ,";
+	$sqlIMGdm.= "img varchar(1000) NOT NULL ,";
+	$sqlIMGdm.= "FOREIGN KEY (ma_dm) REFERENCES danhmuc(ma_dm) ON DELETE CASCADE  );";
+	mysqli_query($conn,$sqlIMGdm) or die ("Lỗi tạo bảng img_dm");
+
+
+
+	//tạo bảng thongtinweb
+	$sqlTTWeb = "CREATE table if not exists thongtinweb("; 
+	$sqlTTWeb.= "tenCty varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "dia_chi varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "tel int(11) NOT NULL ,";
+	$sqlTTWeb.= "email varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "website varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "hotline int(10) NOT NULL ,";
+	$sqlTTWeb.= "tongdTuvan int(4) NOT NULL ,";
+	$sqlTTWeb.= "facebook varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "instagram varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "pinterest varchar(250) NOT NULL ,";
+	$sqlTTWeb.= "google varchar(250) NOT NULL );";
+
+	mysqli_query($conn,$sqlTTWeb) or die ("Lỗi tạo bảng thongtinweb");
 ?>

@@ -18,7 +18,13 @@
 			            </a>
 					</li>
 					<li>
-						<a href="?page=images">
+						<a href="?page=images&img=imgsp">
+			                <i class="fas fa-chevron-right"></i>
+			                Image
+			            </a>
+					</li>
+					<li>
+						<a href="?page=images&img=imgsp">
 			                <i class="fas fa-chevron-right"></i>
 			                Image sản phẩm
 			            </a>
@@ -71,7 +77,7 @@
 			<div class="row">
 				<ul class="ul-search menu-action">
 					<li>
-						<form action="?page=images&select=search" method="post">
+						<form action="?page=images&img=imgsp&select=search" method="post">
 							<ul class="menu-form">
 								<li>
 									<input type="text" name="search" placeholder="Tìm kiếm">
@@ -89,7 +95,7 @@
 						</form>
 					</li>
 					<li>
-						<a href="?page=images"><button><i class="fas fa-step-backward"></i> Quay lại trang Images</button></a>
+						<a href="?page=images&img=imgsp"><button><i class="fas fa-step-backward"></i> Quay lại trang Images</button></a>
 					</li>
 					<!-- <li>
 						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
@@ -105,7 +111,7 @@
 						<th width="220">Image sản phẩm</th>
 						<th width="70">Tác vụ</th>
 					</tr>
-					<?php while ($result = mysqli_fetch_assoc($query)) {
+					<?php while ($result = mysqli_fetch_assoc($queryS)) {
 						
 					?>
 					<tr>
@@ -115,7 +121,7 @@
 							<img class="myImages" id="myImg" src="../<?php echo $result['img']; ?>">
 						</td>
 						<td>
-							<a href="?page=images&select=edit&id=<?php echo $result['ma_sp']; ?>"><i class="fas fa-edit"></i></a>
+							<a href="?page=images&img=imgsp&select=edit&id=<?php echo $result['ma_sp']; ?>"><i class="fas fa-edit"></i></a>
 <!-- 							<a href="?page=images&select=delete&id=<?php echo $result['ma_sp']; ?>" onclick=" return kiemTra()" ><i class="fas fa-trash-alt"></i></a> -->
 						</td>
 					</tr>
@@ -133,46 +139,6 @@
 					
 				</table>
 								<!-- phân trang -->
-				<div class="pagination">
-					<div class="page">
-						<?php
-						if ($current_page > 3) {
-						    $first_page = 1;
-						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
-						    <?php
-						}
-						if ($current_page > 1) {
-						    $prev_page = $current_page - 1;
-						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
-						<?php }
-						?>
-						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
-						    <?php if ($num != $current_page) { ?>
-						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-						            <a class="page-item" href="?page=images&pagination=<?= $num ?>"><?= $num ?></a>
-						        <?php } ?>
-						    <?php } else { ?>
-						        <a class="current-page page-item"><?= $num ?></a>
-						    <?php } ?>
-						<?php } ?>
-						<?php
-						if ($current_page < $totalPages - 1) {
-						    $next_page = $current_page + 1;
-						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
-						<?php
-						}
-						if ($current_page < $totalPages - 3) {
-						    $end_page = $totalPages;
-						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
-						    <?php
-						}
-						?>
-					</div>
-				</div>
 				<!--  -->
 				<div id="myModal" class="modal">
 					<span class="close">&times;</span>

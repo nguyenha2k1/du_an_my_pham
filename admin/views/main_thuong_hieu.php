@@ -12,13 +12,13 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=trademark">
 			                <i class="fas fa-chevron-right"></i>
 			                Thương hiệu
 			            </a>
@@ -27,7 +27,7 @@
 				</ul>
 				<ul class="menu-right">
 					<li>
-						<a href="">
+						<a href="?page=logout">
 			                <i class="fa fa-window-close"></i>
 			                Đăng xuất
 			            </a>
@@ -45,7 +45,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -65,16 +65,15 @@
 			<div class="row">
 				<ul class="ul-search menu-action">
 					<li>
-						<form>
+						<form action="?page=trademark&select=search" method="post">
 							<ul class="menu-form">
 								<li>
 									<input type="text" name="search" placeholder="Tìm kiếm">
 								</li>
 								<li>
-									<select>
-										<option required value="0">--Tìm theo--</option>
-										<option value="1">Mã thương hiệu</option>
-										<option value="2">Tên thương hiệu</option>
+									<select name="sort">
+										<option value="ma_th">Mã thương hiệu</option>
+										<option value="ten_thuong_hieu">Tên thương hiệu</option>
 									</select>
 								</li>
 								<li>
@@ -87,7 +86,7 @@
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
 					</li> -->
 					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
+						<a href="?page=trademark&select=add"><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li>
 				</ul>
 				
@@ -95,114 +94,84 @@
 			<div class="row">
 				<table width="100%">
 					<tr>
-						<th width="40">Mã thương hiệu</th>
-						<th width="250">Tên thương hiệu</th>
-						<th width="600">Image</th>
-						<th width="100">Hiển thị <input type="checkbox" id="checkAll" name=""></th>
+						<th width="70">Mã thương hiệu</th>
+						<th width="550">Tên thương hiệu</th>
+						<th width="400">Image</th>
 						<th width="150">Tác vụ</th>
 					</tr>
+					<?php while ($result = mysqli_fetch_assoc($query)) {
+						
+					?>
 					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
+						<td><?php echo $result['ma_th']; ?></td>
+						<td><?php echo $result['ten_thuong_hieu']; ?></td>
 						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
+							<img class="myImages" id="myImg" src="../<?php echo $result['img']; ?>">
 						</td>
+						
 						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
+							<!-- <a href="?page=trademark&select=edit&id=<?php echo $result['ma_th']; ?>"><i class="fas fa-edit"></i></a> -->
+							<a href="?page=trademark&select=delete&id=<?php echo $result['ma_th']; ?>" onclick=" return kiemTra()" ><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>BIODERMA</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/thuong-hieu-khac.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					
-					
+					<?php } ?>
+<script type="text/javascript">
+	function kiemTra(){
+		if (confirm('Bạn thực sự muốn xóa!!!')==true) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+</script>			
 					
 				</table>
+				<!-- phân trang -->
+				<div class="pagination">
+					<div class="page">
+						<?php
+						if ($current_page > 3) {
+						    $first_page = 1;
+						    ?>
+						    <a class="page-item" href="?page=trademark&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+						    <?php
+						}
+						if ($current_page > 1) {
+						    $prev_page = $current_page - 1;
+						    ?>
+						    <a class="page-item" href="?page=trademark&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+						<?php }
+						?>
+						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
+						    <?php if ($num != $current_page) { ?>
+						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
+						            <a class="page-item" href="?page=trademark&pagination=<?= $num ?>"><?= $num ?></a>
+						        <?php } ?>
+						    <?php } else { ?>
+						        <a class="current-page page-item"><?= $num ?></a>
+						    <?php } ?>
+						<?php } ?>
+						<?php
+						if ($current_page < $totalPages - 1) {
+						    $next_page = $current_page + 1;
+						    ?>
+						    <a class="page-item" href="?page=trademark&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+						<?php
+						}
+						if ($current_page < $totalPages - 3) {
+						    $end_page = $totalPages;
+						    ?>
+						    <a class="page-item" href="?page=trademark&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+						    <?php
+						}
+						?>
+					</div>
+				</div>
+				<!--  -->
+
+
+
 				<div id="myModal" class="modal">
 					<span class="close">&times;</span>
 					<img class="modal-content" id="img01">

@@ -18,17 +18,17 @@
 			            </a>
 					</li>
 					<li>
-						<a href="?page=images">
+						<a href="?page=images&img=imgsp">
+			                <i class="fas fa-chevron-right"></i>
+			                Image
+			            </a>
+					</li>
+					<li>
+						<a href="?page=images&img=imgsp">
 			                <i class="fas fa-chevron-right"></i>
 			                Image sản phẩm
 			            </a>
 					</li>
-					<!-- <li>
-						<a href="">
-			                <i class="fas fa-chevron-right"></i>
-			                Tất cả sản phẩm
-			            </a>
-					</li> -->
 					
 				</ul>
 				<ul class="menu-right">
@@ -71,7 +71,7 @@
 			<div class="row">
 				<ul class="ul-search menu-action">
 					<li>
-						<form action="?page=images&select=search" method="post">
+						<form action="?page=images&img=imgsp&select=search" method="post">
 							<ul class="menu-form">
 								<li>
 									<input type="text" name="search" placeholder="Tìm kiếm">
@@ -115,7 +115,7 @@
 							<img class="myImages" id="myImg" src="../<?php echo $result['img']; ?>">
 						</td>
 						<td>
-							<a href="?page=images&select=edit&id=<?php echo $result['ma_sp']; ?>"><i class="fas fa-edit"></i></a>
+							<a href="?page=images&img=imgsp&select=edit&id=<?php echo $result['ma_sp']; ?>"><i class="fas fa-edit"></i></a>
 <!-- 							<a href="?page=images&select=delete&id=<?php echo $result['ma_sp']; ?>" onclick=" return kiemTra()" ><i class="fas fa-trash-alt"></i></a> -->
 						</td>
 					</tr>
@@ -139,19 +139,19 @@
 						if ($current_page > 3) {
 						    $first_page = 1;
 						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+						    <a class="page-item" href="?page=images&img=imgsp&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
 						    <?php
 						}
 						if ($current_page > 1) {
 						    $prev_page = $current_page - 1;
 						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+						    <a class="page-item" href="?page=images&img=imgsp&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
 						<?php }
 						?>
 						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
 						    <?php if ($num != $current_page) { ?>
 						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-						            <a class="page-item" href="?page=images&pagination=<?= $num ?>"><?= $num ?></a>
+						            <a class="page-item" href="?page=images&img=imgsp&pagination=<?= $num ?>"><?= $num ?></a>
 						        <?php } ?>
 						    <?php } else { ?>
 						        <a class="current-page page-item"><?= $num ?></a>
@@ -161,13 +161,13 @@
 						if ($current_page < $totalPages - 1) {
 						    $next_page = $current_page + 1;
 						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+						    <a class="page-item" href="?page=images&img=imgsp&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
 						<?php
 						}
 						if ($current_page < $totalPages - 3) {
 						    $end_page = $totalPages;
 						    ?>
-						    <a class="page-item" href="?page=images&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+						    <a class="page-item" href="?page=images&img=imgsp&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
 						    <?php
 						}
 						?>

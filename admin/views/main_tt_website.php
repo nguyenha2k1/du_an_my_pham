@@ -14,13 +14,13 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=infor">
 			                <i class="fas fa-chevron-right"></i>
 			                Thông tin website
 			            </a>
@@ -47,7 +47,7 @@
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="../">
 			                <i class="fa fa-caret-left"></i>
 			                Vào trang web
 			            </a>
@@ -64,7 +64,7 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" method="post">
+				<form class="form-add" action="?page=infor&select=edit" method="post">
 					<h2>Thông tin website</h2>
 					
 					<div class="all-item">

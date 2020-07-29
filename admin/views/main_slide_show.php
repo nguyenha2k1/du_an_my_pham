@@ -12,19 +12,19 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=show&img=logo">
 			                <i class="fas fa-chevron-right"></i>
 			                Giao diện
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=show&img=slide">
 			                <i class="fas fa-chevron-right"></i>
 			                Slide show
 			            </a>
@@ -70,7 +70,7 @@
 		<div class="container">
 			<div class="row">
 				<ul class="ul-search menu-action">
-					<li>
+					<!-- <li>
 						<form>
 							<ul class="menu-form">
 								<li>
@@ -88,12 +88,12 @@
 								</li>
 							</ul>
 						</form>
-					</li>
+					</li> -->
 					<li>
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
 					</li>
 					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
+						<a href="?page=show&img=slide&select=add"><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li>
 				</ul>
 				
@@ -103,97 +103,39 @@
 					<tr>
 						
 						<th width="40">Mã slide</th>
-						<th width="250">Tên slide</th>
+						<th width="250">Thông tin slide</th>
 						<th width="700">Image</th>
 						<th width="50">Hiển thị <input type="checkbox" id="checkAll" name=""></th>
 						<th width="70">Tác vụ</th>
 					</tr>
+					<?php while ($result = mysqli_fetch_assoc($query)) {
+						
+					?>
 					<tr>
-						<td>01</td>
-						<td>Banner logo</td>
+						<td><?php echo $result['ma_img']; ?></td>
+						<td><?php echo $result['thong_tin']; ?></td>
 						<td>
-							<img class="myImages" id="myImg" src="img/logo.jpg">
+							<img class="myImages" id="myImg" src="../<?php echo $result['img']; ?>">
 						</td>
 						<td>
-							<input type="checkbox" class="checkItem" name="">
+							<input type="checkbox" class="checkItem" name="" <?php if ($result['hien_thi'] == 1) {echo "checked";} ?>>
 						</td>
 						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
+							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
+							<a href="?page=show&img=slide&select=delete&id=<?php echo $result['ma_img']; ?>" onclick="return kiemTra()"><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
-					<tr>
-						<td>01</td>
-						<td>Chương trình tích điểm</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/2.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Quyền lợi đặc biệt</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/3.jpg">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Chính thức có mặt tại shoppe</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/4.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Chương trình Freeship</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/5.jpg">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					<tr>
-						<td>01</td>
-						<td>Hệ thống cửa hàng</td>
-						<td>
-							<img class="myImages" id="myImg" src="img/6.png">
-						</td>
-						<td>
-							<input type="checkbox" class="checkItem" name="">
-						</td>
-						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
-						</td>
-					</tr>
-					
-					
+					<?php } ?>
+<script type="text/javascript">
+	function kiemTra(){
+		if (confirm('Bạn thực sự muốn xóa!!!')==true) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+</script>
 					
 				</table>
 				<div id="myModal" class="modal">
