@@ -195,11 +195,11 @@
 	$sqlTTWeb = "CREATE table if not exists thongtinweb("; 
 	$sqlTTWeb.= "tenCty varchar(250) NOT NULL ,";
 	$sqlTTWeb.= "dia_chi varchar(250) NOT NULL ,";
-	$sqlTTWeb.= "tel int(11) NOT NULL ,";
+	$sqlTTWeb.= "tel varchar(11) NOT NULL ,";
 	$sqlTTWeb.= "email varchar(250) NOT NULL ,";
 	$sqlTTWeb.= "website varchar(250) NOT NULL ,";
-	$sqlTTWeb.= "hotline int(10) NOT NULL ,";
-	$sqlTTWeb.= "tongdTuvan int(4) NOT NULL ,";
+	$sqlTTWeb.= "hotline varchar(11) NOT NULL ,";
+	$sqlTTWeb.= "tongdTuvan varchar(9) NOT NULL ,";
 	$sqlTTWeb.= "facebook varchar(250) NOT NULL ,";
 	$sqlTTWeb.= "instagram varchar(250) NOT NULL ,";
 	$sqlTTWeb.= "pinterest varchar(250) NOT NULL ,";

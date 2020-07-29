@@ -76,47 +76,47 @@
 					<div class="all-item">
 						<div class="item">
 							<label>Tên công ty:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['tenCty']; ?>" name="tenCty">
 						</div>
 						<div class="item">
 							<label>Địa chỉ:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['dia_chi']; ?>" name="dia_chi">
 						</div>
 						<div class="item">
 							<label>Tel:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['tel']; ?>" name="tel">
 						</div>
 						<div class="item">
 							<label>Email:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['email']; ?>" name="email">
 						</div>
 						<div class="item">
 							<label>Website:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['website']; ?>" name="website">
 						</div>
 						<div class="item">
 							<label>Hotline:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['hotline']; ?>" name="hotline">
 						</div>
 						<div class="item">
 							<label>Tổng đài tư vấn:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['tongdTuvan']; ?>" name="tongdTuvan">
 						</div>
 						<div class="item">
 							<label>Facebook:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['facebook']; ?>" name="facebook">
 						</div>
 						<div class="item">
 							<label>Instagram:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['instagram']; ?>" name="instagram">
 						</div>
 						<div class="item">
 							<label>Pinterest:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['pinterest']; ?>" name="pinterest">
 						</div>
 						<div class="item">
 							<label>Google+:</label>
-							<input type="text" class="content" name="">
+							<input type="text" class="content" value="<?php echo $result['google']; ?>" name="google">
 						</div>
 						<div class="item">
 							<button>Cập nhật</button>

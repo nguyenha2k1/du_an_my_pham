@@ -23,6 +23,12 @@
 			                Đơn hàng
 			            </a>
 					</li>
+					<li>
+						<a href="?page=order">
+			                <i class="fas fa-chevron-right"></i>
+			                Tìm kiếm
+			            </a>
+					</li>
 					
 					
 				</ul>
@@ -73,8 +79,8 @@
 								</li>
 								<li>
 									<select name="sort">
-										<option value="donhang.ma_dh">Mã đơn hàng</option>
-										<option value="thongtintk.ho_va_ten">Tên khách hàng</option>
+										<option value="ma_dh">Mã đơn hàng</option>
+										<option value="ho_va_ten">Tên khách hàng</option>
 									</select>
 								</li>
 								<li>
@@ -85,10 +91,10 @@
 					</li>
 					<!-- <li>
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
-					</li>
-					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li> -->
+					<li>
+						<a href="?page=order"><button><i class="fas fa-step-backward"></i> Trở về đơn hàng</button></a>
+					</li>
 					<!-- <li>
 						<a><button><i class="fas fa-sync"></i> Update</button></a>
 					</li> -->
@@ -157,48 +163,7 @@
 					
 				</table>
 				<!--  -->
-				<!-- phân trang -->
-				<div class="pagination">
-					<div class="page">
-						<?php
-						if ($current_page > 3) {
-						    $first_page = 1;
-						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
-						    <?php
-						}
-						if ($current_page > 1) {
-						    $prev_page = $current_page - 1;
-						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
-						<?php }
-						?>
-						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
-						    <?php if ($num != $current_page) { ?>
-						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-						            <a class="page-item" href="?page=order&pagination=<?= $num ?>"><?= $num ?></a>
-						        <?php } ?>
-						    <?php } else { ?>
-						        <a class="current-page page-item"><?= $num ?></a>
-						    <?php } ?>
-						<?php } ?>
-						<?php
-						if ($current_page < $totalPages - 1) {
-						    $next_page = $current_page + 1;
-						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
-						<?php
-						}
-						if ($current_page < $totalPages - 3) {
-						    $end_page = $totalPages;
-						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
-						    <?php
-						}
-						?>
-					</div>
-				</div>
-				<!--  -->
+			
 			</div>
 		</div>
 	</div>

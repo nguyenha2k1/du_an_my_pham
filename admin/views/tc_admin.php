@@ -78,7 +78,7 @@ if (!isset($_SESSION['admin'])) {
                             </ul>                            
                         </li>
                         <li>
-                            <a class="" href="?page=images"><i class="fas fa-images"></i> Images</a>
+                            <a class="" href="?page=images&img=imgsp"><i class="fas fa-images"></i> Images</a>
                             <ul class="menu2">
                                 <li>
                                     <a href="?page=images&img=imgsp">

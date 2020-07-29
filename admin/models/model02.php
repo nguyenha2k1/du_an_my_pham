@@ -151,12 +151,12 @@ class chung extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
-	// public function getNum_rows(){
-	// 	global $conn;
-	// 	$totalRecords = mysqli_query($conn, "SELECT * FROM `thuonghieu`");
-	// 	$totalRecords = $totalRecords->num_rows;
-	// 	return $totalRecords;
-	// }
+	public function getNum_rows($from){
+		global $conn;
+		$totalRecords = mysqli_query($conn, "SELECT * FROM `$from`");
+		$totalRecords = $totalRecords->num_rows;
+		return $totalRecords;
+	}
 	public function delete($id,$from,$where){
 		global $conn;
 		$this->id=$id;
@@ -209,12 +209,128 @@ class store extends disconnect
 	}
 }
 
+/**
+ * 
+ */
+class infor extends disconnect
+{
+	public function add($tenCty,$dia_chi,$tel,$email,$website,$hotline,$tongdTuvan,$facebook,$instagram,$pinterest,$google){
+		global $conn;
+		$this->tenCty=$tenCty;
+		$this->dia_chi=$dia_chi;
+		$this->tel=$tel;
+		$this->email=$email;
+		$this->website=$website;
+		$this->hotline=$hotline;
+		$this->tongdTuvan=$tongdTuvan;
+		$this->facebook=$facebook;
+		$this->instagram=$instagram;
+		$this->pinterest=$pinterest;
+		$this->google=$google;
+		
+		$sql = "UPDATE `thongtinweb` 
+				SET `tenCty`='$this->tenCty'
+				,`dia_chi`='$this->dia_chi'
+				,`tel`='$this->tel'
+				,`email`='$this->email'
+				,`website`='$this->website'
+				,`hotline`='$this->hotline'
+				,`tongdTuvan`='$this->tongdTuvan'
+				,`facebook`='$this->facebook'
+				,`instagram`='$this->instagram'
+				,`pinterest`='$this->pinterest'
+				,`google`='$this->google'
+				WHERE 1
+				";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+}
 
 
 
 
+class order extends disconnect
+{
+	
+	public function get($item_per_page,$offset){
+		global $conn;
+		$this->item_per_page=$item_per_page;
+		$this->offset=$offset;
+		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+			FROM `donhang` 
+			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
+			LIMIT $this->item_per_page OFFSET $this->offset ";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	public function getdetail($id){
+		global $conn;
+		$this->id=$id;
+		$sql = "SELECT thongtintk.id, donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+			FROM `donhang` 
+			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
+			WHERE ma_dh = $this->id;
+			";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	public function getID($id){
+		global $conn;
+		$this->id=$id;
+		$sql = "SELECT   donhang.ma_sp,donhang.so_luong,sanpham.ma_sp,sanpham.ten_sp,sanpham.gia_ban,donhang.tong_tien
+			FROM `donhang` 
+			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
+			WHERE thongtintk.id = $this->id;
+			";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	public function getSearch($column_name,$search){
+		global $conn;
+		$this->column_name=$column_name;
+		$this->search=$search;
+		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+			FROM `donhang` 
+			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
+			WHERE $this->column_name LIKE $this->search 
+			LIMIT 20 ";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
 
-
+	public function getNum_rows(){
+		global $conn;
+		$totalRecords = mysqli_query($conn, "SELECT * FROM `donhang`");
+		$totalRecords = $totalRecords->num_rows;
+		return $totalRecords;
+	}
+	
+	
+	public function update($ma_dh,$trang_thai){
+		global $conn;
+		$this->ma_dh=$ma_dh;
+		$this->trang_thai=$trang_thai;
+		
+		$sql = "UPDATE `donhang`
+			SET `trang_thai`='$this->trang_thai'
+			WHERE ma_dh = $this->ma_dh";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+		
+	}
+	public function delete($id){
+		global $conn;
+		$this->id=$id;
+		$sql = "DELETE FROM `donhang` WHERE ma_dh = $this->id";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+}
 
 
 

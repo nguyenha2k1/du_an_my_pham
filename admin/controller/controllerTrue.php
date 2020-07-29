@@ -24,6 +24,12 @@ switch ($select) {
 	case 'store':
 		$page ='store';
 		break;
+	case 'infor':
+		$page ='infor';
+		break;
+	case 'order':
+		$page ='order';
+		break;
 	default:
 		# code...
 		break;

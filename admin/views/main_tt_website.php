@@ -70,48 +70,48 @@
 					<div class="all-item">
 						<div class="item">
 							<label>Tên công ty:</label>
-							<div class="">CÔNG TY CỔ PHẦN BEAUTYSHOP</div>
+							<div class=""><?php echo $result['tenCty']; ?></div>
 						</div>
 						<div class="item">
 							<label>Địa chỉ:</label>
-							<div class="">Tp.HN</div>
+							<div class=""><?php echo $result['dia_chi']; ?></div>
 						</div>	
 						<div class="item">
 							<label>Tel:</label>
-							<div class="">09999666999</div>
+							<div class=""><?php echo $result['tel']; ?></div>
 						</div>	
 						<div class="item">
 							<label>Email:</label>
-							<div class="">info@beautyshop.vn</div>
+							<div class=""><?php echo $result['email']; ?></div>
 						</div>	
 						<div class="item">
 							<label>Website:</label>
-							<div class="">www.beautyshop.vn</div>
+							<div class=""><?php echo $result['website']; ?></div>
 						</div>	
 				
 						<div class="item">
 							<label>Hotline:</label>
-							<div class="">0989999111</div>
+							<div class=""><?php echo $result['hotline']; ?></div>
 						</div>	
 						<div class="item">
 							<label>Tổng đài tư vấn:</label>
-							<div class="">19009198</div>
+							<div class=""><?php echo $result['tongdTuvan']; ?></div>
 						</div>	
 						<div class="item">
 							<label>Facebook:</label>
-							<div class="">https://www.facebook.com/beautyshop</div>
+							<div class=""><?php echo $result['facebook']; ?></div>
 						</div>
 						<div class="item">
 							<label>Instagram:</label>
-							<div class="">https://www.instagram.com/beautyshop</div>
+							<div class=""><?php echo $result['instagram']; ?></div>
 						</div>
 						<div class="item">
 							<label>Pinterest:</label>
-							<div class="">https://www.pinterest.com/beautyshop</div>
+							<div class=""><?php echo $result['pinterest']; ?></div>
 						</div>
 						<div class="item">
 							<label>Google+:</label>
-							<div class="">https://plus.google.com/beautyshop</div>
+							<div class=""><?php echo $result['google']; ?></div>
 						</div>
 						<div class="item">
 							<button>Sửa</button>

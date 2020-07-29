@@ -14,20 +14,20 @@
 	<div class="top" >
 			<ul class="menu-left">
 					<li>
-		            	<a href="">
+		            	<a href="?page=admin">
 			                <i class="fas fa-home"></i>
 			                Trang chủ
 			            </a>
 					</li>
 					<li>
-						<a href="">
+						<a href="?page=order">
 			                <i class="fas fa-chevron-right"></i>
 			                Đơn hàng
 			            </a>
 					</li>
 					
 					<li>
-						<a href="">
+						<a href="?page=order&select=detail">
 			                <i class="fas fa-chevron-right"></i>
 			                Chi tiết đơn hàng
 			            </a>
@@ -79,38 +79,73 @@
 								<h3>Thông tin chung</h3>
 								<div class="item">
 									<label>Ngày tạo:</label>
-									<div>2020/05/20 15:45:21</div>
+									<div>
+										<?php
+											$date = date("d-m-Y g:i A", strtotime($result['ngay_tao']));
+											echo $date; 
+										?>
+									</div>
 								</div>
 								<div class="item">
 									<label>Mã đơn hàng:</label>
-									<div>01</div>
+									<div><?php echo $result['ma_dh']; ?></div>
 								</div>
 								<div class="item">
 									<label>Ngày ship:</label>
-									<div>2020/05/20 15:45:21</div>
+									<div>
+										<?php
+											$date = date("d-m-Y g:i A", strtotime($result['ngay_ship']));
+											echo $date; 
+										?>
+									</div>
 								</div>
+								<?php 
+									switch ($result['trang_thai']) {
+										case '1':
+											$color = 'blue';
+											$trangthai = "Chưa giao";
+											break;
+										case '2':
+											$color = 'red';
+											$trangthai = "Đang giao";
+											break;
+										case '3':
+											$color = 'green';
+											$trangthai = "Đã giao";
+											break;
+										default:
+											break;
+									}
+								?>
 								<div class="item">
 									<label>Trạng thái:</label>
-									<div>Chưa giao</div>
+									<div style="color: <?php echo $color; ?>">
+										<?php echo $trangthai; ?>
+									</div>
 								</div>
 							</div>
 							<div class="itemss border">
 								<h3>Khách hàng</h3>
 								<div class="item">
 									<label>Họ và tên:</label>
-									<div>Nguyễn Ngọc Hà</div>
+									<div><?php echo $result['ho_va_ten']; ?></div>
 								</div>
 								<div class="item">
 									<label>SĐT:</label>
-									<div>0354643484</div>
+									<div>
+										<?php 
+											$format_number = number_format($result['sdt'], 0, "",".") ;
+											echo '0'.$format_number;
+										?>
+									</div>
 								</div>
 								<div class="item">
 									<label>Địa chỉ:</label>
-									<div>Làng sinh viên Hacinco, Thanh Xuân, Hà Nội</div>
+									<div><?php echo $result['dia_chi']; ?></div>
 								</div>
 								<div class="item">
 									<label>Email:</label>
-									<div>nguyenha0354643484@gmail.com</div>
+									<div><?php echo $result['email']; ?></div>
 								</div>
 							</div>
 							<div class="items">
@@ -121,7 +156,7 @@
 								</div>
 								<div class="item">
 									<label>Tổng tiền:</label>
-									<div>885,000đ</div>
+									<div><?php echo $tongtien+30000; ?></div>
 								</div>
 								<div class="item">
 									<label>Hình thức:</label>
@@ -139,46 +174,18 @@
 								<th width="40">Số lượng</th>
 								<th width="60">Thành tiền</th>
 							</tr>
+							<?php $stt = 1; while ($result1 = mysqli_fetch_assoc($query1)) {
+							?>
 							<tr>
-								<td>01</td>
-								<td>02</td>
-								<td>Son habaki</td>
-								<td>180,000</td>
-								<td>1</td>
-								<td>171,000</td>
+								<td><?php echo $stt; ?></td>
+								<td><?php echo $result1['ma_sp']; ?></td>
+								<td><?php echo $result1['ten_sp']; ?></td>
+								<td><?php echo $result1['gia_ban']; ?></td>
+								<td><?php echo $result1['so_luong']; ?></td>
+								<td><?php echo $result1['tong_tien']; ?></td>
 							</tr>
-							<tr>
-								<td>01</td>
-								<td>02</td>
-								<td>Son habaki</td>
-								<td>180,000</td>
-								<td>1</td>
-								<td>171,000</td>
-							</tr>
-							<tr>
-								<td>01</td>
-								<td>02</td>
-								<td>Son habaki</td>
-								<td>180,000</td>
-								<td>1</td>
-								<td>171,000</td>
-							</tr>
-							<tr>
-								<td>01</td>
-								<td>02</td>
-								<td>Son habaki</td>
-								<td>180,000</td>
-								<td>1</td>
-								<td>171,000</td>
-							</tr>
-							<tr>
-								<td>01</td>
-								<td>02</td>
-								<td>Son habaki</td>
-								<td>180,000</td>
-								<td>1</td>
-								<td>171,000</td>
-							</tr>
+							<?php 
+							$stt+=1; }?>
 						</table>
 					</div>
 
