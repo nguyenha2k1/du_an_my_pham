@@ -5,25 +5,35 @@
 </head>
 <body>
 <?php 
-include "./config/connect_db.php";
-$db = new connect_db;
-$db->connect();
-if (isset($_GET['ch'])) {
-	$ch = $_GET['ch'];
+
+if (isset($_GET['page'])) {
+	$page = $_GET['page'];
 }else{
-	$ch = '';
+	$page = '';
 }
-switch ($ch) {
+if (isset($_GET['select'])) {
+	$select = $_GET['select'];
+}else{
+	$select = '';
+}
+switch ($page) {
 	case '':
 		require_once('controller/controller.php');
+		$controller = new ctrollHome();
+		$controller->header();
+		$controller->main();
+		$controller->footer();
 		break;
-	// case 'admin':
-	// 	require_once('admin/controller/controller.php');
-	// 	break;
-	default:
+	case 'logout':
+		require_once('controller/controllerLogout.php');
+		break;
 	
+	default:
+		# code...
 		break;
 }
+
+
 
 
 ?>

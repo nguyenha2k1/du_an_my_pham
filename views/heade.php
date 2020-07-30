@@ -50,10 +50,10 @@
             
             <div class="box-social hidden-xs">
                 <ul class="ul-non ul-social">
-                    <li class=""><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                    <li class="hidden-sm"><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    <li class="hidden-sm"><a href="https://www.pinterest.com" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                    <li class="hidden-sm"><a href="https://plus.google.com" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                    <li class=""><a href="<?php echo $resultInfor['facebook']; ?>" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li class="hidden-sm"><a href="<?php echo $resultInfor['instagram']; ?>" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li class="hidden-sm"><a href="<?php echo $resultInfor['pinterest']; ?>" target="_blank"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                    <li class="hidden-sm"><a href="<?php echo $resultInfor['google']; ?>" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                 </ul>
                 <div class="box-pdseen">
                     <a href="">
@@ -71,8 +71,8 @@
             </div>
             <div class="box-hotline">
                 <ul class="ul-non ul-hotline">
-                    <li><a href="tel:0989999111" class="just-hl"><span>Hotline:</span> 0989 999 111</a></li>
-                    <li class="hidden-xs"><a href="tel:19009198" class="just-hl"><span>Tổng đài tư vấn:</span> 1900 9198</a></li>
+                    <li><a href="tel:0989999111" class="just-hl"><span>Hotline:</span> <?php echo $resultInfor['hotline']; ?></a></li>
+                    <li class="hidden-xs"><a href="tel:19009198" class="just-hl"><span>Tổng đài tư vấn:</span> <?php echo $resultInfor['tongdTuvan']; ?></a></li>
                     <li class="hidden-xs">
                         <a href="#" class="pixen-lg">Tài khoản <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="ul-non ul-lg">
@@ -92,7 +92,7 @@
                 <div class="col-lg-4 col-md-12">
                     <div class="box-logo">
                         <a href="./">
-                            <img src="./img/logo.png" alt="" class="img-reponsive">
+                            <img src="<?php echo $resultLogo['img']; ?>" alt="" class="img-reponsive">
                         </a>
                     </div>
                 </div>

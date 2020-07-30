@@ -1,44 +1,35 @@
 <?php 
-// include('');
-require_once('views/heade.php');
-if (isset($_GET['select'])) {
-	$select = $_GET['select'];
-	$choose = isset($_GET['choose']) ? $_GET['choose'] : "";
-	switch ($select) {
-		case 'account':
-			switch ($choose) {
-				case 'login':
-					require_once('views/main_dang_nhap.php');
-					break;
-				case 'registration':
-					require_once('views/main_tao_tai_khoan.php');
-					break;
-				
-				default:
-					# code...
-					break;
-			}
-			break;
-		case 'cart':
-			require_once('views/main_gio_hang_trong.php');
-			break;
-		case 'category':
-			require_once('views/main_danh_muc.php');
-			break;
-		case 'beautypage':
-			require_once('views/main_bi_quyet_lam_dep.php');
-			break;
-		case 'product':
-			require_once('views/main_san_pham.php');
-			break;
-		default:
-			# code...
-			break;
-	}
+session_start();
+require_once('model/model.php');
+/**
+ * 
+ */
+class ctrollHome 
+{
 	
-}else{
-	require_once('views/main_trang_chu.php');
+	
+	public function header(){
+		$getData = new getData();
+		$queryLogo = $getData->getWhere('img','img_show','loai_anh',1);
+		$resultLogo = mysqli_fetch_assoc($queryLogo);
+
+
+		$queryInfor = $getData->getAll('thongtinweb');
+		$resultInfor = mysqli_fetch_assoc($queryInfor);
+
+		include('views/heade.php');
+	}
+	public function main(){
+		$getData = new getData();
+		$querySlide = $getData->getWhere('img','img_show','loai_anh',2);
+		
+		$queryProduct = $getData->getProduct();
+		
+		include('views/main_trang_chu.php');
+	}
+	public function footer(){
+		include('views/footer.php');
+	}
 }
-require_once('views/footer.php');
 
 ?>
