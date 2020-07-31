@@ -353,25 +353,25 @@
 						                <li class=" ">
 						                    <a href="" title="Trang Điểm">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Trang Điểm (1330) 
+						                        Trang Điểm 
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Trang Điểm Mặt" class="">
+						                                    <a href="?page=classify&id=1" title="Trang Điểm Mặt" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Trang Điểm Mặt (531) 
+						                                        Trang Điểm Mặt
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Trang Điểm Mắt" class="">
+						                                    <a href="?page=classify&id=10" title="Trang Điểm Mắt" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Trang Điểm Mắt (298) 
+						                                        Trang Điểm Mắt
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Trang Điểm Môi" class="">
+						                                    <a href="?page=classify&id=15" title="Trang Điểm Môi" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Trang Điểm Môi (459) 
+						                                        Trang Điểm Môi
 						                                    </a>
 						                                </li>
 						                        </ul>
@@ -380,25 +380,25 @@
 						                <li class=" ">
 						                    <a href="" title="Chăm Sóc Da">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Chăm Sóc Da (2048) 
+						                        Chăm Sóc Da
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Làm sạch da " class="">
+						                                    <a href="?page=classify&id=26" title="Làm sạch da " class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Làm sạch da  (534) 
+						                                        Làm sạch da
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Dưỡng da " class="">
+						                                    <a href="?page=classify&id=29" title="Dưỡng da " class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dưỡng da  (1135) 
+						                                        Dưỡng da
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Mask - Mặt nạ" class="">
+						                                    <a href="?page=classify&id=20" title="Mask - Mặt nạ" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Mask - Mặt nạ (329) 
+						                                        Mask - Mặt nạ
 						                                    </a>
 						                                </li>
 						                        </ul>
@@ -407,55 +407,55 @@
 						                <li class=" ">
 						                    <a href="" title="Chăm Sóc Tóc">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Chăm Sóc Tóc (219) 
+						                        Chăm Sóc Tóc 
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Dầu gội " class="">
+						                                    <a href="?page=classify&id=38" title="Dầu gội " class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dầu gội  (66) 
+						                                        Dầu gội
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Dầu xả" class="">
+						                                    <a href="?page=classify&id=39" title="Dầu xả" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dầu xả (42) 
+						                                        Dầu xả
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Kem ủ tóc" class="">
+						                                    <a href="?page=classify&id=41" title="Kem ủ tóc" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Kem ủ tóc (30) 
+						                                        Kem ủ tóc
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Dầu gội khô" class="">
+						                                    <a href="?page=classify&id=40" title="Dầu gội khô" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dầu gội khô (9) 
+						                                        Dầu gội khô
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Serum dưỡng tóc" class="">
+						                                    <a href="?page=classify&id=42" title="Serum dưỡng tóc" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Serum dưỡng tóc (33) 
+						                                        Serum dưỡng tóc
 						                                    </a>
 						                                </li>
-						                                <li>
-						                                    <a href="" title="Set dầu gội" class="">
+						                                <!-- <li>
+						                                    <a href="?page=classify&id=38" title="Set dầu gội" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
 						                                        Set dầu gội (15) 
 						                                    </a>
-						                                </li>
-						                                <li>
-						                                    <a href="" title="Màu nhuộm tóc" class="">
+						                                </li> -->
+						                               <!--  <li>
+						                                    <a href="?page=classify&id=" title="Màu nhuộm tóc" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
 						                                        Màu nhuộm tóc (8) 
 						                                    </a>
-						                                </li>
+						                                </li> -->
 						                                <li>
-						                                    <a href="" title="Set dưỡng tóc" class="">
+						                                    <a href="?page=classify&id=37" title="Set dưỡng tóc" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Set dưỡng tóc (2) 
+						                                        Set dưỡng tóc
 						                                    </a>
 						                                </li>
 						                        </ul>
@@ -464,25 +464,25 @@
 						                <li class=" ">
 						                    <a href="" title="Phụ Kiện">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Phụ Kiện (236) 
+						                        Phụ Kiện 
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Dụng cụ trang điểm" class="">
+						                                    <a href="?page=classify&id=43" title="Dụng cụ trang điểm" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dụng cụ trang điểm (115) 
+						                                        Dụng cụ trang điểm 
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Phụ kiện làm đẹp" class="">
+						                                    <a href="?page=classify&id=44" title="Phụ kiện làm đẹp" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Phụ kiện làm đẹp (96) 
+						                                        Phụ kiện làm đẹp
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Sơn móng - Rửa móng" class="">
+						                                    <a href="?page=classify&id=45" title="Sơn móng - Rửa móng" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Sơn móng - Rửa móng (14) 
+						                                        Sơn móng - Rửa móng
 						                                    </a>
 						                                </li>
 						                        </ul>
@@ -491,25 +491,25 @@
 						                <li class=" ">
 						                    <a href="" title="Nước Hoa">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Nước Hoa (100) 
+						                        Nước Hoa
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Nước hoa nữ " class="">
+						                                    <a href="?page=classify&id=47" title="Nước hoa nữ " class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Nước hoa nữ  (56) 
+						                                        Nước hoa nữ  
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Nước hoa nam" class="">
+						                                    <a href="?page=classify&id=48" title="Nước hoa nam" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Nước hoa nam (9) 
+						                                        Nước hoa nam
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Xịt thơm body" class="">
+						                                    <a href="?page=classify&id=49" title="Xịt thơm body" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Xịt thơm body (32) 
+						                                        Xịt thơm body 
 						                                    </a>
 						                                </li>
 						                        </ul>
@@ -518,69 +518,69 @@
 						                <li class=" ">
 						                    <a href="" title="Chăm Sóc Toàn Thân">
 						                        <i class="fa fa-angle-right" aria-hidden="true"></i>
-						                        Chăm Sóc Toàn Thân (424) 
+						                        Chăm Sóc Toàn Thân 
 						                    </a>
 						                        <ul class="ul-non ul-childs">
 						                                <li>
-						                                    <a href="" title="Sữa tắm" class="">
+						                                    <a href="?page=classify&id=51" title="Sữa tắm" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Sữa tắm (109) 
+						                                        Sữa tắm 
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Kem dưỡng toàn  thân - Body Cream" class="">
+						                                    <a href="?page=classify&id=52" title="Kem dưỡng toàn  thân - Body Cream" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Kem dưỡng toàn  thân - Body Cream (39) 
+						                                        Kem dưỡng toàn  thân - Body Cream 
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Dưỡng da tay" class="">
+						                                    <a href="?page=classify&id=53" title="Dưỡng da tay" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dưỡng da tay (34) 
+						                                        Dưỡng da tay
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Tẩy tế bào chết" class="">
+						                                    <a href="?page=classify&id=54" title="Tẩy tế bào chết" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Tẩy tế bào chết (25) 
+						                                        Tẩy tế bào chết
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Tẩy lông" class="">
+						                                    <a href="?page=classify&id=55" title="Tẩy lông" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Tẩy lông (14) 
+						                                        Tẩy lông  
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Khử mùi" class="">
+						                                    <a href="?page=classify&id=56" title="Khử mùi" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Khử mùi (46) 
+						                                        Khử mùi  
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Giảm sẹo – Giảm thâm – Giảm nám" class="">
+						                                    <a href="?page=classify&id=57" title="Giảm sẹo – Giảm thâm – Giảm nám" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Giảm sẹo – Giảm thâm – Giảm nám (7) 
+						                                        Giảm sẹo – Giảm thâm – Giảm nám 
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Chăm sóc răng miệng" class="">
+						                                    <a href="?page=classify&id=58" title="Chăm sóc răng miệng" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Chăm sóc răng miệng (37) 
+						                                        Chăm sóc răng miệng  
+						                                    </a>
+						                                </li>
+						                                <!-- <li>
+						                                    <a href="?page=classify&id=" title="Dưỡng thể - Body Lotion" class="">
+						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+						                                        Dưỡng thể - Body Lotion  
 						                                    </a>
 						                                </li>
 						                                <li>
-						                                    <a href="" title="Dưỡng thể - Body Lotion" class="">
+						                                    <a href="?page=classify&id=" title="Sản phẩm trắng răng" class="">
 						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Dưỡng thể - Body Lotion (73) 
+						                                        Sản phẩm trắng răng  
 						                                    </a>
-						                                </li>
-						                                <li>
-						                                    <a href="" title="Sản phẩm trắng răng" class="">
-						                                        <i class="fa fa-caret-right" aria-hidden="true"></i>
-						                                        Sản phẩm trắng răng (21) 
-						                                    </a>
-						                                </li>
+						                                </li> -->
 						                        </ul>
 
 						                </li>

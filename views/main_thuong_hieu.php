@@ -29,7 +29,7 @@
                 <div class="col-lg-12">
                     <ol class="ol-non">
                         <li><a href="./">Trang chủ</a></li>
-                        <li><a href="?page=classify&id=<?php echo $resultLMapl['ma_pl'] ?>"><?php echo $resultLMapl['ten_loai_sp']; ?></a></li>
+                        <li><a href="?page=classify&id=<?php echo $resultmath['ma_th'] ?>"><?php echo $resultmath['ten_thuong_hieu']; ?></a></li>
                     </ol>
                 </div>
             </div>
@@ -52,8 +52,8 @@
                             <div class="head-box">
                                 <div class="title-box">
                                     <h2>
-                                        <a href="?page=classify&id=<?php echo $resultLMapl['ma_pl'] ?>" title="<?php echo $resultLMapl['ten_loai_sp']; ?>">
-                                            <?php echo $resultLMapl['ten_loai_sp']; ?>
+                                        <a href="?page=classify&id=<?php echo $resultmath['ma_th'] ?>" title="<?php echo $resultmath['ten_thuong_hieu']; ?>">
+                                            <?php echo $resultmath['ten_thuong_hieu']; ?>
                                         </a>
                                     </h2>
                                 </div>
@@ -122,19 +122,19 @@
                                         if ($current_page > 3) {
                                             $first_page = 1;
                                             ?>
-                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+                                            <a class="page-item" href="?page=trademark&id=<?php echo $ma_th ?>&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
                                             <?php
                                         }
                                         if ($current_page > 1) {
                                             $prev_page = $current_page - 1;
                                             ?>
-                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+                                            <a class="page-item" href="?page=trademark&id=<?php echo $ma_th ?>&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
                                         <?php }
                                         ?>
                                         <?php for ($num = 1; $num <= $totalPages; $num++) { ?>
                                             <?php if ($num != $current_page) { ?>
                                                 <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-                                                    <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $num ?>"><?= $num ?></a>
+                                                    <a class="page-item" href="?page=trademark&id=<?php echo $ma_th ?>&pagination=<?= $num ?>"><?= $num ?></a>
                                                 <?php } ?>
                                             <?php } else { ?>
                                                 <a class="current-page page-item"><?= $num ?></a>
@@ -144,13 +144,13 @@
                                         if ($current_page < $totalPages - 1) {
                                             $next_page = $current_page + 1;
                                             ?>
-                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+                                            <a class="page-item" href="?page=trademark&id=<?php echo $ma_th ?>&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
                                         <?php
                                         }
                                         if ($current_page < $totalPages - 3) {
                                             $end_page = $totalPages;
                                             ?>
-                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+                                            <a class="page-item" href="?page=trademark&id=<?php echo $ma_th ?>&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
                                             <?php
                                         }
                                         ?>

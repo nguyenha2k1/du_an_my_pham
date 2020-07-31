@@ -260,40 +260,39 @@
                                                         <div>
                                                         <a href="" class="title-two">Trang Điểm Mặt</a>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Kem che khuyết điểm</a></li>
-                                                            <li><a href="">Cushion</a></li>
-                                                            <li><a href="">Kem nền</a></li>
-                                                            <li><a href="">Kem BB - CC - DD</a></li>
-                                                            <li><a href="">Primer - Kem Lót</a></li>
-                                                            <li><a href="">Phấn phủ - Phấn nền</a></li>
-                                                            <li><a href="">Phấn má hồng</a></li>
-                                                            <li><a href="">Tạo khối - Highlighter</a></li>
-                                                            <li><a href="">Xịt khoáng nền</a></li>
+                                                            <li><a href="?page=classify&id=1">Kem che khuyết điểm</a></li>
+                                                            <li><a href="?page=classify&id=2">Cushion</a></li>
+                                                            <li><a href="?page=classify&id=3">Kem nền</a></li>
+                                                            <li><a href="?page=classify&id=4">Kem BB - CC - DD</a></li>
+                                                            <li><a href="?page=classify&id=5">Primer - Kem Lót</a></li>
+                                                            <li><a href="?page=classify&id=6">Phấn phủ - Phấn nền</a></li>
+                                                            <li><a href="?page=classify&id=7">Phấn má hồng</a></li>
+                                                            <li><a href="?page=classify&id=8">Tạo khối - Highlighter</a></li>
+                                                            <li><a href="?page=classify&id=9">Xịt khoáng nền</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
-                                                        <a href="" class="title-two">Trang Điểm Mắt</a>
+                                                        <a href="?page=classify&id=10" class="title-two">Trang Điểm Mắt</a>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Phấn Mắt</a></li>
-                                                            <li><a href="">Eye Primer – Kem Lót Mắt</a></li>
-                                                            <li><a href="">Kẻ Mày</a></li>
-                                                            <li><a href="">Eyeliner – Kẻ Mắt</a></li>
-                                                            <li><a href="">Mascara</a></li>
+                                                            <li><a href="?page=classify&id=10">Phấn Mắt</a></li>
+                                                            <li><a href="?page=classify&id=11">Eye Primer – Kem Lót Mắt</a></li>
+                                                            <li><a href="?page=classify&id=12">Kẻ Mày</a></li>
+                                                            <li><a href="?page=classify&id=13">Eyeliner – Kẻ Mắt</a></li>
+                                                            <li><a href="?page=classify&id=14">Mascara</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
-                                                        <a href="" class="title-two">Trang Điểm Môi</a>
+                                                        <a href="?page=classify&id=15" class="title-two">Trang Điểm Môi</a>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Che khuyết điểm môi</a></li>
-                                                            <li><a href="">Son môi</a></li>
-                                                            <li><a href="">Son dưỡng </a></li>
-                                                            <li><a href="">Lót môi – Khóa môi</a></li>
-                                                            <li><a href="">Lips Mask – Mặt nạ môi</a></li>
-                                                            <li><a href="">Son high-end</a></li>
+                                                            <li><a href="?page=classify&id=15">Che khuyết điểm môi</a></li>
+                                                            <li><a href="?page=classify&id=16">Son môi</a></li>
+                                                            <li><a href="?page=classify&id=17">Son dưỡng </a></li>
+                                                            <li><a href="?page=classify&id=18">Lót môi – Khóa môi</a></li>
+                                                            <li><a href="?page=classify&id=19">Son high-end</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -316,39 +315,39 @@
                                                 <div class="row">
                                                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
-                                                            <a href="" class="title-two">Mask - Mặt nạ</a>
+                                                            <a href="?page=classify&id=20" class="title-two">Mask - Mặt nạ</a>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Mặt nạ lột mụn</a></li>
-                                                                <li><a href="">Mask Đất Sét</a></li>
-                                                                <li><a href="">Mask Giấy</a></li>
-                                                                <li><a href="">Mask Đắp - Rửa </a></li>
-                                                                <li><a href="">Mask Ngủ</a></li>
-                                                                <li><a href="">Mask Thiên Nhiên</a></li>
+                                                                <li><a href="?page=classify&id=20">Mặt nạ lột mụn</a></li>
+                                                                <li><a href="?page=classify&id=21">Mask Đất Sét</a></li>
+                                                                <li><a href="?page=classify&id=22">Mask Giấy</a></li>
+                                                                <li><a href="?page=classify&id=23">Mask Đắp - Rửa </a></li>
+                                                                <li><a href="?page=classify&id=24">Mask Ngủ</a></li>
+                                                                <li><a href="?page=classify&id=25">Mask Thiên Nhiên</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
-                                                            <a href="" class="title-two">Làm sạch da </a>
+                                                            <a href="?page=classify&id=26" class="title-two">Làm sạch da </a>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Sữa rửa mặt</a></li>
-                                                                <li><a href="">Tẩy trang </a></li>
-                                                                <li><a href="">Tẩy tế bào chết</a></li>
+                                                                <li><a href="?page=classify&id=26">Sữa rửa mặt</a></li>
+                                                                <li><a href="?page=classify&id=27">Tẩy trang </a></li>
+                                                                <li><a href="?page=classify&id=28">Tẩy tế bào chết</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
-                                                            <a href="" class="title-two">Dưỡng da </a>
+                                                            <a href="?page=classify&id=29" class="title-two">Dưỡng da </a>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Dưỡng da mặt</a></li>
-                                                                <li><a href="">Hỗ trợ</a></li>
-                                                                <li><a href="">Dưỡng vùng mắt</a></li>
-                                                                <li><a href="">Kem dưỡng da</a></li>
-                                                                <li><a href="">Essence - Serum - Ampoule</a></li>
-                                                                <li><a href="">Lotion - Sữa dưỡng</a></li>
-                                                                <li><a href="">Toner - Nước hoa hồng</a></li>
-                                                                <li><a href="">Kem chống nắng</a></li>
+                                                                <li><a href="?page=classify&id=29">Dưỡng da mặt</a></li>
+                                                                <li><a href="?page=classify&id=30">Hỗ trợ</a></li>
+                                                                <li><a href="?page=classify&id=31">Dưỡng vùng mắt</a></li>
+                                                                <li><a href="?page=classify&id=32">Kem dưỡng da</a></li>
+                                                                <li><a href="?page=classify&id=33">Essence - Serum - Ampoule</a></li>
+                                                                <li><a href="?page=classify&id=34">Lotion - Sữa dưỡng</a></li>
+                                                                <li><a href="?page=classify&id=35">Toner - Nước hoa hồng</a></li>
+                                                                <li><a href="?page=classify&id=36">Kem chống nắng</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -373,24 +372,24 @@
                                                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Set dưỡng tóc</a></li>
-                                                                <li><a href="">Dầu gội </a></li>
+                                                                <li><a href="?page=classify&id=37">Set dưỡng tóc</a></li>
+                                                                <li><a href="?page=classify&id=38">Dầu gội </a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Dầu xả</a></li>
-                                                                <li><a href="">Kem ủ tóc</a></li>
+                                                                <li><a href="?page=classify&id=39">Dầu xả</a></li>
+                                                                <li><a href="?page=classify&id=41">Kem ủ tóc</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Dầu gội khô</a></li>
-                                                                <li><a href="">Serum dưỡng tóc</a></li>
+                                                                <li><a href="?page=classify&id=40">Dầu gội khô</a></li>
+                                                                <li><a href="?page=classify&id=42">Serum dưỡng tóc</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -408,9 +407,9 @@
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div>
                                                             <ul class="ul-non ul-out">
-                                                                <li><a href="">Dụng cụ trang điểm</a></li>
-                                                                <li><a href="">Phụ kiện làm đẹp</a></li>
-                                                                <li><a href="">Sơn móng - Rửa móng</a></li>
+                                                                <li><a href="?page=classify&id=43">Dụng cụ trang điểm</a></li>
+                                                                <li><a href="?page=classify&id=44">Phụ kiện làm đẹp</a></li>
+                                                                <li><a href="?page=classify&id=45">Sơn móng - Rửa móng</a></li>
                                                             </ul>
                                                         </div>
                                                     </div>
@@ -428,9 +427,9 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Nước hoa nữ </a></li>
-                                                            <li><a href="">Nước hoa nam</a></li>
-                                                            <li><a href="">Xịt thơm body</a></li>
+                                                            <li><a href="?page=classify&id=47">Nước hoa nữ </a></li>
+                                                            <li><a href="?page=classify&id=48">Nước hoa nam</a></li>
+                                                            <li><a href="?page=classify&id=49">Xịt thơm body</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
@@ -449,27 +448,27 @@
                                                             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                                 <div>
                                                                     <ul class="ul-non ul-out">
-                                                                        <li><a href="">Dưỡng thể - Body Lotion</a></li>
-                                                                        <li><a href="">Sữa tắm</a></li>
-                                                                        <li><a href="">Kem dưỡng toàn  thân - Body Cream</a></li>
+                                                                        <li><a href="?page=classify&id=50">Dưỡng thể - Body Lotion</a></li>
+                                                                        <li><a href="?page=classify&id=51">Sữa tắm</a></li>
+                                                                        <li><a href="?page=classify&id=52">Kem dưỡng toàn  thân - Body Cream</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                                 <div>
                                                                     <ul class="ul-non ul-out">
-                                                                        <li><a href="">Dưỡng da tay</a></li>
-                                                                        <li><a href="">Tẩy tế bào chết</a></li>
-                                                                        <li><a href="">Tẩy lông</a></li>
+                                                                        <li><a href="?page=classify&id=53">Dưỡng da tay</a></li>
+                                                                        <li><a href="?page=classify&id=54">Tẩy tế bào chết</a></li>
+                                                                        <li><a href="?page=classify&id=55">Tẩy lông</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
                                                             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12">
                                                                 <div>
                                                                     <ul class="ul-non ul-out">
-                                                                        <li><a href="">Khử mùi</a></li>
-                                                                        <li><a href="">Giảm sẹo – Giảm thâm – Giảm nám</a></li>
-                                                                        <li><a href="">Chăm sóc răng miệng</a></li>
+                                                                        <li><a href="?page=classify&id=56">Khử mùi</a></li>
+                                                                        <li><a href="?page=classify&id=57">Giảm sẹo – Giảm thâm – Giảm nám</a></li>
+                                                                        <li><a href="?page=classify&id=58">Chăm sóc răng miệng</a></li>
                                                                     </ul>
                                                                 </div>
                                                             </div>
@@ -484,7 +483,7 @@
                                 </a>
                             </li>
                             <li class="li-parent">
-                                <a href="" class="a-parent">
+                                <a href="?page=trademark&id=1" class="a-parent">
                                     Thương hiệu
                                     <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                     <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -494,79 +493,79 @@
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">3CE</a></li>
-                                                            <li><a href="">3W Clinic</a></li>
-                                                            <li><a href="">A'PIEU</a></li>
-                                                            <li><a href="">Aritaum</a></li>
-                                                            <li><a href="">Avene</a></li>
-                                                            <li><a href="">Bath and body works</a></li>
-                                                            <li><a href="">Benton</a></li>
-                                                            <li><a href="">Bioderma</a></li>
-                                                            <li><a href="">Careline</a></li>
-                                                            <li><a href="">City Color</a></li>
-                                                            <li><a href="">Cocoon</a></li>
-                                                            <li><a href="">Covergirl</a></li>
-                                                            <li><a href="">DHC</a></li>
-                                                            <li><a href="">Dr.Belmeur</a></li>
+                                                            <li><a href="?page=trademark&id=1">3CE</a></li>
+                                                            <li><a href="?page=trademark&id=2">3W Clinic</a></li>
+                                                            <li><a href="?page=trademark&id=3">A'PIEU</a></li>
+                                                            <li><a href="?page=trademark&id=4">Aritaum</a></li>
+                                                            <li><a href="?page=trademark&id=5">Avene</a></li>
+                                                            <li><a href="?page=trademark&id=6">Bath and body works</a></li>
+                                                            <li><a href="?page=trademark&id=7">Benton</a></li>
+                                                            <li><a href="?page=trademark&id=8">Bioderma</a></li>
+                                                            <li><a href="?page=trademark&id=9">Careline</a></li>
+                                                            <li><a href="?page=trademark&id=10">City Color</a></li>
+                                                            <li><a href="?page=trademark&id=11">Cocoon</a></li>
+                                                            <li><a href="?page=trademark&id=12">Covergirl</a></li>
+                                                            <li><a href="?page=trademark&id=13">DHC</a></li>
+                                                            <li><a href="?page=trademark&id=14">Dr.Belmeur</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Etude House</a></li>
-                                                            <li><a href="">Evoluderm</a></li>
-                                                            <li><a href="">Hada Labo</a></li>
-                                                            <li><a href="">Holika Holika </a></li>
-                                                            <li><a href="">Innisfree</a></li>
-                                                            <li><a href="">Kose</a></li>
-                                                            <li><a href="">L.A Girl</a></li>
-                                                            <li><a href="">LANEIGE KOREA</a></li>
-                                                            <li><a href="">Lanopearl</a></li>
-                                                            <li><a href="">L'oreal Paris</a></li>
-                                                            <li><a href="">MAC</a></li>
-                                                            <li><a href="">Mamonde</a></li>
-                                                            <li><a href="">Maybelline</a></li>
-                                                            <li><a href="">Missha</a></li>
+                                                            <li><a href="?page=trademark&id=15">Etude House</a></li>
+                                                            <li><a href="?page=trademark&id=16">Evoluderm</a></li>
+                                                            <li><a href="?page=trademark&id=17">Hada Labo</a></li>
+                                                            <li><a href="?page=trademark&id=18">Holika Holika </a></li>
+                                                            <li><a href="?page=trademark&id=19">Innisfree</a></li>
+                                                            <li><a href="?page=trademark&id=20">Kose</a></li>
+                                                            <li><a href="?page=trademark&id=21">L.A Girl</a></li>
+                                                            <li><a href="?page=trademark&id=22">LANEIGE KOREA</a></li>
+                                                            <li><a href="?page=trademark&id=23">Lanopearl</a></li>
+                                                            <li><a href="?page=trademark&id=24">L'oreal Paris</a></li>
+                                                            <li><a href="?page=trademark&id=25">MAC</a></li>
+                                                            <li><a href="?page=trademark&id=26">Mamonde</a></li>
+                                                            <li><a href="?page=trademark&id=27">Maybelline</a></li>
+                                                            <li><a href="?page=trademark&id=28">Missha</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Nature Republic</a></li>
-                                                            <li><a href="">Neutrogena</a></li>
-                                                            <li><a href="">NYX</a></li>
-                                                            <li><a href="">Ohui </a></li>
-                                                            <li><a href="">Paula's Choice</a></li>
-                                                            <li><a href="">Physician Formula</a></li>
-                                                            <li><a href="">Play Boy </a></li>
-                                                            <li><a href="">Pony</a></li>
-                                                            <li><a href="">Rebirth </a></li>
-                                                            <li><a href="">Revlon</a></li>
-                                                            <li><a href="">Rimmel</a></li>
-                                                            <li><a href="">Secret Key</a></li>
-                                                            <li><a href="">Shiseido</a></li>
-                                                            <li><a href="">Simple</a></li>
+                                                            <li><a href="?page=trademark&id=29">Nature Republic</a></li>
+                                                            <li><a href="?page=trademark&id=30">Neutrogena</a></li>
+                                                            <li><a href="?page=trademark&id=31">NYX</a></li>
+                                                            <li><a href="?page=trademark&id=32">Ohui </a></li>
+                                                            <li><a href="?page=trademark&id=33">Paula's Choice</a></li>
+                                                            <li><a href="?page=trademark&id=34">Physician Formula</a></li>
+                                                            <li><a href="?page=trademark&id=35">Play Boy </a></li>
+                                                            <li><a href="?page=trademark&id=36">Pony</a></li>
+                                                            <li><a href="?page=trademark&id=37">Rebirth </a></li>
+                                                            <li><a href="?page=trademark&id=38">Revlon</a></li>
+                                                            <li><a href="?page=trademark&id=39">Rimmel</a></li>
+                                                            <li><a href="?page=trademark&id=40">Secret Key</a></li>
+                                                            <li><a href="?page=trademark&id=41">Shiseido</a></li>
+                                                            <li><a href="?page=trademark&id=42">Simple</a></li>
                                                         </ul>
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
                                                     <div>
                                                         <ul class="ul-non ul-out">
-                                                            <li><a href="">Sivanna Colors</a></li>
-                                                            <li><a href="">SK - II</a></li>
-                                                            <li><a href="">Skinfood</a></li>
-                                                            <li><a href="">StIves</a></li>
-                                                            <li><a href="">The Body Shop</a></li>
-                                                            <li><a href="">The Face Shop</a></li>
-                                                            <li><a href="">Thương Hiệu Khác</a></li>
-                                                            <li><a href="">Tonymoly</a></li>
-                                                            <li><a href="">Vacosi</a></li>
-                                                            <li><a href="">Vichy</a></li>
-                                                            <li><a href="">Victoria's Secret</a></li>
-                                                            <li><a href="">W7 </a></li>
-                                                            <li><a href="">Yadah </a></li>
+                                                            <li><a href="?page=trademark&id=43">Sivanna Colors</a></li>
+                                                            <li><a href="?page=trademark&id=44">SK - II</a></li>
+                                                            <li><a href="?page=trademark&id=45">Skinfood</a></li>
+                                                            <li><a href="?page=trademark&id=46">StIves</a></li>
+                                                            <li><a href="?page=trademark&id=47">The Body Shop</a></li>
+                                                            <li><a href="?page=trademark&id=48">The Face Shop</a></li>
+                                                            <li><a href="?page=trademark&id=49">Thương Hiệu Khác</a></li>
+                                                            <li><a href="?page=trademark&id=50">Tonymoly</a></li>
+                                                            <li><a href="?page=trademark&id=51">Vacosi</a></li>
+                                                            <li><a href="?page=trademark&id=52">Vichy</a></li>
+                                                            <li><a href="?page=trademark&id=53">Victoria's Secret</a></li>
+                                                            <li><a href="?page=trademark&id=54">W7 </a></li>
+                                                            <li><a href="?page=trademark&id=55">Yadah </a></li>
                                                         </ul>
                                                     </div>
                                                 </div>

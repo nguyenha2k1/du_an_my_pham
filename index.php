@@ -31,7 +31,10 @@ switch ($page) {
 		break;
 	case 'classify':
 		$controllerMain->mainClassify();
-		
+		break;
+	case 'trademark':
+		$controllerMain->mainTrademark();
+		# code...
 		break;
 	default:
 		# code...

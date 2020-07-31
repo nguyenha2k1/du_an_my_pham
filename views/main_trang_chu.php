@@ -216,26 +216,28 @@
                                 </h2>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
-                            <ul class="ul-non ul-category" >
+                            <!-- <ul class="ul-non ul-category" >
                                 <li class="active">
                                     <a href="" onclick="" >Trang Điểm Mặt</a>
                                 </li>
                                 <li class="">
                                     <a href="" onclick="" >Trang Điểm Môi</a>
                                 </li>
-                            </ul>
+                            </ul> -->
                           <!--   <button class="btn-ct hidden-md" onclick=" ">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                             </button> -->
                             <div class="clr"></div>
                         </div>
                         <div class="body-box-category">
+                            <?php while ($resultGetProDm = mysqli_fetch_assoc($queryGetDm)) {
+                            ?>
                             <!-- Bắt đầu sp -->
                             <div class="col-2-ct">
                                 <div class="pd-box pd-box-category">
                                     <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
+                                            <a href="?page=product&id=<?php echo $resultGetProDm['ma_sp']; ?>" title="<?php echo $resultGetProDm['ten_sp']; ?>">
+                                                <img src="<?php echo $resultGetProDm['img']; ?>" alt="" class="img-reponsive lazy ">
                                             </a>
                                         <button type="button" onclick="" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
@@ -244,281 +246,17 @@
                                     </div>
                                     <div class="box-content">
                                         <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
+                                            <a href="?page=product&id=<?php echo $resultGetProDm['ma_sp']; ?>"><?php echo $resultGetProDm['ten_sp']; ?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
+                                            <span class="price-drop"><?php echo $resultGetProDm['gia_ban']?>₫</span>
+                                            <span class="price "><?php echo $resultGetProDm['gia_thi_truong']?>₫</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="" title="Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate">
-                                                <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">33%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Xịt khoáng La Roche-Posay Serozinc Zinc Sulfate</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">290,000₫</span>
-                                            <span class="price ">431,200₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-
+                            <?php }?>
 
 
 
@@ -549,7 +287,7 @@
                                 </h2>
                                 <i class="fa fa-angle-right" aria-hidden="true"></i>
                             </a>
-                                <ul class="ul-non ul-category">
+                                <!-- <ul class="ul-non ul-category">
                                     <li class="active">
                                         <a href="" onclick="">Dưỡng da </a>
                                     </li>
@@ -559,301 +297,40 @@
                                     <li class="">
                                         <a href="" onclick="">Mask - Mặt nạ</a>
                                     </li>
-                                </ul>
+                                </ul> -->
                            <!--  <button class="btn-ct hidden-md" onclick="">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                             </button> -->
                             <div class="clr"></div>
                         </div>
                         <div class="body-box-category">
-                            <!-- bắt đầu sp -->
+                            <?php while ($resultGetProDm2 = mysqli_fetch_assoc($queryGetDm2)) {
+                            ?>
+                            <!-- Bắt đầu sp -->
                             <div class="col-2-ct">
                                 <div class="pd-box pd-box-category">
                                     <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
+                                            <a href="?page=product&id=<?php echo $resultGetProDm2['ma_sp']; ?>" title="<?php echo $resultGetProDm2['ten_sp']; ?>">
+                                                <img src="<?php echo $resultGetProDm2['img']; ?>" alt="" class="img-reponsive lazy ">
+                                            </a>
                                         <button type="button" onclick="" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
                                         </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
+                                        <div class="sale-off hide">33%<br>OFF</div>
                                     </div>
                                     <div class="box-content">
                                         <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
+                                            <a href="?page=product&id=<?php echo $resultGetProDm2['ma_sp']; ?>"><?php echo $resultGetProDm2['ten_sp']; ?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
+                                            <span class="price-drop"><?php echo $resultGetProDm2['gia_ban']?>₫</span>
+                                            <span class="price "><?php echo $resultGetProDm2['gia_thi_truong']?>₫</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
-                            <!-- bắt đầu sp -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img src="./img/sanpham.jpg" alt="" class="img-reponsive lazy ">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">62%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Dầu Hạt Nho Now Grapeseed Oil 100%</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">160,000₫</span>
-                                            <span class="price ">416,500₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- kết thúc -->
+                            <!-- Kết thúc -->
+                            <?php }?>
                         </div>
                     </div>
                 </div>

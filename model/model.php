@@ -37,6 +37,7 @@ class getData extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
+	
 
 	public function getProduct(){
 		global $conn;
@@ -141,6 +142,16 @@ class getData extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
+	public function getMath($ma_th){
+		global $conn;
+		$this->ma_th = $ma_th;
+		$sql = "SELECT thuonghieu.ten_thuong_hieu,thuonghieu.ma_th
+				FROM thuonghieu
+				WHERE thuonghieu.ma_th = $this->ma_th
+			";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
 	
 	public function getProductDm($ma_dm,$item_per_page,$offset){
 		global $conn;
@@ -154,6 +165,19 @@ class getData extends disconnect
 			WHERE phanloaisp.ma_dm = $this->ma_dm
 			-- ORDER BY RAND() DESC 
 			LIMIT $this->item_per_page OFFSET $this->offset ";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	public function getProDm($ma_dm){
+		global $conn;
+		$this->ma_dm = $ma_dm;
+		$sql = "SELECT sanpham.ten_sp,sanpham.gia_ban,sanpham.ma_sp,sanpham.gia_thi_truong,img_sp.img 
+			FROM `sanpham` 
+			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
+			INNER JOIN phanloaisp ON sanpham.ma_pl = phanloaisp.ma_pl
+			WHERE phanloaisp.ma_dm = $this->ma_dm
+			ORDER BY RAND() DESC 
+			LIMIT 12  ";
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
@@ -171,6 +195,20 @@ class getData extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
+	public function getProductTh($ma_th,$item_per_page,$offset){
+		global $conn;
+		$this->ma_th = $ma_th;
+		$this->item_per_page=$item_per_page;
+		$this->offset=$offset;
+		$sql = "SELECT sanpham.ten_sp,sanpham.gia_ban,sanpham.ma_sp,sanpham.gia_thi_truong,img_sp.img
+			FROM `sanpham` 
+			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
+			INNER JOIN thuonghieu ON sanpham.ma_th = thuonghieu.ma_th
+			WHERE thuonghieu.ma_th = $this->ma_th
+			LIMIT $this->item_per_page OFFSET $this->offset ";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
 	public function getNum_rowsPl($ma_pl){
 		global $conn;
 		$totalRecords = mysqli_query($conn, "SELECT * 
@@ -178,6 +216,16 @@ class getData extends disconnect
 			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
 			INNER JOIN phanloaisp ON sanpham.ma_pl = phanloaisp.ma_pl
 			WHERE phanloaisp.ma_pl = $ma_pl");
+		$totalRecords = $totalRecords->num_rows;
+		return $totalRecords;
+	}
+	public function getNum_rowsTh($ma_th){
+		global $conn;
+		$totalRecords = mysqli_query($conn, "SELECT * 
+			FROM `sanpham` 
+			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
+			INNER JOIN thuonghieu ON sanpham.ma_th = thuonghieu.ma_th
+			WHERE thuonghieu.ma_th = $ma_th");
 		$totalRecords = $totalRecords->num_rows;
 		return $totalRecords;
 	}

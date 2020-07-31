@@ -205,10 +205,10 @@ class product extends disconnect
 		$this->uploadedFilesSp = $uploadedFilesSp;
 		$uploadFiles = new uploadFiles;
 		// $upload = array();
-		$upload = $uploadFiles->upload($this->uploadedFiles);
+		
 		$uploadSp = $uploadFiles->upload($this->uploadedFilesSp);
 		// print_r($upload[2]);
-		$dem = count($upload);
+		
 		$sqlSp = "INSERT INTO `sanpham`(`ten_sp`, `date_tao`, `gia_ban`, `gia_thi_truong`, `ma_th`, `sl_trong_kho`, `ma_pl`, `hien_thi`) 
 			VALUES ('$this->ten_sp','$this->date_tao',$this->gia_ban,$this->gia_thi_truong,$this->ma_th,$this->sl_trong_kho,$this->ma_pl,$this->hien_thi)
 			";
@@ -232,17 +232,28 @@ class product extends disconnect
 					";
 		$queryImgsp = mysqli_query($conn,$sqlImgsp);
 
-		for ($i=0; $i < $dem; $i++) { 
-			$sqlImgspbs = "INSERT INTO `img_sp_bs`( `ma_sp`, `img`) 
-						VALUES ($this->ma_sp,'$upload[$i]')
-						";
-			$queryImgspbs = mysqli_query($conn,$sqlImgspbs);
+
+		if (!empty($this->uploadedFiles['name'][0])) {
+			$upload = $uploadFiles->upload($this->uploadedFiles);
+			$dem = count($upload);
+			$queryUpimgbs = $this->getImgBs($dem,$this->ma_sp,$upload);
 		}
 
 
 
 
-		return $querySp and $queryTt and $queryImgsp and $queryImgspbs;
+		return $querySp and $queryTt and $queryImgsp ;
+	}
+	public function getImgBs($dem,$ma_sp,$upload){
+		global $conn;
+
+		for ($i=0; $i < $dem; $i++) { 
+			$sqlImgspbs = "INSERT INTO `img_sp_bs`( `ma_sp`, `img`) 
+						VALUES ($ma_sp,'$upload[$i]')
+						";
+			$queryImgspbs = mysqli_query($conn,$sqlImgspbs);
+		}
+		return $queryImgspbs;
 	}
 	
 	public function edit($id){

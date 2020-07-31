@@ -16,6 +16,9 @@ class main
 		$queryProduct = $getData->getProduct();
 		$queryProductBc = $getData->getProduct();
 		
+		$queryGetDm = $getData->getProDm(1);
+		$queryGetDm2 = $getData->getProDm(2);
+
 
 		$queryThuonghieu = $getData->getAll('thuonghieu');
 		
@@ -52,8 +55,10 @@ class main
 	}
 
 	public function mainCategory(){
+
+
+		// $ma_pl = $_GET['id'];
 		$ma_dm = $_GET['id'];
-		$ma_pl = $_GET['id'];
 		$getData = new getData();
 		$queryLMadm = $getData->getMadm($ma_dm);
 		$resultLMadm = mysqli_fetch_assoc($queryLMadm);
@@ -82,9 +87,22 @@ class main
 		$date_minus = date_format($date, 'Y-m-d H:i:s');
 
 		$querySpNew = $getData->getProductNew($date_minus);
+
+
+
+		$queryDm = $getData->getDm();
+		
+		while ($resultDm = mysqli_fetch_assoc($queryDm)) {
+			$result[]=$resultDm;
+		}
+
 		include('views/main_danh_muc.php');
 	}
 	public function mainClassify(){
+		
+
+
+
 		$ma_pl = $_GET['id'];
 		$getData = new getData();
 		$queryLMapl = $getData->getMapl($ma_pl);
@@ -113,7 +131,49 @@ class main
 		$date_minus = date_format($date, 'Y-m-d H:i:s');
 
 		$querySpNew = $getData->getProductNew($date_minus);
+
+
+
+
+		$queryDm = $getData->getDm();
+		
+		while ($resultDm = mysqli_fetch_assoc($queryDm)) {
+			$result[]=$resultDm;
+		}
 		include('views/main_phan_loai.php');
+	}
+	public function mainTrademark(){
+		$ma_th = $_GET['id'];
+		$getData = new getData();
+		$queryLMath = $getData->getMath($ma_th);
+		$resultmath = mysqli_fetch_assoc($queryLMath);
+
+		// phân trang
+		$item_per_page = 24;
+		$current_page = !empty($_GET['pagination'])?$_GET['pagination']:1; //Trang hiện tại
+		$offset = ($current_page - 1) * $item_per_page;
+		$queryProductPl = $getData->getProductTh($ma_th,$item_per_page,$offset);
+		$totalRecords = $getData->getNum_rowsTh($ma_th);
+		$totalPages = ceil($totalRecords / $item_per_page);
+		//
+
+
+		// time
+		$tz = 'Asia/Ho_Chi_Minh';
+		$timestamp = time();
+		$dt = new DateTime("now", new DateTimeZone($tz)); 
+		$dt->setTimestamp($timestamp);
+		$date_tao=$dt->format('Y-m-d H:i:s');
+		// time
+		$now = $date_tao;
+		$date = new DateTime($now);
+		$days = 30;
+		// >= php version 5.3
+		date_sub($date, date_interval_create_from_date_string($days.' days'));
+		$date_minus = date_format($date, 'Y-m-d H:i:s');
+
+		$querySpNew = $getData->getProductNew($date_minus);
+		include('views/main_thuong_hieu.php');
 	}
 	
 }

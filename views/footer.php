@@ -27,6 +27,7 @@
                 <div class="col-lg-5 col-md-12">
                     <div class="box-info">
                         <span>HỆ THỐNG CỬA HÀNG</span>
+                        <hr>
                         <ul class="ul-non ul-info">
                             <?php while ($resultHtCuahang = mysqli_fetch_assoc($queryHtCuahang)) {
                             ?>
@@ -47,6 +48,7 @@
                 <div class="col-lg-2 col-md-6">
                     <div class="box-info">
                         <span> VỀ CHÚNG TÔI</span>
+                        <hr>
                         <ul class="ul-non ul-infos">
                             <li><a href="">Hệ thống cửa hàng</a></li>
                             <li><a href="">Giới thiệu Beautygarden</a></li>
@@ -58,6 +60,7 @@
                 <div class="col-lg-2 col-md-6">
                     <div class="box-info">
                         <span> HỖ TRỢ</span>
+                        <hr>
                         <ul class="ul-non ul-infos">
                             <li><a href="">Giải đáp thắc mắc</a></li>
                             <li><a href="">Hướng dẫn mua hàng</a></li>
@@ -68,7 +71,8 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <div class="box-info">
-                        <span> ĐĂNG KÝ NHẬN THÔNG TIN KHUYẾN MÃI</span>
+                        <span> NHẬN THÔNG TIN KHUYẾN MÃI</span>
+                        <hr>
                         <div>
                             <form class="example form-inline">
                                 <input type="text" class="form-control ip-send" id="sendmail" placeholder="Vui lòng nhập email..." name="search2">
@@ -96,6 +100,7 @@
                 <div class="col-lg-5 col-md-6 ">
                     <div class="box-info">
                         <span> WEBSITE THUỘC QUYỀN</span>
+                        <hr>
                         <ul class="ul-non ul-infos">
                             <li><?php echo $resultInfor['tenCty'] ?></li>
                             <li>ĐKKD số: 1111111111</li>
@@ -106,6 +111,7 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="box-info">
                         <span> TRỤ SỞ CHÍNH</span>
+                        <hr>
                         <ul class="ul-non ul-infos">
                             <li><a>Địa chỉ: <?php echo $resultInfor['dia_chi'] ?></a></li>
                             <li><a>Tel: <?php echo $resultInfor['tel'] ?> - Email: <?php echo $resultInfor['email'] ?></a></li>
