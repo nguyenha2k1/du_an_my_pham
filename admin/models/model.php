@@ -47,11 +47,13 @@ class uploadFiles
 
 		// print_r($files);
 		// 	echo "</pre>";
-
+	    
 	    $uploadPath = "../images/products/" . date('d-m-Y', time());
+	    $uploadPath1 = substr($uploadPath, 3); 
 	    if (!is_dir($uploadPath)) {
 	        mkdir($uploadPath, 0777, true);
 	    }
+	    $i =0;
 	    foreach ($files as $file) {
 	        $file = $this->validateUploadFile($file, $uploadPath);
 	        if ($file != false) {
@@ -59,10 +61,16 @@ class uploadFiles
 	        }else {
 	            $file = false;
 	        }
+
+	        $nameImg[$i] = $uploadPath1.'/'.$file['name'];
+	        $i++;
 	    }
-	    $uploadPath1 = substr($uploadPath, 3); 
-	    $this->img=$img = $uploadPath1.'/'.$file['name'];
-	 	return $this->img;
+	    // $this->img=$img = $uploadPath1.'/'.$file['name'];
+	    
+	    // echo "<pre>";
+	    // print_r($nameImg);
+	    // echo "</pre>";
+	 	return $nameImg;
 	}
 	public function delete($url){
 		$url = '../'.$result['img'];
@@ -181,7 +189,7 @@ class product extends disconnect
 		$totalRecords = $totalRecords->num_rows;
 		return $totalRecords;
 	}
-	public function add($ten_sp,$date_tao,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung){
+	public function add($ten_sp,$date_tao,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung,$uploadedFiles,$uploadedFilesSp){
 		global $conn;
 		$this->ten_sp=$ten_sp;
 		$this->date_tao=$date_tao;
@@ -193,6 +201,14 @@ class product extends disconnect
 		$this->ma_pl=$ma_pl;
 		$this->khai_quat=$khai_quat;
 		$this->noidung=$noidung;
+		$this->uploadedFiles = $uploadedFiles;
+		$this->uploadedFilesSp = $uploadedFilesSp;
+		$uploadFiles = new uploadFiles;
+		// $upload = array();
+		$upload = $uploadFiles->upload($this->uploadedFiles);
+		$uploadSp = $uploadFiles->upload($this->uploadedFilesSp);
+		// print_r($upload[2]);
+		$dem = count($upload);
 		$sqlSp = "INSERT INTO `sanpham`(`ten_sp`, `date_tao`, `gia_ban`, `gia_thi_truong`, `ma_th`, `sl_trong_kho`, `ma_pl`, `hien_thi`) 
 			VALUES ('$this->ten_sp','$this->date_tao',$this->gia_ban,$this->gia_thi_truong,$this->ma_th,$this->sl_trong_kho,$this->ma_pl,$this->hien_thi)
 			";
@@ -210,8 +226,25 @@ class product extends disconnect
 				VALUES ($this->ma_sp,'$this->khai_quat','$this->noidung')
 				";
 		$queryTt = mysqli_query($conn,$sqlTt);
-		return $querySp and $queryTt;
+
+		$sqlImgsp = "INSERT INTO `img_sp`( `ma_sp`, `img`) 
+					VALUES ($this->ma_sp,'$uploadSp[0]')
+					";
+		$queryImgsp = mysqli_query($conn,$sqlImgsp);
+
+		for ($i=0; $i < $dem; $i++) { 
+			$sqlImgspbs = "INSERT INTO `img_sp_bs`( `ma_sp`, `img`) 
+						VALUES ($this->ma_sp,'$upload[$i]')
+						";
+			$queryImgspbs = mysqli_query($conn,$sqlImgspbs);
+		}
+
+
+
+
+		return $querySp and $queryTt and $queryImgsp and $queryImgspbs;
 	}
+	
 	public function edit($id){
 		global $conn;
 		$this->id=$id;

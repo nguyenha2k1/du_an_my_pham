@@ -1,3 +1,7 @@
+.container {
+    max-width: 1200px;
+    position: relative;
+}*/
 .box-none-card a:hover{
     color: white;
 }
@@ -53,6 +57,59 @@
 }
 .box-Sform .btn-search:hover{
     color: black;
+}
+
+
+
+/**/
+.row .box-products-category{
+    height: 585px;
+}
+.pd-box{
+    background-color: white;
+}
+/*.pd-box .box-images {
+    max-height: 189px;
+}*/
+.pd-box .box-images img{
+    max-height: 188.5px;
+    
+}
+/**/
+/*phân trang*/
+.pagination{
+  font-size: 14px;
+  width: 90%;
+  margin: 0px auto 30px auto;
+}
+.pagination a{
+    padding: 6px 10px;
+    color: white;
+}
+.pagination .page{
+  float: right;
+
+}
+.pagination .page-item{
+  border: 1px solid #ccc;
+  color: white;
+  border-radius: 5px;
+  background-color: #459429 ;
+}
+.pagination .page-item i{
+  color: white;
+}
+.pagination .page-item:hover{
+  background-color: #459429;
+  color: white;
+}
+.pagination .page-item:hover i{
+  color: white;
+}
+.pagination .current-page{
+  border: 1px solid #ccc;
+  color: white;
+  background-color: white;
 }
 /**/
 /*form đăng nhập 2*/
@@ -207,4 +264,4 @@
     border-bottom: 1px solid #000;
     letter-spacing: 2px;
     margin-bottom: 30px;
-}*/
+}

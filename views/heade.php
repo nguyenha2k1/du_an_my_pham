@@ -249,7 +249,7 @@
 
                             <!-- sádgfdas -->
                                     <li class="li-parent">
-                                        <a href="./?select=category" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[0]['ma_dm']; ?>" class="a-parent">
                                             Trang Điểm
                                                 <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                                 <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -306,7 +306,7 @@
                                         </div>
                                     </li>
                                     <li class="li-parent">
-                                        <a href="" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[1]['ma_dm']; ?>" class="a-parent">
                                             Chăm Sóc Da
                                                 <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                                 <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -363,7 +363,7 @@
 
                                     </li>
                                     <li class="li-parent">
-                                        <a href="" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[2]['ma_dm']; ?>" class="a-parent">
                                             Chăm Sóc Tóc
                                                 <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                                 <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -398,7 +398,7 @@
                                             </div>
                                     </li>
                                     <li class="li-parent">
-                                        <a href="" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[3]['ma_dm']; ?>" class="a-parent">
                                             Phụ Kiện
                                             <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                             <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -418,7 +418,7 @@
                                             </div>
                                     </li>
                                     <li class="li-parent">
-                                        <a href="" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[4]['ma_dm']; ?>" class="a-parent">
                                             Nước Hoa
                                                 <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                                 <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>
@@ -438,7 +438,7 @@
                                         </div>
                                     </li>
                                     <li class="li-parent">
-                                        <a href="" class="a-parent">
+                                        <a href="?page=category&id=<?php echo $result[5]['ma_dm']; ?>" class="a-parent">
                                             Chăm Sóc Toàn Thân
                                                 <i class="fa fa-angle-down hidden-xs hidden-sm" aria-hidden="true"></i>
                                                 <i class="fa fa-angle-right hidden-md" aria-hidden="true"></i>

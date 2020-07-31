@@ -16,24 +16,29 @@ if (isset($_GET['select'])) {
 }else{
 	$select = '';
 }
+require_once('controller/controller.php');
+$controllerHeader = new header();
+$controllerMain = new main();
 switch ($page) {
 	case '':
-		require_once('controller/controller.php');
-		$controller = new ctrollHome();
-		$controller->header();
-		$controller->main();
-		$controller->footer();
+		$controllerMain->mainHome();
 		break;
-	case 'logout':
-		require_once('controller/controllerLogout.php');
+	case 'product':
+		$controllerMain->mainProduct();
 		break;
-	
+	case 'category':
+		$controllerMain->mainCategory();
+		break;
+	case 'classify':
+		$controllerMain->mainClassify();
+		
+		break;
 	default:
 		# code...
 		break;
 }
 
-
+$controllerFooter = new footer();
 
 
 ?>

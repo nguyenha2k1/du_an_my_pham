@@ -91,7 +91,7 @@
                             <div class="item">
                                 <div class="pd-box ">
                                     <div class="box-images">
-                                        <a href="./?select=product&id=1">
+                                        <a href="./?page=product&id=<?php echo $resultProduct['ma_sp'] ?>">
                                             <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultProduct['img']?>" style="opacity: 1;">
                                         </a>
                                         <button type="button" onclick="" class="btn-addlike ">
@@ -101,7 +101,7 @@
                                     </div>
                                     <div class="box-content">
                                         <h3>
-                                            <a href="./?select=product&id=1"><?php echo $resultProduct['ten_sp']; ?></a>
+                                            <a href="./?page=product&id=<?php echo $resultProduct['ma_sp'] ?>"><?php echo $resultProduct['ten_sp']; ?></a>
                                         </h3>
                                         <div>
                                             <span class="price-drop"><?php echo $resultProduct['gia_ban']; ?>₫</span>
@@ -147,7 +147,7 @@
                         </div>
                         <div class="body-box-category">
                             <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
+                          <!--   <div class="col-2-ct">
                                 <div class="pd-box pd-box-category">
                                     <div class="box-images">
                                             <a href="">
@@ -166,250 +166,33 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> -->
                             <!-- Kết thúc -->
+                           <?php while ($resultProductBc = mysqli_fetch_assoc($queryProductBc)) {
+                            ?>
                             <!-- Bắt đàu sản phẩm -->
                             <div class="col-2-ct">
                                 <div class="pd-box pd-box-category">
                                     <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
+                                            <a href="?page=product&id=<?php echo $resultProductBc['ma_sp'] ?>">
+                                                <img alt="" class="img-reponsive lazy " src="<?php echo $resultProductBc['img']?>" style="">
                                             </a>
                                         <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
                                         <div class="sale-off hide">37%<br>OFF</div>
                                     </div>
                                     <div class="box-content">
                                         <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
+                                            <a href="?page=product&id=<?php echo $resultProductBc['ma_sp'] ?>"><?php echo $resultProductBc['ten_sp']?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
+                                            <span class="price-drop"><?php echo $resultProductBc['gia_ban']?>₫</span>
+                                            <span class="price "><?php echo $resultProductBc['gia_thi_truong']?>₫</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
-                            <!-- Bắt đàu sản phẩm -->
-                            <div class="col-2-ct">
-                                <div class="pd-box pd-box-category">
-                                    <div class="box-images">
-                                            <a href="">
-                                                <img alt="" class="img-reponsive lazy " src="./img/sanpham.jpg" style="">
-                                            </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
-                                        <div class="sale-off hide">37%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước hoa hồng Simple Soothing Facial Toner</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">120,000₫</span>
-                                            <span class="price ">190,400₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Kết thúc -->
+                            <?php }?>
 
 
                         </div>
@@ -1087,42 +870,13 @@
                     </div>
                     <div class="body-box">
                         <div class="owl-carousel owl-theme">
+                            <?php while ($resultThuonghieu = mysqli_fetch_assoc($queryThuonghieu)) {
+                            ?>
                             <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
+                                <img src="<?php echo $resultThuonghieu['img'] ?>">
                             </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
-                            <div class="item imgth">
-                                <img src="./img/thuong-hieu-khac.png">
-                            </div>
+                            <?php } ?>
+                            
                         </div>
                     </div>
                 </div>

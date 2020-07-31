@@ -28,86 +28,19 @@
                     <div class="box-info">
                         <span>HỆ THỐNG CỬA HÀNG</span>
                         <ul class="ul-non ul-info">
+                            <?php while ($resultHtCuahang = mysqli_fetch_assoc($queryHtCuahang)) {
+                            ?>
                             <li>
                                 <a href="" onclick="">
                                     <b>
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
+                                        <?php echo $resultHtCuahang['dia_chi'] ?>
                                     </b>
-                                    - Hà Nội - 0934 544 111
+                                    - <?php echo $resultHtCuahang['sdt'] ?>
                                     <div class="map-mages img-luna"></div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" onclick="">
-                                    <b>
-                                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-                                        Tp.HN
-                                    </b>
-                                    - Hà Nội - 0934 544 111
-                                    <div class="map-mages img-luna"></div>
-                                </a>
-                            </li>
+                            <?php } ?>
                         </ul>
                     </div>
                 </div>
@@ -144,10 +77,10 @@
                         </div>
                         <span class="non-back"> LIÊN KẾT</span>
                         <ul class="ul-non ul-sofooter">
-                            <li><a href="https://www.facebook.com" target="_blank" class="a-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.instagram.com" target="_blank" class="a-it"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                            <li><a href="https://www.pinterest.com" target="_blank" class="a-pn"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
-                            <li><a href="https://plus.google.com" target="_blank" class="a-gg"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo $resultInfor['facebook'] ?>" target="_blank" class="a-fb"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo $resultInfor['instagram'] ?>" target="_blank" class="a-it"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo $resultInfor['pinterest'] ?>" target="_blank" class="a-pn"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a></li>
+                            <li><a href="<?php echo $resultInfor['google'] ?>" target="_blank" class="a-gg"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
                         </ul>
                         <div class="clr"></div>
                         <div class="mar-top-10">
@@ -164,7 +97,7 @@
                     <div class="box-info">
                         <span> WEBSITE THUỘC QUYỀN</span>
                         <ul class="ul-non ul-infos">
-                            <li>CÔNG TY CỔ PHẦN BEAUTY SHOP</li>
+                            <li><?php echo $resultInfor['tenCty'] ?></li>
                             <li>ĐKKD số: 1111111111</li>
                             <li>Do Sở KH&amp;ĐT Tp. HN Cấp ngày 21/12/2112</li>
                         </ul>
@@ -174,9 +107,9 @@
                     <div class="box-info">
                         <span> TRỤ SỞ CHÍNH</span>
                         <ul class="ul-non ul-infos">
-                            <li><a>Địa chỉ: Tp.HN</a></li>
-                            <li><a>Tel: 09 999 666 999 - Email: info@beautyshop.vn</a></li>
-                            <li><a>Website: www.beautyshop.vn</a></li>
+                            <li><a>Địa chỉ: <?php echo $resultInfor['dia_chi'] ?></a></li>
+                            <li><a>Tel: <?php echo $resultInfor['tel'] ?> - Email: <?php echo $resultInfor['email'] ?></a></li>
+                            <li><a>Website: <?php echo $resultInfor['website'] ?></a></li>
                         </ul>
                     </div>
                 </div>

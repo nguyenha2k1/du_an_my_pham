@@ -71,7 +71,7 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" action="?page=product&select=getadd" method="post">
+				<form class="form-add" action="?page=product&select=getadd" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Thêm mới sản phẩm</h2>
 					<button class="submit">Thêm</button>
 					<div class="all-item">
@@ -115,20 +115,13 @@
 								</div>
 								<div class="form-item">
 									<label>Image sản phẩm:</label>
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
-								</div>
-								<div class="form-item">
-									<label>Image công dụng:</label>
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
-								</div>
-								<div class="form-item">
-									<label>Image cách sử dụng:</label>
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
+									<input type="file" name="imgsp[]" accept=".jpg, .jpeg, .png">
 								</div>
 								<div class="form-item">
 									<label>Image bổ sung:</label>
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
+									<input type="file" multiple name="file_upload[]" accept=".jpg, .jpeg, .png">
 								</div>
+								
 								
 								
 								

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="public/css/site.min.css">
+    <title></title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="public/css/site.min.css">
     <link rel="stylesheet" type="text/css" href="public/css/style.css">
     <link rel="stylesheet" type="text/css" href="public/css/category.css">
     <link rel="stylesheet" type="text/css" href="public/css/shopcard.css">
@@ -29,7 +29,7 @@
                 <div class="col-lg-12">
                     <ol class="ol-non">
                         <li><a href="./">Trang chủ</a></li>
-                        <li><a href="?page=category&id=<?php echo $resultLMadm['ma_dm']; ?>"><?php echo $resultLMadm['ten_dm']; ?></a></li>
+                        <li><a href="?page=classify&id=<?php echo $resultLMapl['ma_pl'] ?>"><?php echo $resultLMapl['ten_loai_sp']; ?></a></li>
                     </ol>
                 </div>
             </div>
@@ -43,11 +43,7 @@
                 <!-- bên phải -->
                 <div class="col-lg-9 order-lg-last">
                     <div class="box-manugar">
-                        <!-- ảnh đại diện danh mục -->
-                        <a href="" class="mar-bot-20 dl-block">
-                            <img src="<?php echo $resultLMadm['img']; ?>" alt="<?php echo $resultLMadm['ten_dm']; ?>" class="img-reponsive">
-                        </a>
-                        <!-- kết thúc -->
+                       
                         <!-- phần conten -->
                         <div class="my-content">
 
@@ -56,8 +52,8 @@
                             <div class="head-box">
                                 <div class="title-box">
                                     <h2>
-                                        <a href="" title="Trang Điểm">
-                                            <?php echo $resultLMadm['ten_dm']; ?>
+                                        <a href="?page=classify&id=<?php echo $resultLMapl['ma_pl'] ?>" title="<?php echo $resultLMapl['ten_loai_sp']; ?>">
+                                            <?php echo $resultLMapl['ten_loai_sp']; ?>
                                         </a>
                                     </h2>
                                 </div>
@@ -89,26 +85,26 @@
 
                             <div class="mar-bot-20">
                                 <div class="row">
-                                    <?php while ($resultProductDm = mysqli_fetch_assoc($queryProductDm)) {
+                                    <?php while ($resultProductPl = mysqli_fetch_assoc($queryProductPl)) {
                                         
                                     ?>
                                     <!-- bắt đầu -->
                                     <div class="col-lg-3 col-md-4 col-sm-6 col-6 pan-right mar-bot-10">
                                         <div class="pd-box ">
                                             <div class="box-images">
-                                                    <a href="?page=product&id=<?php echo $resultProductDm['ma_sp'] ?>" title="">
-                                                        <img alt="" class="img-reponsive lazy " src="<?php echo $resultProductDm['img']; ?>" style="">
+                                                    <a href="?page=product&id=<?php echo $resultProductPl['ma_sp'] ?>" title="">
+                                                        <img alt="" class="img-reponsive lazy " src="<?php echo $resultProductPl['img']; ?>" style="">
                                                     </a>
                                                 <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
                                                 <div class="sale-off hide">15%<br>OFF</div>
                                             </div>
                                             <div class="box-content">
                                                 <h3>
-                                                    <a href="?page=product&id=<?php echo $resultProductDm['ma_sp'] ?>" title=""><?php echo $resultProductDm['ten_sp']; ?> </a>
+                                                    <a href="?page=product&id=<?php echo $resultProductPl['ma_sp'] ?>" title=""><?php echo $resultProductPl['ten_sp']; ?> </a>
                                                 </h3>
                                                 <div>
-                                                    <span class="price-drop"><?php echo number_format($resultProductDm['gia_ban'], 0, ',', ','); ?>₫</span>
-                                                    <span class="price "><?php echo number_format($resultProductDm['gia_thi_truong'], 0, ',', ','); ?>₫</span>
+                                                    <span class="price-drop"><?php echo number_format($resultProductPl['gia_ban'], 0, ',', ','); ?>₫</span>
+                                                    <span class="price "><?php echo number_format($resultProductPl['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -126,19 +122,19 @@
                                         if ($current_page > 3) {
                                             $first_page = 1;
                                             ?>
-                                            <a class="page-item" href="?page=category&id=<?php echo $ma_pl ?>&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
                                             <?php
                                         }
                                         if ($current_page > 1) {
                                             $prev_page = $current_page - 1;
                                             ?>
-                                            <a class="page-item" href="?page=category&id=<?php echo $ma_pl ?>&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
                                         <?php }
                                         ?>
                                         <?php for ($num = 1; $num <= $totalPages; $num++) { ?>
                                             <?php if ($num != $current_page) { ?>
                                                 <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-                                                    <a class="page-item" href="?page=category&id=<?php echo $ma_pl ?>&pagination=<?= $num ?>"><?= $num ?></a>
+                                                    <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $num ?>"><?= $num ?></a>
                                                 <?php } ?>
                                             <?php } else { ?>
                                                 <a class="current-page page-item"><?= $num ?></a>
@@ -148,13 +144,13 @@
                                         if ($current_page < $totalPages - 1) {
                                             $next_page = $current_page + 1;
                                             ?>
-                                            <a class="page-item" href="?page=category&id=<?php echo $ma_pl ?>&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
                                         <?php
                                         }
                                         if ($current_page < $totalPages - 3) {
                                             $end_page = $totalPages;
                                             ?>
-                                            <a class="page-item" href="?page=category&id=<?php echo $ma_pl ?>&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+                                            <a class="page-item" href="?page=classify&id=<?php echo $ma_pl ?>&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
                                             <?php
                                         }
                                         ?>

@@ -56,9 +56,9 @@
 			<div class="row">
 				<div class="col-lg-12">
                     <ol class="ol-non">
-                        <li><a href="">Trang chủ</a></li>
-                        <li><a href="">Xịt khoáng nền</a></li>
-                        <li><a href="">Xịt Khoáng La Roche Posay Laboratoire </a></li>
+                        <li><a href="./">Trang chủ</a></li>
+                        <li><a href="?page=classify&id=<?php echo $resultProductDetail['ma_pl']; ?>"><?php echo $resultProductDetail['ten_loai_sp']; ?></a></li>
+                        <li><a href="?page=product&id=<?php echo $resultProductDetail['ma_sp']; ?>"><?php echo $resultProductDetail['ten_sp']; ?></a></li>
                     </ol>
                 </div>
 			</div>
@@ -76,8 +76,8 @@
                                     <div class="box-img-detail">
                                         <div class="config-alige">
                                             <div class="easyzoom easyzoom--overlay easyzoom--with-thumbnails is-ready">
-                                                <a href="./img/xitkhoang.jpg">
-                                                    <img src="./img/xitkhoang.jpg" width="300" height="300" alt="" class="">
+                                                <a href="<?php echo $resultProductDetail['img']; ?>">
+                                                    <img src="<?php echo $resultProductDetail['img']; ?>" width="300" height="300" alt="" class="">
                                                 </a>
                                             </div>
                                         </div>
@@ -85,25 +85,18 @@
                                     <div class="box-thumnail-detail">
                                         <ul class="thumbnails ">
                                             <li>
-                                                <a href="./img/xitkhoang.jpg" data-standard="./img/xitkhoang.jpg">
-                                                    <img src="./img/xitkhoang.jpg" alt="">
+                                                <a href="<?php echo $resultProductDetail['img']; ?>" data-standard="<?php echo $resultProductDetail['img']; ?>">
+                                                    <img src="<?php echo $resultProductDetail['img']; ?>" alt="">
                                                 </a>
                                             </li>
+                                            <?php while ($resultImgbs = mysqli_fetch_assoc($queryImgbs)) {
+                                            ?>
                                             <li>
-                                                <a href="img/Hinh-6-son-duong-moi-Astrid-Lip-Balm.jpg" data-standard="img/Hinh-6-son-duong-moi-Astrid-Lip-Balm.jpg">
-                                                    <img src="img/Hinh-6-son-duong-moi-Astrid-Lip-Balm.jpg" alt="">
+                                                <a href="<?php echo $resultImgbs['img'] ?>" data-standard="<?php echo $resultImgbs['img'] ?>">
+                                                    <img src="<?php echo $resultImgbs['img'] ?>" alt="">
                                                 </a>
                                             </li>
-                                            <li>
-                                                <a href="img/Hinh-7-son-duong-moi-Astrid-Lip-Balm.jpg" data-standard="img/Hinh-7-son-duong-moi-Astrid-Lip-Balm.jpg">
-                                                    <img src="img/Hinh-7-son-duong-moi-Astrid-Lip-Balm.jpg" alt="">
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="img/Hinh-8-son-duong-moi-Astrid-Lip-Balm.jpg" data-standard="img/Hinh-8-son-duong-moi-Astrid-Lip-Balm.jpg">
-                                                    <img src="img/Hinh-8-son-duong-moi-Astrid-Lip-Balm.jpg" alt="">
-                                                </a>
-                                            </li>
+                                            <?php } ?>
                                             <div class="clr"></div>
 
                                         </ul>
@@ -128,9 +121,9 @@
                             <div class="col-lg-6">
                                 <div>
                                     <h1 class="title-Product">
-                                        Xịt Khoáng La Roche Posay Laboratoire 
+                                        <?php echo $resultProductDetail['ten_sp']; ?>
                                     </h1>
-                                    <div class="rate-star">
+                                    <!-- <div class="rate-star">
                                         <div class="rating-stars" data-star="4">
                                             <ul id="stars">
                                                 <li class="star selected" title="Tệ" data-value="1" onclick="">
@@ -153,31 +146,33 @@
                                         <div class="text-rating">
                                             <p><span>4</span> sao - <span>0</span> lượt đánh giá</p>
                                         </div>
-                                    </div>
+                                    </div> -->
                                     <div class="box-price">
                                         <div class="price-drop">
-                                            <span>170,000₫</span>
-                                            <span class="issale hide">198,900₫</span>
+                                            <span><?php echo number_format($resultProductDetail['gia_ban'], 0, ',', ','); ?>₫</span>
+                                            <span class="issale hide"><?php echo number_format($resultProductDetail['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                             <span class="persale hide">- 15%</span>
                                         </div>
                                         <div class="price-vince">
-                                            <p>Giá thị trường: <span>198,900₫</span> - Tiết kiệm: <span>28,900₫ </span> (<span>- 15%</span>)</p>
+                                            <?php 
+                                                $tk = $resultProductDetail['gia_thi_truong']-$resultProductDetail['gia_ban'];
+                                                $pt = $tk/$resultProductDetail['gia_thi_truong']*100;
+                                            ?>
+                                            <p>Giá thị trường: <span><?php echo number_format($resultProductDetail['gia_thi_truong'], 0, ',', ','); ?>₫</span> - Tiết kiệm: <span><?php echo number_format($tk, 0, ',', ','); ?>₫ </span> (<span>- <?php echo number_format((float)$pt, 2, '.', '') ?>%</span>)</p>
                                         </div>
                                         <div class="hanc">
-                                            <p>Thương hiệu: Thương Hiệu Khác</p>
+                                            <p>Thương hiệu: <?php echo $resultProductDetail['ten_thuong_hieu']; ?></p>
                                         </div>
                                     </div>
                                     <div class="box-note ">
-                                        <p style="box-sizing: border-box; margin: 0px 0px 10px; color: #666666; font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;">&nbsp;- Nước khoáng trị liệu các vấn đề về da, Giàu Selenium &amp; Silica, chống oxi hóa, giảm kích ứng, làm dịu da.</p>
-										<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #666666; font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;">- Hỗ trợ việc điều trị các vấn đề về da (viêm da cơ địa, chàm, làm lành vết thương, sau điều trị thẩm mỹ,…).</p>
-										<p style="box-sizing: border-box; margin: 0px 0px 10px; color: #666666; font-family: &#39;Helvetica Neue&#39;, Helvetica, Arial, sans-serif;">- Làm dịu mát làn da, làm dịu da và tạo càm giác mượt mà, chống oxy hóa, chống kích ứng, giảm bỏng rát do nắng và giảm ngứa hiệu quả.</p>
+                                        <?php echo $resultProductDetail['khai_quat']; ?>
                                     </div>
                                        <div class="card-box">
                                             <div class="inner-load">
                                                 <div class="box-add">
                                                     <div class="number-card">
                                                         <span>Số lượng:</span>
-                                                        <input type="number" name="numberproduct" id="numberproduct" class="form-control" value="1" min="1" max="99" data-barcode="" data-refid="">
+                                                        <input type="number" name="numberproduct" id="numberproduct" class="form-control" value="1" min="1" max="<?php echo $resultProductDetail['sl_trong_kho']; ?>" data-barcode="" data-refid="">
                                                         <div class="clr"></div>
                                                     </div>
                                                     <div class="bst">
@@ -214,273 +209,37 @@
                     	</div>
                     	<div class="body-box">
                     		<div class="owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
+                                <?php while ($resultProductNgauNhien = mysqli_fetch_assoc($queryProductNgauNhien)) {
+                                ?>
+                                <div class="item">
+                                    <div class="pd-box ">
+                                        <div class="box-images">
+                                            <a href="?page=product&id=<?php echo $resultProductNgauNhien['ma_sp'] ?>">
+                                                <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultProductNgauNhien['img'] ?>" style="opacity: 1;">
+                                            </a>
+                                            <button type="button" onclick="" class="btn-addlike ">
+                                                <i class="fa fa-cart-plus"></i>
+                                            </button>
+                                            <div class="sale-off hide">0%<br>OFF</div>
+                                        </div>
+                                        <div class="box-content">
+                                            <h3>
+                                                <a href="?page=product&id=<?php echo $resultProductNgauNhien['ma_sp'] ?>"><?php echo $resultProductNgauNhien['ten_sp'] ?></a>
+                                            </h3>
+                                            <div>
+                                                <span class="price-drop"><?php echo number_format($resultProductNgauNhien['gia_ban'], 0, ',', ','); ?>₫</span>
+                                                <span class="price "><?php echo number_format($resultProductNgauNhien['gia_thi_truong'], 0, ',', ','); ?>₫</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                <?php } ?>
+                       
                     	</div>
                     </div>
                     <!-- Thông tin sản phẩm -->
                     <div class="box-thongtin">
-                        <div class="item-note ">
-                            <div class="title-member">
-                                <h2>Thông tin sản phẩm</h2>
-                             </div>
-                          	<div class="back-content">
-                                <p><strong>Nước khoáng giúp làm dịu và bảo vệ da La Roche-Posay&nbsp;Thermal Spring Water</strong> được sản xuất từ nguồn nước khoáng chứa nhiều khoáng chất cân bằng và giàu các nguyên tố vi lượng sẽ giúp làm dịu mát làn da, cung cấp độ ẩm cần thiết, làm giảm kích ứng và bảo vệ da trước các tác hại của môi trường bên ngoài. Nước khoáng dạng phun sương chuyên biệt dành cho làn da nhạy cảm dễ bị kích ứng từng màn sương mỏng nhe thẩm thấu vào từng tế bào da ngay lập tức, cung cấp nước và khoáng chất giúp làm dịu da, chống kích ứng ngay tức thì.</p>
-								<p><img style="display: block; margin-left: auto; margin-right: auto;" alt="" width="760" height="988" class="lazy" src="./img/the2024908.jpg"></p>
-                            </div>
-                        </div>
-                        <div class="item-note ">
-                            <div class="title-member right-border title-behide">
-                                <h2>Công Dụng Sản Phẩm </h2>
-                            </div>
-                        	<div class="back-content">
-                            	<p>Xuất xứ: Pháp</p>
-								<p>Dung tích: 50ml</p>
-								<p>Với nguồn khoáng chất cân bằng và giàu các nguyên tố vi lượng giúp làm dịu mát làn da,&nbsp;giảm&nbsp;kích ứng &amp; chống oxi hoá.&nbsp;Xịt khoáng phù hợp cho làn da nhạy cảm nhất.<br>Sự kết hợp độc đáo giữa các khoáng chất và nguyên tố vi lượng như SELENIUM, nước xịt khoáng La Roche-Posay đã được khoa học chứng minh có tác dụng làm dịu, giảm kích ứng và chống oxi hoá<br>Nước khoáng làm dịu và bảo vệ da La Roche-Posay Thermal Spring Water giúp làm dịu da, bảo vệ da chống lại sự lão hóa nhờ thành phần chứa nhiều khoáng chất cân bằng và giàu các nguyên tố vi lượng. Sản phẩm dạng xịt phun sương nhỏ, rất mịn, không gây đọng những vệt nước ở trên da, phù hợp cả cho việc sử dụng khi trang điểm.</p>
-								<p><img style="display: block; margin-left: auto; margin-right: auto;" alt="" width="1600" height="1066" class="lazy" src="./img/xit-khoang-la-roche-posay-lam-diu-va-bao-ve-da-05025004.jpg"></p>
-								<p>&nbsp;</p>
-                        	</div>
-                        </div>
-                            <div class="item-note">
-                                <div class="title-member right-border title-behide">
-                                    <h2>Hướng Dẫn Sử Dụng</h2>
-                                </div>
-                                <div class="back-content">
-                                    <p>
-                                    	Bước 1:Rửa sạch mặt bằng sữa rửa mặt rồi lau bằng khăn bông sạch.
-                                    </p>
-                                    <p>
-										Bước 2: Lấy một lượng mỏng sản phẩm bôi lên da, tránh vùng mắt.
-									</p>
-									<p>
-										Bước 3: Để nguyên khoảng từ 10 – 15 giây, bong bóng sẽ dần hình thành
-									</p>
-									<p>
-										Bước 4: Giữ nguyên mặt nạ trong khoảng 10 – 15 phút hoặc chờ cho đến khi các bong bóng dần biến mất sạch. 
-									</p>
-									<p>
-										Bước 5: Rửa mặt lại thật sạch.
-                                    </p>
-                                </div>
-                            </div>
+                        <?php echo $resultProductDetail['noidung']; ?>
                            
                         </div>
                     </div>
@@ -495,235 +254,40 @@
                     	</div>
                     	<div class="body-box">
                     		<div class="owl-carousel owl-theme">
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
+                                <?php while ($resultSpCl = mysqli_fetch_assoc($querySpCl)) {
+                                ?>
+                                <div class="item">
+                                    <div class="pd-box ">
+                                        <div class="box-images">
+                                            <a href="?page=product&id=<?php echo $resultSpCl['ma_sp'] ?>">
+                                                <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultSpCl['img'] ?>" style="opacity: 1;">
+                                            </a>
+                                            <button type="button" onclick="" class="btn-addlike ">
+                                                <i class="fa fa-cart-plus"></i>
+                                            </button>
+                                            <div class="sale-off hide">0%<br>OFF</div>
+                                        </div>
+                                        <div class="box-content">
+                                            <h3>
+                                                <a href="?page=product&id=<?php echo $resultSpCl['ma_sp'] ?>"><?php echo $resultSpCl['ten_sp'] ?></a>
+                                            </h3>
+                                            <div>
+                                                <span class="price-drop"><?php echo number_format($resultSpCl['gia_ban'], 0, ',', ','); ?>₫</span>
+                                                <span class="price "><?php echo number_format($resultSpCl['gia_thi_truong'], 0, ',', ','); ?>₫</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="pd-box ">
-                                    <div class="box-images">
-                                        <a href="">
-                                            <img data-src="" alt="" class="img-reponsive owl-lazy " src="./img/sanpham.jpg" style="opacity: 1;">
-                                        </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
-                                            <i class="fa fa-cart-plus"></i>
-                                        </button>
-                                        <div class="sale-off hide">0%<br>OFF</div>
-                                    </div>
-                                    <div class="box-content">
-                                        <h3>
-                                            <a href="">Nước Cân Bằng Senka Deep Moist Lotion I</a>
-                                        </h3>
-                                        <div>
-                                            <span class="price-drop">190,000₫</span>
-                                            <span class="price hide">0₫</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            
-                            </div>
+                                <?php } ?>
+                         
 
 
 
 
-                    	</div>
+                    	   </div>
 
-                    </div>
-				</div>
+                        </div>
+				    </div>
 
 
 
@@ -1031,62 +595,23 @@
 						    <strong>SẢN PHẨM MỚI VỀ</strong>
 						</div>
 						<div class="content-left">
+                            <?php while ($resultSpNew = mysqli_fetch_assoc($querySpNew)) {
+                            ?>
 						    <div class="box-shas">
 						        <div class="box-imgs">
-						            <a href="" title="">
-						                <img alt="" class="img-reponsive lazy" data-id="lazy-t0" src="./img/sanpham.jpg" style="">
+						            <a href="?page=product&id=<?php echo $resultSpNew['ma_sp'] ?>" title="">
+						                <img alt="" class="img-reponsive lazy" data-id="lazy-t0" src="<?php echo $resultSpNew['img'] ?>" style="">
 						            </a>
 						        </div>
 						        <div class="content-shas">
-						         	<a href="" title="">
-						                Sữa tắm tẩy tế bào chết
+						         	<a href="?page=product&id=<?php echo $resultSpNew['ma_sp'] ?>" title="">
+						                <?php echo $resultSpNew['ten_sp'] ?>
 						            </a>
-						            <span>192,000₫</span>
+						            <span><?php echo number_format($resultSpNew['gia_ban'], 0, ',', ','); ?>₫</span>
 						        </div>
 						        <div class="clr"></div>
 							</div>
-							<div class="box-shas">
-						        <div class="box-imgs">
-						            <a href="" title="">
-						                <img alt="" class="img-reponsive lazy" data-id="lazy-t0" src="./img/sanpham.jpg" style="">
-						            </a>
-						        </div>
-						        <div class="content-shas">
-						         	<a href="" title="">
-						                Sữa tắm tẩy tế bào chết
-						            </a>
-						            <span>192,000₫</span>
-						        </div>
-						        <div class="clr"></div>
-							</div>
-							<div class="box-shas">
-						        <div class="box-imgs">
-						            <a href="" title="">
-						                <img alt="" class="img-reponsive lazy" data-id="lazy-t0" src="./img/sanpham.jpg" style="">
-						            </a>
-						        </div>
-						        <div class="content-shas">
-						         	<a href="" title="">
-						                Sữa tắm tẩy tế bào chết
-						            </a>
-						            <span>192,000₫</span>
-						        </div>
-						        <div class="clr"></div>
-							</div>
-							<div class="box-shas">
-						        <div class="box-imgs">
-						            <a href="" title="">
-						                <img alt="" class="img-reponsive lazy" data-id="lazy-t0" src="./img/sanpham.jpg" style="">
-						            </a>
-						        </div>
-						        <div class="content-shas">
-						         	<a href="" title="">
-						                Sữa tắm tẩy tế bào chết
-						            </a>
-						            <span>192,000₫</span>
-						        </div>
-						        <div class="clr"></div>
-							</div>
+						  <?php } ?>
 	                    </div>
 	                </div>
 	                <!-- kết thúc 33333333333 -->

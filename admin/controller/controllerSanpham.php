@@ -65,6 +65,8 @@ switch ($select) {
 		$_SESSION['page'] = 'main_them_moi_san_pham';
 		break;
 	case 'getadd':
+		$uploadedFiles = $_FILES['file_upload'];
+		$uploadedFilesSp = $_FILES['imgsp'];
 		$ten_sp = $_POST['ten_sp'];
 		$gia_ban = $_POST['gia_ban'];
 		$gia_thi_truong = $_POST['gia_thi_truong'];
@@ -86,7 +88,7 @@ switch ($select) {
 		$dt->setTimestamp($timestamp);
 		$date_tao=$dt->format('Y-m-d H:i:s');
 		// time
-		$queryAdd = $product->add($ten_sp,$date_tao,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung);
+		$queryAdd = $product->add($ten_sp,$date_tao,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung,$uploadedFiles,$uploadedFilesSp);
 		if ($queryAdd==true) {
 			header('Location: ?page=true&select=product');
 		}else{

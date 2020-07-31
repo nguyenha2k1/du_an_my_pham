@@ -1145,3 +1145,43 @@
     display: inline-block;
     float: left;
 }
+/**/
+.select {
+    float: right;
+    width: auto;
+    height: 30px;
+    padding-top: 4px;
+}
+.select a.active,.select2 a.active{
+    border-left: 1px solid #d0cccc;
+    background-color: #459429;
+    color: #fff;
+
+}
+.select a{
+    color: black;
+    float: left;
+    font-size: 14px;
+    padding: 2px 8px;
+    border: 1px solid #d0cccc;
+    border-left: 0px; 
+    display: inline-block;
+
+}
+.select2{
+    width: auto;
+    height: 30px;
+    padding-top: 4px;
+}
+.select2 a{
+    color: black;
+    float: left;
+    font-size: 14px;
+    padding: 2px 8px;
+    border: 1px solid #d0cccc;
+    border-left: 0px; 
+    display: inline-block;
+}
+/*.righ-here{
+    width: 0;
+}*/
