@@ -260,6 +260,16 @@ class product extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
+	public function editImgspbs($id){
+		global $conn;
+		$this->id=$id;
+		$sql = "SELECT  sanpham.ten_sp,img_sp_bs.img
+				FROM `sanpham` 
+			INNER JOIN img_sp_bs ON sanpham.ma_sp = img_sp_bs.ma_sp WHERE sanpham.ma_sp= $this->id";
+			
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
 	public function update($ma_sp,$ten_sp,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung){
 		global $conn;
 		$this->ma_sp=$ma_sp;
@@ -284,6 +294,58 @@ class product extends disconnect
 
 		return $querySp and $queryTt;
 		
+	}
+	public function updateImgBs($ma_sp,$uploadedFiles){
+		global $conn;
+		$this->uploadedFiles = $uploadedFiles;
+		$this->ma_sp = $ma_sp;
+		$uploadFiles = new uploadFiles;
+
+		$sqlGet = "SELECT img FROM `img_sp_bs` WHERE ma_sp = $this->ma_sp";
+		$queryGet = mysqli_query($conn,$sqlGet);
+		while ($resultGet = mysqli_fetch_assoc($queryGet)) {
+			$url = '../'.$resultGet['img'];
+	    	unlink($url);
+		}
+
+
+		$sql = "DELETE FROM `img_sp_bs` WHERE ma_sp = $this->ma_sp";
+		$query = mysqli_query($conn,$sql);
+
+
+
+		$upload = $uploadFiles->upload($this->uploadedFiles);
+		$dem = count($upload);
+		for ($i=0; $i < $dem; $i++) { 
+			$sqlImgspbs = "INSERT INTO `img_sp_bs`( `ma_sp`, `img`) 
+						VALUES ($this->ma_sp,'$upload[$i]')
+						";
+			$queryImgspbs = mysqli_query($conn,$sqlImgspbs);
+		}
+
+		return $queryImgspbs;
+	}
+	public function updateImgSp($ma_sp,$uploadedFilesSp){
+		global $conn;
+		$this->uploadedFilesSp = $uploadedFilesSp;
+		$this->ma_sp = $ma_sp;
+		$uploadFiles = new uploadFiles;
+		$uploadSp = $uploadFiles->upload($this->uploadedFilesSp);
+
+
+		$sqlGet = "SELECT img FROM `img_sp` WHERE ma_sp = $this->ma_sp";
+		$queryGet = mysqli_query($conn,$sqlGet);
+		$resultGet = mysqli_fetch_assoc($queryGet);
+		$url = '../'.$resultGet['img'];
+	    unlink($url);
+
+		$sqlImgsp = "UPDATE `img_sp` 
+					SET `img`='$uploadSp[0]'
+					WHERE ma_sp = $this->ma_sp
+					";
+		$queryImgsp = mysqli_query($conn,$sqlImgsp);
+
+		return $queryImgsp;
 	}
 	public function delete($id){
 		global $conn;

@@ -15,13 +15,27 @@ switch ($select) {
 	case 'edit':
 		$id = $_GET['id'];
 		$query = $product->edit($id);
+		$queryIMG = $product->editImgspbs($id);
 		$result = mysqli_fetch_assoc($query);
+		
 		$queryPl = $product->getPl();
 		$queryTh = $product->getTh();
 		$_SESSION['page'] = 'main_sua_san_pham';
 		break;
 	case 'update':
 		$id = $_GET['id'];
+
+		$uploadedFiles = $_FILES['file_upload'];
+		if (!empty($uploadedFiles['name'][0])) {
+			$queryUpimgbs = $product->updateImgBs($id,$uploadedFiles);
+		}
+
+		$uploadedFilesSp = $_FILES['imgsp'];
+		if (!empty($uploadedFilesSp['name'][0])) {
+			$queryUpimgSp = $product->updateImgSp($id,$uploadedFilesSp);
+		}
+
+
 		$ten_sp = $_POST['ten_sp'];
 		$gia_ban = str_replace('.', '', $_POST['gia_ban']);
 		$gia_thi_truong = str_replace('.', '', $_POST['gia_thi_truong']);
@@ -37,7 +51,7 @@ switch ($select) {
 		$khai_quat = $_POST['khai_quat'];
 		$noidung = $_POST['noidung'];
 		$queryUp = $product->update($id,$ten_sp,$gia_ban,$gia_thi_truong,$sl_trong_kho,$hien_thi,$ma_th,$ma_pl,$khai_quat,$noidung);
-		if ($queryUp==true) {
+		if ((isset($queryUpimgbs) && $queryUpimgbs==true) || (isset($queryUpimgSp) && $queryUpimgSp==true) ||$queryUp==true) {
 			header('Location: ?page=true&select=product');
 		}else{
 			header('Location: ?page=false&select=product');

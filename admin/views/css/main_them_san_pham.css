@@ -126,6 +126,7 @@
     border-radius: 4px;
 }
 .form-item img{
+    float: left;
     width: 150px;
     height: auto;
     border: 1px solid #f1f1f1;

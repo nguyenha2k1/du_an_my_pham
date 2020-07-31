@@ -79,7 +79,7 @@
 	<div class="bot">
 		<div class="container">
 			<div class="row">
-				<form class="form-add" action="?page=product&select=update&id=<?php echo $id?>" method="post">
+				<form class="form-add" action="?page=product&select=update&id=<?php echo $id?>" method="post" id="upload-file-form" enctype="multipart/form-data">
 					<h2>Sửa sản phẩm</h2>
 					<button class="submit" >Cập nhật</button>
 					<div class="all-item">
@@ -129,23 +129,18 @@
 								<div class="form-item">
 									<label>Image sản phẩm:</label>
 									<img src="../<?php echo $result['img'] ?>">
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
+									<input type="file" name="imgsp[]" accept=".jpg, .jpeg, .png">
 								</div>
 								<div class="form-item">
-									<label>Image bổ sung 1:</label>
-									<img src="../<?php echo $result['img'] ?>">
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
+									<label style="widows: 100%">Image bổ sung:</label>
+									<div class="div"><br><br><br></div>
+									<?php while ($resultIMG = mysqli_fetch_assoc($queryIMG)) {
+									?>
+									<img src="../<?php echo $resultIMG['img'] ?>">
+									<?php }?>
+									<input type="file" multiple name="file_upload[]" accept=".jpg, .jpeg, .png">
 								</div>
-								<div class="form-item">
-									<label>Image bổ sung 2:</label>
-									<img src="../<?php echo $result['img'] ?>">
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
-								</div>
-								<div class="form-item">
-									<label>Image bổ sung 3:</label>
-									<img src="../<?php echo $result['img'] ?>">
-									<input type="file" name="" accept=".jpg, .jpeg, .png">
-								</div>
+								
 								
 								
 							</div>
