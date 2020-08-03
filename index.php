@@ -1,3 +1,7 @@
+
+<script type="text/javascript">
+	document.cookie = "user=John Doe; expires=Thu, 18 Dec 2021 12:00:00 UTC";
+</script>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +38,12 @@ switch ($page) {
 		break;
 	case 'trademark':
 		$controllerMain->mainTrademark();
-		# code...
+		break;
+	case 'account':
+		$controllerMain->mainAccount();
+		break;
+	case 'cart':
+		$controllerMain->mainCart();
 		break;
 	default:
 		# code...
@@ -47,3 +56,4 @@ $controllerFooter = new footer();
 ?>
 </body>
 </html>
+

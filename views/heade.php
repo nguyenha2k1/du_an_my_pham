@@ -76,8 +76,8 @@
                     <li class="hidden-xs">
                         <a href="#" class="pixen-lg">Tài khoản <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="ul-non ul-lg">
-                            <li><a href="./?select=account&choose=login">Đăng nhập</a></li>
-                            <li><a href="./?select=account&choose=registration">Đăng ký</a></li>
+                            <li><a href="./?page=account&select=login">Đăng nhập</a></li>
+                            <li><a href="./?page=account&select=registration">Đăng ký</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -122,17 +122,21 @@
                     <div class="box-card">
                         <ul class="ul-non ul-card">
                             <li>
-                                <a href="./?select=like" class="like-pd" title="Sản phẩm yêu thích">
+                                <a href="./?page=like" class="like-pd" title="Sản phẩm yêu thích">
                                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                                     Yêu thích
                                     <span id="numberLike" data-id="0">0</span>
                                 </a>
                             </li>
                             <li>
-                                <a href="./?select=cart" class="shop_cart" title="Giỏ hàng">
+                                <a href="./?page=cart" class="shop_cart" title="Giỏ hàng">
                                     <i class="fa fa-shopping-cart "></i>
                                     Giỏ hàng
-                                    <span>0</span>
+                                    <span id="result"><?php if (isset($_COOKIE["sl"])) {
+                                        echo $_COOKIE["sl"];
+                                    }else{
+                                        echo "0";
+                                    }  ?></span>
                                 </a>
                             </li>
                         </ul>
@@ -150,13 +154,13 @@
                         <div class="hidden-md ">
                             <ul class="ul-non menu-mb">
                                 <li>
-                                    <a href="./?select=cart" class="shop_cart_mb" title="Giỏ hàng">
+                                    <a href="./?page=cart" class="shop_cart_mb" title="Giỏ hàng">
                                         <i class="fa fa-shopping-cart "></i>
                                         <span>0</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="" class="like-pd-mb">
+                                    <a href="./?page=like" class="like-pd-mb">
                                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                                         <span>0</span>
                                     </a>
@@ -594,7 +598,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="./?select=cart">
+                                <a href="./?page=cart">
                                     <i class="fa fa-shopping-cart "></i>
                                 </a>
                             </li>

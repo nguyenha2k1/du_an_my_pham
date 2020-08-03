@@ -163,7 +163,7 @@ class getData extends disconnect
 			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
 			INNER JOIN phanloaisp ON sanpham.ma_pl = phanloaisp.ma_pl
 			WHERE phanloaisp.ma_dm = $this->ma_dm
-			-- ORDER BY RAND() DESC 
+			ORDER BY RAND() DESC 
 			LIMIT $this->item_per_page OFFSET $this->offset ";
 		$query = mysqli_query($conn,$sql);
 		return $query;
@@ -191,6 +191,7 @@ class getData extends disconnect
 			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
 			INNER JOIN phanloaisp ON sanpham.ma_pl = phanloaisp.ma_pl
 			WHERE phanloaisp.ma_pl = $this->ma_pl
+			ORDER BY RAND() DESC 
 			LIMIT $this->item_per_page OFFSET $this->offset ";
 		$query = mysqli_query($conn,$sql);
 		return $query;
@@ -205,6 +206,7 @@ class getData extends disconnect
 			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
 			INNER JOIN thuonghieu ON sanpham.ma_th = thuonghieu.ma_th
 			WHERE thuonghieu.ma_th = $this->ma_th
+			ORDER BY RAND() DESC 
 			LIMIT $this->item_per_page OFFSET $this->offset ";
 		$query = mysqli_query($conn,$sql);
 		return $query;

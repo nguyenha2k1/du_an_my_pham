@@ -94,7 +94,7 @@
                                         <a href="./?page=product&id=<?php echo $resultProduct['ma_sp'] ?>">
                                             <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultProduct['img']?>" style="opacity: 1;">
                                         </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
+                                        <button type="button" onclick="load_data(<?php echo $resultProduct['ma_sp'] ?>)" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
                                         </button>
                                         <div class="sale-off hide">0%<br>OFF</div>
@@ -112,7 +112,65 @@
                             </div>
                            <?php } ?>
 
+<script type="text/javascript">
+function load_data(query){
+    get = getCookie('gio_hang');
+    if (get ==='') {
+        var cartArray = new Array();
+    } else {
+        var cartArray = new Array(get);
+    }
 
+    cartArray.push(query);
+    var text = cartArray.toString();
+    for (var i = 0; i < 50; i++) {
+        getT = get.split(',', i);
+        dem = i;
+        if (getT==get) {
+            break;
+        }
+    }
+    document.getElementById("result").innerHTML = dem+1;
+    sol=dem+1;
+    setCookie('sl',sol,30);
+    setCookie('gio_hang',text,30);
+}
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
+}
+
+
+function checkCookie() {
+    var username=getCookie("username");
+    if (username!="") {
+        alert("Welcome again " + username);
+    } else {
+        username = prompt("Please enter your name:", "");
+        if (username != "" && username != null) {
+            setCookie("username", username, 365);
+        }
+    }
+}   
+</script>
 
 
 

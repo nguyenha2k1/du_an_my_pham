@@ -86,7 +86,151 @@
 								<div class="mar-bot-mb">
                                     <span class="price price-mb" style="color: #199427;">170,000₫</span>
                                     <span class="price price-mb oik ">198,900₫</span>
-                                    <span class="sale  hidden-sm hidden-xs">Giảm 15%</span>
+                                    <!-- <span class="sale  hidden-sm hidden-xs">Giảm 15%</span> -->
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-6 ">
+								<!--Số lượng-->
+                                <div class="form-group">
+                                    <div class="input-group wb-60">
+                                        <input type="number" class="form-control input-qty" value="1"  name="qty1" min="1" max="99">
+                                        <div class="input-group-addon" style="border:0">
+                                        	<a href="" title="Lưu thay đổi">
+                                        		<i class="fa fa-save"></i>
+                                        	</a>
+                                        </div>
+                                    </div>
+                                    <a href="" class="btn btn-link btn-item-delete hidden-md btn-mbx" title="Xóa"> Xóa </a>
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<!--thành tiền-->
+                                <p class="price tt-mb" style="color: #199427;"> 170,000₫ </p>
+							</div>
+							<div class="box-info-discount-mobile hidden-md hidden-lg"></div>
+						</div>
+					</div>
+					<div class="shopping-cart-item">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-3 img-thumnail-custom">
+								<div class="image">
+                                    <a class="top_zindex" href="" title="">
+                                        <img class="img-reponsive" src="./img/xitkhoang2.jpg" alt="">
+                                    </a>
+                                </div>
+							</div>
+							<div class="col-lg-4 col-md-4 c2 col-6">
+								<div class="name">
+                                    <a class="top_zindex" href="" title=""> Xịt Khoáng La Roche Posay Laboratoire </a>
+
+                                </div>
+
+                                <p class="action">
+                                    <a href="" class="btn btn-link btn-item-delete hidden-sm hidden-xs" title="Xóa"> Xóa </a>
+                                </p>
+                                <div class="clr"></div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<div class="mar-bot-mb">
+                                    <span class="price price-mb" style="color: #199427;">170,000₫</span>
+                                    <span class="price price-mb oik ">198,900₫</span>
+                                    <!-- <span class="sale  hidden-sm hidden-xs">Giảm 15%</span> -->
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-6 ">
+								<!--Số lượng-->
+                                <div class="form-group">
+                                    <div class="input-group wb-60">
+                                        <input type="number" class="form-control input-qty" value="1"  name="qty1" min="1" max="99">
+                                        <div class="input-group-addon" style="border:0">
+                                        	<a href="" title="Lưu thay đổi">
+                                        		<i class="fa fa-save"></i>
+                                        	</a>
+                                        </div>
+                                    </div>
+                                    <a href="" class="btn btn-link btn-item-delete hidden-md btn-mbx" title="Xóa"> Xóa </a>
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<!--thành tiền-->
+                                <p class="price tt-mb" style="color: #199427;"> 170,000₫ </p>
+							</div>
+							<div class="box-info-discount-mobile hidden-md hidden-lg"></div>
+						</div>
+					</div>
+					<div class="shopping-cart-item">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-3 img-thumnail-custom">
+								<div class="image">
+                                    <a class="top_zindex" href="" title="">
+                                        <img class="img-reponsive" src="./img/xitkhoang2.jpg" alt="">
+                                    </a>
+                                </div>
+							</div>
+							<div class="col-lg-4 col-md-4 c2 col-6">
+								<div class="name">
+                                    <a class="top_zindex" href="" title=""> Xịt Khoáng La Roche Posay Laboratoire </a>
+
+                                </div>
+
+                                <p class="action">
+                                    <a href="" class="btn btn-link btn-item-delete hidden-sm hidden-xs" title="Xóa"> Xóa </a>
+                                </p>
+                                <div class="clr"></div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<div class="mar-bot-mb">
+                                    <span class="price price-mb" style="color: #199427;">170,000₫</span>
+                                    <span class="price price-mb oik ">198,900₫</span>
+                                    <!-- <span class="sale  hidden-sm hidden-xs">Giảm 15%</span> -->
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-6 ">
+								<!--Số lượng-->
+                                <div class="form-group">
+                                    <div class="input-group wb-60">
+                                        <input type="number" class="form-control input-qty" value="1"  name="qty1" min="1" max="99">
+                                        <div class="input-group-addon" style="border:0">
+                                        	<a href="" title="Lưu thay đổi">
+                                        		<i class="fa fa-save"></i>
+                                        	</a>
+                                        </div>
+                                    </div>
+                                    <a href="" class="btn btn-link btn-item-delete hidden-md btn-mbx" title="Xóa"> Xóa </a>
+                                </div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<!--thành tiền-->
+                                <p class="price tt-mb" style="color: #199427;"> 170,000₫ </p>
+							</div>
+							<div class="box-info-discount-mobile hidden-md hidden-lg"></div>
+						</div>
+					</div>
+					<div class="shopping-cart-item">
+						<div class="row">
+							<div class="col-lg-2 col-md-2 col-3 img-thumnail-custom">
+								<div class="image">
+                                    <a class="top_zindex" href="" title="">
+                                        <img class="img-reponsive" src="./img/xitkhoang2.jpg" alt="">
+                                    </a>
+                                </div>
+							</div>
+							<div class="col-lg-4 col-md-4 c2 col-6">
+								<div class="name">
+                                    <a class="top_zindex" href="" title=""> Xịt Khoáng La Roche Posay Laboratoire </a>
+
+                                </div>
+
+                                <p class="action">
+                                    <a href="" class="btn btn-link btn-item-delete hidden-sm hidden-xs" title="Xóa"> Xóa </a>
+                                </p>
+                                <div class="clr"></div>
+							</div>
+							<div class="col-lg-2 col-md-2 col-3">
+								<div class="mar-bot-mb">
+                                    <span class="price price-mb" style="color: #199427;">170,000₫</span>
+                                    <span class="price price-mb oik ">198,900₫</span>
+                                    <!-- <span class="sale  hidden-sm hidden-xs">Giảm 15%</span> -->
                                 </div>
 							</div>
 							<div class="col-lg-2 col-md-2 col-6 ">
@@ -127,7 +271,7 @@
                             </p>
                         </div>
                     </div>
-                    <button id="btn_submit_cart" type="button" class="btn btn-large btn-block btn-default btn-checkout" onclick="" style="color: white;"> TIẾN HÀNH ĐẶT HÀNG </button>
+                    <button id="btn_submit_cart" type="button" class="btn btn-large btn-block btn-default btn-checkout" onclick="" style="color: white;"> <a style="color: white; text-decoration: none;" href="?page=cart&select=order">TIẾN HÀNH ĐẶT HÀNG </a></button>
 				</div>
 			</div>
 		</div>

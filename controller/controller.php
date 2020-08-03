@@ -175,6 +175,40 @@ class main
 		$querySpNew = $getData->getProductNew($date_minus);
 		include('views/main_thuong_hieu.php');
 	}
+	public function mainAccount(){
+		$select=isset($_GET['select'])?$_GET['select']:'';
+		switch ($select) {
+			case 'login':
+				include('views/main_dang_nhap.php');
+				break;
+			case 'registration':
+				include('views/main_tao_tai_khoan.php');
+				break;
+			default:
+				# code...
+				break;
+		}
+		
+
+	}
+	public function mainCart(){
+		$select=isset($_GET['select'])?$_GET['select']:'';
+		switch ($select) {
+			case 'order':
+				include('views/main_dat_hang.php');
+				break;
+			case 'registration':
+				include('views/main_tao_tai_khoan.php');
+				break;
+			case '':
+				include('views/main_gio_hang_ko_dang_nhap.php');
+				break;
+			default:
+				# code...
+				break;
+		}
+
+	}
 	
 }
 /**
