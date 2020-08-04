@@ -30,6 +30,19 @@ class getData extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 	}
+	public function getWhereCart($where1,$where2)
+	{
+		global $conn;
+		$this->where1 = $where1;
+		$this->where2 = $where2;
+		$sql = "SELECT sanpham.ten_sp,sanpham.gia_ban,sanpham.ma_sp,sanpham.gia_thi_truong,img_sp.img 
+			FROM sanpham
+			INNER JOIN img_sp ON sanpham.ma_sp = img_sp.ma_sp
+			WHERE $this->where1 = $this->where2
+			";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
 	public function getAll($from){
 		global $conn;
 		$this->from = $from;

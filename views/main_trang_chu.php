@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -94,7 +95,7 @@
                                         <a href="./?page=product&id=<?php echo $resultProduct['ma_sp'] ?>">
                                             <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultProduct['img']?>" style="opacity: 1;">
                                         </a>
-                                        <button type="button" onclick="load_data(<?php echo $resultProduct['ma_sp'] ?>)" class="btn-addlike ">
+                                        <button type="button" onclick="load_cart(<?php echo $resultProduct['ma_sp'] ?>)" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
                                         </button>
                                         <div class="sale-off hide">0%<br>OFF</div>
@@ -112,7 +113,7 @@
                             </div>
                            <?php } ?>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 function load_data(query){
     get = getCookie('gio_hang');
     if (get ==='') {
@@ -170,7 +171,7 @@ function checkCookie() {
         }
     }
 }   
-</script>
+</script> -->
 
 
 
@@ -235,7 +236,7 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultProductBc['ma_sp'] ?>">
                                                 <img alt="" class="img-reponsive lazy " src="<?php echo $resultProductBc['img']?>" style="">
                                             </a>
-                                        <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
+                                        <button type="button" onclick="load_cart(<?php echo $resultProductBc['ma_sp'] ?>)" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
                                         <div class="sale-off hide">37%<br>OFF</div>
                                     </div>
                                     <div class="box-content">
@@ -297,7 +298,7 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultGetProDm['ma_sp']; ?>" title="<?php echo $resultGetProDm['ten_sp']; ?>">
                                                 <img src="<?php echo $resultGetProDm['img']; ?>" alt="" class="img-reponsive lazy ">
                                             </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
+                                        <button type="button" onclick="load_cart(<?php echo $resultGetProDm['ma_sp'] ?>)" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
                                         </button>
                                         <div class="sale-off hide">33%<br>OFF</div>
@@ -371,7 +372,7 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultGetProDm2['ma_sp']; ?>" title="<?php echo $resultGetProDm2['ten_sp']; ?>">
                                                 <img src="<?php echo $resultGetProDm2['img']; ?>" alt="" class="img-reponsive lazy ">
                                             </a>
-                                        <button type="button" onclick="" class="btn-addlike ">
+                                        <button type="button" onclick="load_cart(<?php echo $resultGetProDm2['ma_sp'] ?>)" class="btn-addlike ">
                                             <i class="fa fa-cart-plus"></i>
                                         </button>
                                         <div class="sale-off hide">33%<br>OFF</div>

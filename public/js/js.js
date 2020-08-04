@@ -1,3 +1,101 @@
+// js giỏ hàng
+function load_cart(query){
+    get = getCookie('gio_hang');
+    for (var i = 0; i < 50; i++) {
+        getT = get.split(',', i);
+        if (getT==get) {
+            break;
+        }
+    }
+    if (get ==='') {
+        var cartArray = new Array();
+    } else {
+        var cartArray = new Array(get);
+    }
+    var text1 = query.toString();
+    kt = getT.includes(text1);
+    if (kt==true) {
+    	alert('Sản phẩm đã có trong giỏ hàng!');
+    } else {
+    	cartArray.push(query);
+    	var text = cartArray.toString();
+	    kq = Array.isArray(getT);
+	    leng = getT.length;
+	    document.getElementById("result0").innerHTML = leng+1;
+	    document.getElementById("result1").innerHTML = leng+1;
+	    document.getElementById("result2").innerHTML = leng+1;
+	    setCookie('sl',leng+1,30);
+	    setCookie('gio_hang',text,30);
+    }
+}
+function deleteCart(query){
+	get = getCookie('gio_hang');
+    for (var i = 0; i < 50; i++) {
+        getT = get.split(',', i);
+        if (getT==get) {
+            break;
+        }
+    }
+    var text1 = query.toString();
+    new_arr = getT.filter(item => item !== text1);
+    var text = new_arr.toString();
+    tt = confirm('Sản phẩm sẽ xóa khỏi giỏ hàng!!!');
+    if (tt==true) {
+    	leng = new_arr.length;
+	    setCookie('sl',leng,30);
+    	setCookie('gio_hang',text,30);
+    	// window.location= "./?page=cart&act=delete&ma_sp="+text1;
+    	return true;
+    } else {
+    	return false;
+    }
+}
+function thaydSl(){
+	var soluong = document.getElementById("soluong").value;
+	// alert(soluong);
+	// if (soluong==null) {
+	// 	document.getElementById('soluong').innerHTML = 1;
+	// } else {}
+	// document.getElementById("soluong").value = 21;
+	// document.getElementById('soluong').innerHTML = 12;
+	window.location= "./?page=cart&act=soluong&sl="+soluong;
+}
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + "; " + expires;
+}
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
+}
+
+
+function checkCookie() {
+    var username=getCookie("username");
+    if (username!="") {
+        alert("Welcome again " + username);
+    } else {
+        username = prompt("Please enter your name:", "");
+        if (username != "" && username != null) {
+            setCookie("username", username, 365);
+        }
+    }
+}   
+// 
 window.onscroll = function() {myFunction()};
 
 var header = document.getElementById("myHeader");

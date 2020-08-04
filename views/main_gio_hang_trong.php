@@ -43,7 +43,7 @@
                     <div class="box-none-card">
                         <img src="./img/mascot@2x.png" class="img-reponsive">
                         <p>Không có sản phẩm nào trong giỏ hàng của bạn.</p>
-                        <a href="">Tiếp tục mua sắm</a>
+                        <a href="./">Tiếp tục mua sắm</a>
                     </div>
                 </div>
             </div>

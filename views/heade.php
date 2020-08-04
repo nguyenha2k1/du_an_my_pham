@@ -132,7 +132,7 @@
                                 <a href="./?page=cart" class="shop_cart" title="Giỏ hàng">
                                     <i class="fa fa-shopping-cart "></i>
                                     Giỏ hàng
-                                    <span id="result"><?php if (isset($_COOKIE["sl"])) {
+                                    <span id="result0"><?php if (isset($_COOKIE["sl"])) {
                                         echo $_COOKIE["sl"];
                                     }else{
                                         echo "0";
@@ -156,7 +156,11 @@
                                 <li>
                                     <a href="./?page=cart" class="shop_cart_mb" title="Giỏ hàng">
                                         <i class="fa fa-shopping-cart "></i>
-                                        <span>0</span>
+                                        <span id="result1"><?php if (isset($_COOKIE["sl"])) {
+                                        echo $_COOKIE["sl"];
+                                    }else{
+                                        echo "0";
+                                    }  ?></span>
                                     </a>
                                 </li>
                                 <li>
@@ -599,7 +603,11 @@
                             </li>
                             <li>
                                 <a href="./?page=cart">
-                                    <i class="fa fa-shopping-cart "></i>
+                                    <i class="fa fa-shopping-cart " id="result2"><?php if (isset($_COOKIE["sl"])) {
+                                        echo $_COOKIE["sl"];
+                                    }else{
+                                        echo "0";
+                                    }  ?></i>
                                 </a>
                             </li>
                         </ul>

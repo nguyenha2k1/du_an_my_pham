@@ -99,7 +99,7 @@
                                                     <a href="?page=product&id=<?php echo $resultProductDm['ma_sp'] ?>" title="">
                                                         <img alt="" class="img-reponsive lazy " src="<?php echo $resultProductDm['img']; ?>" style="">
                                                     </a>
-                                                <button type="button" onclick="" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
+                                                <button type="button" onclick="load_cart(<?php echo $resultProductDm['ma_sp'] ?>)" class="btn-addlike "><i class="fa fa-cart-plus"></i></button>
                                                 <div class="sale-off hide">15%<br>OFF</div>
                                             </div>
                                             <div class="box-content">

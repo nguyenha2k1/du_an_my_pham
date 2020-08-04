@@ -201,7 +201,61 @@ class main
 				include('views/main_tao_tai_khoan.php');
 				break;
 			case '':
-				include('views/main_gio_hang_ko_dang_nhap.php');
+				if (!empty($_COOKIE['gio_hang'])) {
+					$str = $_COOKIE['gio_hang'];
+					$getData = new getData();
+					$arrayMa_sp = explode(',', $str);
+					$array = array();
+					$arraySl = array();
+					// $getDa = isset($_SESSION['cart'])?$_SESSION['cart']:'';
+					// $coun = isset($_SESSION['count'])?$_SESSION['count']:'';
+					// $array = unserialize($_SESSION['cart']);
+					$count = count($arrayMa_sp);
+					// $_SESSION['count'] = $count;
+					if (empty($array)) {
+						
+						for ($i=0; $i < $count ; $i++) { 
+							$queryDonH = $getData->getWhereCart('sanpham.ma_sp',$arrayMa_sp[$i]);
+							$result = mysqli_fetch_assoc($queryDonH);
+							$array[$i] = $result;
+							$array[$i]['soluong'] = 1;
+						}
+						// echo "Biến này rỗng";
+					}
+					
+
+					$countA = count($array);
+					// $act=isset($_GET['act'])?$_GET['act']:'';
+					// switch ($act) {
+					// 	case 'soluong':
+					// 		$soluong = isset($_GET['sl'])?$_GET['sl']:'';
+					// 		$ma_sp = isset($_GET['ma'])?$_GET['ma']:'';
+					// 		for ($i=0; $i < $count ; $i++) { 
+					// 			if (in_array($ma_sp,$array[$i])) {
+					// 				$array[$i]['soluong'] = $soluong;
+					// 				// echo "Tìm thấy";
+					// 			}
+					// 		}
+					// 		break;
+					// 	case 'delete':
+							
+					// 		break;
+					// 	default:
+					// 		# code...
+					// 		break;
+					// }
+						
+
+					$data = serialize($arraySl);
+					$_SESSION['cart'] = $data;
+					// echo "<pre>";
+					// print_r($data);
+					// session_destroy();
+					include('views/main_gio_hang_ko_dang_nhap.php');
+				}else{
+					include('views/main_gio_hang_trong.php');
+				}
+				
 				break;
 			default:
 				# code...

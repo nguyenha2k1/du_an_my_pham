@@ -170,13 +170,13 @@
                                        <div class="card-box">
                                             <div class="inner-load">
                                                 <div class="box-add">
-                                                    <div class="number-card">
+                                                   <!--  <div class="number-card">
                                                         <span>Số lượng:</span>
                                                         <input type="number" name="numberproduct" id="numberproduct" class="form-control" value="1" min="1" max="<?php echo $resultProductDetail['sl_trong_kho']; ?>" data-barcode="" data-refid="">
                                                         <div class="clr"></div>
-                                                    </div>
+                                                    </div> -->
                                                     <div class="bst">
-                                                        <button type="button" class="btn-bts btn-atc" onclick="">
+                                                        <button type="button" class="btn-bts btn-atc" onclick="load_cart(<?php echo $resultProductDetail['ma_sp'] ?>)">
                                                             <i class="fa fa-shopping-cart"></i>
                                                             Thêm giỏ hàng
                                                         </button>
@@ -217,7 +217,7 @@
                                             <a href="?page=product&id=<?php echo $resultProductNgauNhien['ma_sp'] ?>">
                                                 <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultProductNgauNhien['img'] ?>" style="opacity: 1;">
                                             </a>
-                                            <button type="button" onclick="" class="btn-addlike ">
+                                            <button type="button" onclick="load_cart(<?php echo $resultProductNgauNhien['ma_sp'] ?>)" class="btn-addlike ">
                                                 <i class="fa fa-cart-plus"></i>
                                             </button>
                                             <div class="sale-off hide">0%<br>OFF</div>
@@ -262,7 +262,7 @@
                                             <a href="?page=product&id=<?php echo $resultSpCl['ma_sp'] ?>">
                                                 <img data-src="" alt="" class="img-reponsive owl-lazy " src="<?php echo $resultSpCl['img'] ?>" style="opacity: 1;">
                                             </a>
-                                            <button type="button" onclick="" class="btn-addlike ">
+                                            <button type="button" onclick="load_cart(<?php echo $resultSpCl['ma_sp'] ?>)" class="btn-addlike ">
                                                 <i class="fa fa-cart-plus"></i>
                                             </button>
                                             <div class="sale-off hide">0%<br>OFF</div>
