@@ -105,8 +105,8 @@
                                             <a href="./?page=product&id=<?php echo $resultProduct['ma_sp'] ?>"><?php echo $resultProduct['ten_sp']; ?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop"><?php echo $resultProduct['gia_ban']; ?>₫</span>
-                                            <span class="price "><?php echo $resultProduct['gia_thi_truong']; ?>₫</span>
+                                            <span class="price-drop"><?php echo number_format($resultProduct['gia_ban'], 0, ',', ','); ?>₫</span>
+                                            <span class="price "><?php echo number_format($resultProduct['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                         </div>
                                     </div>
                                 </div>
@@ -244,8 +244,8 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultProductBc['ma_sp'] ?>"><?php echo $resultProductBc['ten_sp']?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop"><?php echo $resultProductBc['gia_ban']?>₫</span>
-                                            <span class="price "><?php echo $resultProductBc['gia_thi_truong']?>₫</span>
+                                            <span class="price-drop"><?php echo number_format($resultProductBc['gia_ban'], 0, ',', ','); ?>₫</span>
+                                            <span class="price "><?php echo number_format($resultProductBc['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                         </div>
                                     </div>
                                 </div>
@@ -308,8 +308,8 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultGetProDm['ma_sp']; ?>"><?php echo $resultGetProDm['ten_sp']; ?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop"><?php echo $resultGetProDm['gia_ban']?>₫</span>
-                                            <span class="price "><?php echo $resultGetProDm['gia_thi_truong']?>₫</span>
+                                            <span class="price-drop"><?php echo number_format($resultGetProDm['gia_ban'], 0, ',', ','); ?>₫</span>
+                                            <span class="price "><?php echo number_format($resultGetProDm['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                         </div>
                                     </div>
                                 </div>
@@ -382,8 +382,8 @@ function checkCookie() {
                                             <a href="?page=product&id=<?php echo $resultGetProDm2['ma_sp']; ?>"><?php echo $resultGetProDm2['ten_sp']; ?></a>
                                         </h3>
                                         <div>
-                                            <span class="price-drop"><?php echo $resultGetProDm2['gia_ban']?>₫</span>
-                                            <span class="price "><?php echo $resultGetProDm2['gia_thi_truong']?>₫</span>
+                                            <span class="price-drop"><?php echo number_format($resultGetProDm['gia_ban'], 0, ',', ','); ?>₫</span>
+                                            <span class="price "><?php echo number_format($resultGetProDm['gia_thi_truong'], 0, ',', ','); ?>₫</span>
                                         </div>
                                     </div>
                                 </div>

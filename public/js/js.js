@@ -24,8 +24,8 @@ function load_cart(query){
 	    document.getElementById("result0").innerHTML = leng+1;
 	    document.getElementById("result1").innerHTML = leng+1;
 	    document.getElementById("result2").innerHTML = leng+1;
-	    setCookie('sl',leng+1,30);
-	    setCookie('gio_hang',text,30);
+	    setCookie('sl',leng+1,15);
+	    setCookie('gio_hang',text,15);
     }
 }
 function deleteCart(query){
@@ -42,8 +42,8 @@ function deleteCart(query){
     tt = confirm('Sản phẩm sẽ xóa khỏi giỏ hàng!!!');
     if (tt==true) {
     	leng = new_arr.length;
-	    setCookie('sl',leng,30);
-    	setCookie('gio_hang',text,30);
+	    setCookie('sl',leng,15);
+    	setCookie('gio_hang',text,15);
     	// window.location= "./?page=cart&act=delete&ma_sp="+text1;
     	return true;
     } else {
@@ -58,7 +58,8 @@ function thaydSl(){
 	// } else {}
 	// document.getElementById("soluong").value = 21;
 	// document.getElementById('soluong').innerHTML = 12;
-	window.location= "./?page=cart&act=soluong&sl="+soluong;
+	// window.location= "./?page=cart&act=soluong&sl="+soluong;
+	return false;
 }
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -322,6 +323,7 @@ function kiemtraFormdathang(){
 	}else{
 		if(check_email.test(email)){
 			// document.getElementById('val-txtEmail').innerHTML = "<p style='color:red;'>Hợp lệ!</p>" ;
+			return true;
 		}else{
 			alert('Email không hợp lệ!');
 			// document.getElementById('val-txtEmail').innerHTML = "<p style='color:red;'>Email không hợp lệ!</p>" ;

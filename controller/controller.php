@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 require_once('model/model.php');
 /**
  * 
@@ -193,67 +193,96 @@ class main
 	}
 	public function mainCart(){
 		$select=isset($_GET['select'])?$_GET['select']:'';
+		$ngay = 15;
+		$times = $ngay * 24  * 60 * 60;
 		switch ($select) {
 			case 'order':
-				include('views/main_dat_hang.php');
-				break;
-			case 'registration':
-				include('views/main_tao_tai_khoan.php');
-				break;
-			case '':
-				if (!empty($_COOKIE['gio_hang'])) {
-					$str = $_COOKIE['gio_hang'];
-					$getData = new getData();
-					$arrayMa_sp = explode(',', $str);
-					$array = array();
-					$arraySl = array();
-					// $getDa = isset($_SESSION['cart'])?$_SESSION['cart']:'';
-					// $coun = isset($_SESSION['count'])?$_SESSION['count']:'';
-					// $array = unserialize($_SESSION['cart']);
-					$count = count($arrayMa_sp);
-					// $_SESSION['count'] = $count;
-					if (empty($array)) {
-						
-						for ($i=0; $i < $count ; $i++) { 
-							$queryDonH = $getData->getWhereCart('sanpham.ma_sp',$arrayMa_sp[$i]);
-							$result = mysqli_fetch_assoc($queryDonH);
-							$array[$i] = $result;
-							$array[$i]['soluong'] = 1;
-						}
-						// echo "Biến này rỗng";
-					}
+				$act = isset($_GET['act'])?$_GET['act']:'';
+				switch ($act) {
+					case '':
+						$decode = json_decode($_COOKIE['cart'], true);
+						$array = $decode;
+						$count = count($array);
+						setcookie("gio_hang",'xoa',time()-$times);
+						setcookie("sl",'xoa',time()-$times);
+						setcookie("cart",'xoa',time()-$times);
+						include('views/main_dat_hang.php');
+						break;
 					
-
+					default:
+						# code...
+						break;
+				}
+				break;
+			case 'pay':
+				include('views/main_dat_hang_ok.php');
+				break;	
+			case '':
+				
+				$str = isset($_COOKIE['gio_hang'])?$_COOKIE['gio_hang']:'';
+				$arrayMa_sp = explode(',', $str);
+				$count = count($arrayMa_sp);
+				if (!empty($_COOKIE['gio_hang']) && !empty($_COOKIE['cart'])) {
+					$decode = json_decode($_COOKIE['cart'], true);
+					$array = $decode;
 					$countA = count($array);
-					// $act=isset($_GET['act'])?$_GET['act']:'';
-					// switch ($act) {
-					// 	case 'soluong':
-					// 		$soluong = isset($_GET['sl'])?$_GET['sl']:'';
-					// 		$ma_sp = isset($_GET['ma'])?$_GET['ma']:'';
-					// 		for ($i=0; $i < $count ; $i++) { 
-					// 			if (in_array($ma_sp,$array[$i])) {
-					// 				$array[$i]['soluong'] = $soluong;
-					// 				// echo "Tìm thấy";
-					// 			}
-					// 		}
-					// 		break;
-					// 	case 'delete':
+					if ($count!=$countA) {
+						setcookie("cart",'xoa',time()-$times);
+						header("Location: ?page=cart");
+					}
+					$act = isset($_GET['act'])?$_GET['act']:'';
+					switch ($act) {
+						case 'soluong':
+							$ma = $_GET['ma'];
+							// echo $ma;
+							$sl = $_GET['sl'];
+							// foreach ($array as $value) {
+								# code...
+							// }
+							for ($i=0; $i < $countA; $i++) { 
+								if ($array[$i]['ma_sp']==$ma) {
+									$array[$i]['soluong']=$sl;
+								}
+								
+							}
 							
-					// 		break;
-					// 	default:
-					// 		# code...
-					// 		break;
-					// }
+							$st =  json_encode($array);
+							setcookie("cart",$st,time()+$times);
+							header("Location: ?page=cart");
+							break;
 						
-
-					$data = serialize($arraySl);
-					$_SESSION['cart'] = $data;
-					// echo "<pre>";
-					// print_r($data);
-					// session_destroy();
+						default:
+							# code...
+							break;
+					}
+					// echo "ok";
 					include('views/main_gio_hang_ko_dang_nhap.php');
 				}else{
-					include('views/main_gio_hang_trong.php');
+					if (!empty($_COOKIE['gio_hang'])) {
+						$str = $_COOKIE['gio_hang'];
+						$getData = new getData();
+						$arrayMa_sp = explode(',', $str);
+						$array = array();
+						$count = count($arrayMa_sp);
+						if (empty($array)) {
+							for ($i=0; $i < $count ; $i++) { 
+								$queryDonH = $getData->getWhereCart('sanpham.ma_sp',$arrayMa_sp[$i]);
+								$result = mysqli_fetch_assoc($queryDonH);
+								$array[$i] = $result;
+								$array[$i]['soluong'] = 1;
+							}
+							// echo "Biến này rỗng";
+						}
+						$st =  json_encode($array);
+						setcookie("cart",$st,time()+$times);
+						$countA = count($array);
+						// echo "<pre>";
+						// print_r($decode);
+						include('views/main_gio_hang_ko_dang_nhap.php');
+					}else{
+						include('views/main_gio_hang_trong.php');
+
+					}
 				}
 				
 				break;

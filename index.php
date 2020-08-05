@@ -1,7 +1,4 @@
-
-<script type="text/javascript">
-	document.cookie = "user=John Doe; expires=Thu, 18 Dec 2021 12:00:00 UTC";
-</script>
+<?php ob_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -56,4 +53,5 @@ $controllerFooter = new footer();
 ?>
 </body>
 </html>
+<?php ob_flush(); ?>
 

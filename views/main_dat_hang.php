@@ -41,7 +41,7 @@
 	            <div class="col-lg-7">
 	                <div id="load-error"></div>
 	                <h2 class="h2-fiead">Địa chỉ nhận hàng</h2>
-	                <form>
+	                <form action="?page=cart&select=pay" method="post">
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Họ tên</b></label>
 	                        <div class="col-sm-9">
@@ -142,7 +142,7 @@
 	                            <a class="btn btn-light pull-left opsize" href="">QUAY LẠI GIỎ HÀNG</a>
 	                        </div>
 	                        <div class="col-sm-6 col-5">
-	                            <button class="btn btn-thanhtoan pull-right opsize" type="button" onclick="return kiemtraFormdathang()" id="btn-tt">THANH TOÁN</button>
+	                            <button class="btn btn-thanhtoan pull-right opsize" type="submit" onclick="return kiemtraFormdathang()" id="btn-tt">THANH TOÁN</button>
 	                        </div>
 	                    </div>
 	                </form>
@@ -155,31 +155,37 @@
 					    <div id="cart-info" class="cart-info">
 					        <h2 class="title-secres">Giỏ Hàng</h2>
 					        <ul class="list-unstyled">
+					        	<?php 
+					        		$tongtien = 0;
+					        		for ($i=0; $i < $count; $i++) { 
+					        		$thanhtien = $array[$i]['gia_ban']*$array[$i]['soluong'];
+					        		$tongtien = $tongtien+$thanhtien;
+					        	?>
 			                    <li>
 			                        <figure>
 			                            <a class="cart_list_product_img" href="" title="">
-			                                <img src="./img/xitkhoang.jpg" alt="" class="img-reponsive imds">
+			                                <img src="<?php echo $array[$i]['img']; ?>" alt="" class="img-reponsive imds">
 			                            </a>
 			                        </figure>
 			                        <div class="list_content">
 			                            <h5>
 			                                <a href="" title="">
-			                                    <span class="name-ps">Xịt Khoáng La Roche Posay Laboratoire </span>
+			                                    <span class="name-ps"><?php echo $array[$i]['ten_sp']; ?> </span>
 			                                </a>
 
 			                            </h5>
 			                            <div class="quantity">
-			                                3 x
+			                                <?php echo $array[$i]['soluong']; ?> x
 			                                <span class="amount">
 			                                    <span class="money" style="color: #199427; font-size: 14px !important;">
-			                                        170,000₫
+			                                        <?php echo number_format($array[$i]['gia_ban'], 0, ',', ','); ?>₫
 			                                    </span>
 			                                    <span class="" style="text-decoration: line-through; font-size: 12px; padding-left: 12px;">
-			                                        198,900₫
+			                                        <?php echo number_format($array[$i]['gia_thi_truong'], 0, ',', ','); ?>₫
 			                                    </span>
 			                                </span>
 			                                <div class="pull-right tt">
-			                                    510,000₫
+			                                    <?php echo number_format($thanhtien, 0, ',', ','); ?>₫
 			                                </div>
 			                            </div>
 			                            <div class="iserror">
@@ -187,118 +193,23 @@
 			                        </div>
 			                        <div class="clr"></div>
 			                    </li>
-			                    <li>
-			                        <figure>
-			                            <a class="cart_list_product_img" href="" title="">
-			                                <img src="./img/xitkhoang.jpg" alt="" class="img-reponsive imds">
-			                            </a>
-			                        </figure>
-			                        <div class="list_content">
-			                            <h5>
-			                                <a href="" title="">
-			                                    <span class="name-ps">Xịt Khoáng La Roche Posay Laboratoire </span>
-			                                </a>
-
-			                            </h5>
-			                            <div class="quantity">
-			                                3 x
-			                                <span class="amount">
-			                                    <span class="money" style="color: #199427; font-size: 14px !important;">
-			                                        170,000₫
-			                                    </span>
-			                                    <span class="" style="text-decoration: line-through; font-size: 12px; padding-left: 12px;">
-			                                        198,900₫
-			                                    </span>
-			                                </span>
-			                                <div class="pull-right tt">
-			                                    510,000₫
-			                                </div>
-			                            </div>
-			                            <div class="iserror">
-			                            </div>
-			                        </div>
-			                        <div class="clr"></div>
-			                    </li>
-			                    <li>
-			                        <figure>
-			                            <a class="cart_list_product_img" href="" title="">
-			                                <img src="./img/xitkhoang.jpg" alt="" class="img-reponsive imds">
-			                            </a>
-			                        </figure>
-			                        <div class="list_content">
-			                            <h5>
-			                                <a href="" title="">
-			                                    <span class="name-ps">Xịt Khoáng La Roche Posay Laboratoire </span>
-			                                </a>
-
-			                            </h5>
-			                            <div class="quantity">
-			                                3 x
-			                                <span class="amount">
-			                                    <span class="money" style="color: #199427; font-size: 14px !important;">
-			                                        170,000₫
-			                                    </span>
-			                                    <span class="" style="text-decoration: line-through; font-size: 12px; padding-left: 12px;">
-			                                        198,900₫
-			                                    </span>
-			                                </span>
-			                                <div class="pull-right tt">
-			                                    510,000₫
-			                                </div>
-			                            </div>
-			                            <div class="iserror">
-			                            </div>
-			                        </div>
-			                        <div class="clr"></div>
-			                    </li>
-			                    <li>
-			                        <figure>
-			                            <a class="cart_list_product_img" href="" title="">
-			                                <img src="./img/xitkhoang.jpg" alt="" class="img-reponsive imds">
-			                            </a>
-			                        </figure>
-			                        <div class="list_content">
-			                            <h5>
-			                                <a href="" title="">
-			                                    <span class="name-ps">Xịt Khoáng La Roche Posay Laboratoire </span>
-			                                </a>
-
-			                            </h5>
-			                            <div class="quantity">
-			                                3 x
-			                                <span class="amount">
-			                                    <span class="money" style="color: #199427; font-size: 14px !important;">
-			                                        170,000₫
-			                                    </span>
-			                                    <span class="" style="text-decoration: line-through; font-size: 12px; padding-left: 12px;">
-			                                        198,900₫
-			                                    </span>
-			                                </span>
-			                                <div class="pull-right tt">
-			                                    510,000₫
-			                                </div>
-			                            </div>
-			                            <div class="iserror">
-			                            </div>
-			                        </div>
-			                        <div class="clr"></div>
-			                    </li>
+			                  	<?php } ?>
 					        </ul>
 					        <div class="load-lead">
 					            <div class="box-coupon">
 					                <p class="list-info-price" id="price-before" data-id="318000">
-					                    <small class="color-black">Tạm tính: </small> <span style="color:green">510,000₫</span>
+					                    <small class="color-black">Tạm tính: </small> <span style="color:green"><?php echo number_format($tongtien, 0, ',', ','); ?>₫</span>
 					                </p>
 					            </div>
 					        </div>
 					        <!--Tổng số tiền-->
-					        <div class="load-giamgia " id="fac" data-id="False">
+					       <!--  <div class="load-giamgia " id="fac" data-id="False">
 					            <div class="box-coupon">
 					                <p class="list-info-price" id="pricetotalmis" data-id="318000">
 					                    <small class="color-black">Giảm giá: </small> <span>- ₫</span>
 					                </p>
 					            </div>
-					        </div>
+					        </div> -->
 					        <div class="load-ship">
 					            <div class="box-coupon">
 					                <p class="list-info-price" id="priceship" data-id="0">
@@ -310,7 +221,7 @@
 					            Thành tiền:
 					            <span>
 					                <span class="amount">
-					                    <strong class="money lucal" style="color: #e54d42;"> 540,000₫ </strong>
+					                    <strong class="money lucal" style="color: #e54d42;"> <?php echo number_format($tongtien+30000, 0, ',', ','); ?>₫ </strong>
 					                </span>
 					            </span>
 					        </div>

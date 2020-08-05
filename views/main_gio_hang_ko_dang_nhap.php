@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,8 +28,8 @@
 			<div class="row">
 				<div class="col-lg-12">
 					<ol class="ol-non">
-	                    <li><a href="">Trang chủ</a></li>
-	                    <li><a href="">Giỏ hàng</a></li>
+	                    <li><a href="./">Trang chủ</a></li>
+	                    <li><a href="?page=cart">Giỏ hàng</a></li>
 	                </ol>
 				</div>
 			</div>
@@ -105,7 +104,7 @@
                                     <div class="input-group wb-60">
                                         <input type="number" id="soluong<?php echo $array[$i]['ma_sp']; ?>" class="form-control input-qty" value="<?php echo $array[$i]['soluong']; ?>"  name="qty1" min="1" max="99">
                                         <div class="input-group-addon" style="border:0">
-                                        	<a href="" id="save<?php echo $array[$i]['ma_sp']; ?>" title="Lưu thay đổi" onclick=" ">
+                                        	<a href="" id="save<?php echo $array[$i]['ma_sp']; ?>" title="Lưu thay đổi" onclick="">
                                         		<i class="fa fa-save"></i>
                                         	</a>
                                         </div>
@@ -119,7 +118,8 @@
 									$thanhtien = $array[$i]['gia_ban']*$array[$i]['soluong'];
 									$tongtien = $tongtien+$thanhtien;
 								?>
-                                <p class="price tt-mb" style="color: #199427;"> <?php echo number_format($thanhtien, 0, ',', ','); ?>₫ </p>
+                                <p class="price tt-mb" id="thanhtien<?php echo $array[$i]['ma_sp']; ?>" style="color: #199427;"><?php echo number_format($thanhtien, 0, ',', ','); ?>₫</p>
+                                
 							</div>
 							<div class="box-info-discount-mobile hidden-md hidden-lg"></div>
 						</div>
@@ -128,6 +128,7 @@
 						$(document).ready(function(){
 						  $("#save<?php echo $array[$i]['ma_sp']; ?>").click(function(){
 							  $("#save<?php echo $array[$i]['ma_sp']; ?>").attr("href", "?page=cart&act=soluong&ma=<?php echo $array[$i]['ma_sp']; ?>&sl="+$("#soluong<?php echo $array[$i]['ma_sp']; ?>").val());
+							  
 							});
 						});
 					</script>
@@ -152,12 +153,12 @@ $(document).ready(function(){
 					<div class="panel panel-default fee">
                         <div class="panel-body">
                             <p class="list-info-price" id="pricetotal">
-                                <b>Tạm tính: </b> <span><?php echo number_format($tongtien, 0, ',', ','); ?>₫</span>
+                                <b>Tạm tính: </b> <span> <?php echo number_format($tongtien, 0, ',', ','); ?>₫</span>
                             </p>
                             <div class="load-giamgia hide">
                             	<p>Giảm giá: <span style="float: right;">10%</span></p>
                             </div>
-                            <p class="total2">Thành tiền: <span style="float: right" class="load-price"><?php echo number_format($tongtien, 0, ',', ','); ?>₫ </span> </p>
+                            <p class="total2">Thành tiền: <span style="float: right" class="load-price"> <?php echo number_format($tongtien, 0, ',', ','); ?>₫ </span> </p>
                             <p class="text-right">
                                 <i>(Chưa bao gồm phí vận chuyển)</i>
                             </p>
