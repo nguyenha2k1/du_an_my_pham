@@ -105,6 +105,12 @@ if (!isset($_SESSION['admin'])) {
                                     </a>
                                 </li>
                                 <li>
+                                    <a href="?page=account&account=current_customers">
+                                        <i class="fa fa-arrow-right"></i>
+                                        Khách hàng vãng lai
+                                    </a>
+                                </li>
+                                <li>
                                     <a href="?page=account&account=staff">
                                         <i class="fa fa-arrow-right"></i>
                                         Nhân viên

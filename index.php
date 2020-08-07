@@ -40,7 +40,11 @@ switch ($page) {
 		$controllerMain->mainAccount();
 		break;
 	case 'cart':
-		$controllerMain->mainCart();
+		// if (isset($_COOKIE['customer'])) {
+		// 	$controllerMain->mainCartC();
+		// }else{
+			$controllerMain->mainCart();
+		// }
 		break;
 	default:
 		# code...
@@ -51,6 +55,8 @@ $controllerFooter = new footer();
 
 
 ?>
+
+
 </body>
 </html>
 <?php ob_flush(); ?>

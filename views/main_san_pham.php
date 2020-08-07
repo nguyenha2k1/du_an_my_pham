@@ -183,7 +183,7 @@
                                                         <button type="button" class="btn-bts btn-fs hide">
                                                             Mua Nhanh
                                                         </button>
-                                                        <button type="button" class="btn-bts btn-hea " onclick="">
+                                                        <button type="button" class="btn-bts btn-hea " onclick="load_like(<?php echo $resultProductDetail['ma_sp'] ?>)">
                                                             <i class="fa fa-heart-o heart_new"></i>
                                                         </button>
                                                         <div class="clr"></div>
@@ -197,7 +197,16 @@
                             </div>
                         </div>
                     </div>
-
+<script type="text/javascript">
+    function load_like(query){
+        get = getCookie('customer');
+        if (get == 0) {
+         alert('Bạn phải đăng nhập để thêm vào yêu thích!');
+        } else {
+            alert('Sản phẩm đã được thêm vào yêu thích!');
+        }
+    }
+</script>
                     <!-- box sản phẩm đề xuất -->
 
                     <div class="box-products">

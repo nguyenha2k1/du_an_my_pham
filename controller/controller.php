@@ -177,12 +177,46 @@ class main
 	}
 	public function mainAccount(){
 		$select=isset($_GET['select'])?$_GET['select']:'';
+		$ngay = 15;
+		$times = $ngay * 24  * 60 * 60;
 		switch ($select) {
 			case 'login':
 				include('views/main_dang_nhap.php');
 				break;
+			case 'getlogin':
+				$user = $_POST['user'];
+				$pass = $_POST['pass'];
+				$account = new account();
+				$query = $account->login($user,$pass);
+				$result = mysqli_fetch_assoc($query);
+				$num = mysqli_num_rows($query);
+				if ($num == 1) {
+					$queryName = $account->getName($result['ten_tk']);
+					$resultName = mysqli_fetch_assoc($queryName);
+					setcookie("customer",$resultName['ho_va_ten'],time()+$times);
+					setcookie("ten_tk",$result['ten_tk'],time()+$times);
+					header("Location: ./");
+
+				}
+				else{
+					// echo "sai";
+					header("Location: ?page=account&select=login");
+				}
+				break;
+			case 'logout':
+				setcookie("customer",$resultName['ho_va_ten'],time()-$times);
+				setcookie("ten_tk",$result['ten_tk'],time()-$times);
+				header("Location: ?page=account&select=login");
+
+				break;
 			case 'registration':
 				include('views/main_tao_tai_khoan.php');
+				break;
+			case 'get_registration':
+				
+				break;
+			case 'infor':
+				echo "Thông tin tài khoản";
 				break;
 			default:
 				# code...
@@ -197,25 +231,86 @@ class main
 		$times = $ngay * 24  * 60 * 60;
 		switch ($select) {
 			case 'order':
-				$act = isset($_GET['act'])?$_GET['act']:'';
-				switch ($act) {
-					case '':
-						$decode = json_decode($_COOKIE['cart'], true);
-						$array = $decode;
-						$count = count($array);
-						setcookie("gio_hang",'xoa',time()-$times);
-						setcookie("sl",'xoa',time()-$times);
-						setcookie("cart",'xoa',time()-$times);
-						include('views/main_dat_hang.php');
-						break;
-					
-					default:
-						# code...
-						break;
+				if (isset($_COOKIE['cart'])) {
+					$act = isset($_GET['act'])?$_GET['act']:'';
+					switch ($act) {
+						case '':
+							$decode = json_decode($_COOKIE['cart'], true);
+							$array = $decode;
+							$count = count($array);
+							if (isset($_COOKIE['ten_tk'])) {
+								$user = $_COOKIE['ten_tk'];
+								$account = new account();
+								$query  = $account->getAccount($user);
+								$result = mysqli_fetch_assoc($query);
+							}
+							include('views/main_dat_hang.php');
+							break;
+						
+						default:
+							# code...
+							break;
+					}
+				}else{
+					header("Location: ?page=cart");
 				}
 				break;
 			case 'pay':
-				include('views/main_dat_hang_ok.php');
+				if (isset($_COOKIE['cart'])) {
+					$pushdata = new pushdata();
+					$name = $_POST['name'];
+					$sex = $_POST['sex'];
+					$sdt = $_POST['sdt'];
+					$address = $_POST['address'];
+					$email = $_POST['email'];
+					$note = $_POST['note'];
+					
+					$cart = $_COOKIE['cart'];
+					$phi_ship = 30000;
+
+					$decode = json_decode($_COOKIE['cart'], true);
+					$array = $decode;
+					$count = count($array);
+					$tongtien = 0;
+					for ($i=0; $i < $count ; $i++) { 
+						$thanhtien = $array[$i]['gia_ban']*$array[$i]['soluong'];
+					    $tongtien = $tongtien+$thanhtien;
+					}
+					$tong_tien = $tongtien + $phi_ship;
+					$trang_thai = 1;
+					// time
+					$tz = 'Asia/Ho_Chi_Minh';
+					$timestamp = time();
+					$dt = new DateTime("now", new DateTimeZone($tz)); 
+					$dt->setTimestamp($timestamp);
+					$ngay_tao=$dt->format('Y-m-d H:i:s');
+					// time
+					if (isset($_COOKIE['customer'])) {
+						$user = $_COOKIE['ten_tk'];
+						$account = new account();
+						$query  = $account->getAccount($user);
+						$result = mysqli_fetch_assoc($query);
+						$id = $result['id'];
+						$query = $pushdata->updateTK($id,$name,$sex,$sdt,$address,$email);
+					}else{
+						$cap = 4;
+						$id = $pushdata->pushTK($ngay_tao,$cap,$name,$sex,$sdt,$address,$email);
+					}
+
+					
+
+					$ma_dh = $pushdata->pushOrder($id,$note,$ngay_tao,$phi_ship,$tong_tien,$trang_thai);
+					for ($i=0; $i < $count ; $i++) { 
+						$pushdata->pushOrderCt($array[$i]['ma_sp'],$array[$i]['soluong'],$ma_dh,$array[$i]['gia_ban']);
+					}
+					
+					setcookie("gio_hang",'xoa',time()-$times);
+					setcookie("sl",'xoa',time()-$times);
+					setcookie("cart",'xoa',time()-$times);
+					include('views/main_dat_hang_ok.php');
+				}else{
+					header("Location: ?page=cart");
+				}
 				break;	
 			case '':
 				

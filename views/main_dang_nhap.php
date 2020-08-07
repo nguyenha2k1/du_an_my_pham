@@ -67,11 +67,11 @@
 	            <div class="col-lg-7 m-auto">
 	                <div id="load-error"></div>
 	                <h2 class="h2-fiead">Thông tin đăng nhập</h2>
-	                <form>
+	                <form action="?page=account&select=getlogin" method="post">
 	                    <div class="form-group row">
 	                        <label for="inputUser" class="col-sm-3 col-form-label text-rights opsize"><b>Tên tài khoản</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="text" class="form-control opsize" id="txtUser" onchange="">
+	                            <input type="text" class="form-control opsize" id="txtUser" onchange="" name="user">
 	                            <div class="feedback" id="val-txtUser">
 
 	                            </div>
@@ -81,7 +81,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Mật khẩu</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="password" class="form-control opsize" id="txtPass1" onchange="">
+	                            <input type="password" class="form-control opsize" id="txtPass1" onchange="" name="pass">
 	                            <div class="feedback" id="val-txtPass1">
 
 	                            </div>
@@ -95,9 +95,7 @@
 	                            <input class="btn btn-light pull-right opsize" type="reset" value="VIẾT LẠI" name="">
 	                        </div>
 	                        <div class="col-sm-6 col-5">
-	                            <a href="https://www.google.com/">
-	                        		<input type="button" name="" class="btn btn-light pull-right" value="ĐĂNG NHẬP" onclick="return kiemtraFormdangnhap()" >
-	                        	</a>
+	                        		<input type="submit" name="" class="btn btn-light pull-right" value="ĐĂNG NHẬP" onclick="return kiemtraFormdangnhap()" >
 	                        </div>
 	                    </div>
 	                </form>
@@ -106,9 +104,7 @@
 	                        <div class="col-sm-6 col-7">
 	                            <input class="btn btn-light pull-right opsize" type="reset" value="VIẾT LẠI" name="">
 	                        </div>
-	                        	<a href="https://www.google.com/">
-	                        		<input type="button" name="" class="btn btn-light pull-right" value="ĐĂNG NHẬP" onclick="return kiemtraFormdangnhap()" >
-	                        	</a>
+	                        		<input type="submit" name="" class="btn btn-light pull-right" value="ĐĂNG NHẬP" onclick="return kiemtraFormdangnhap()" >
 	                    </div>
 	                </form>
 	            </div>

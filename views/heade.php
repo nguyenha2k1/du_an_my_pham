@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -76,8 +76,24 @@
                     <li class="hidden-xs">
                         <a href="#" class="pixen-lg">Tài khoản <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="ul-non ul-lg">
-                            <li><a href="./?page=account&select=login">Đăng nhập</a></li>
-                            <li><a href="./?page=account&select=registration">Đăng ký</a></li>
+                            <li><a href="./?page=account&select=<?php if (isset($_COOKIE['customer'])) {
+                                echo 'infor';
+                            }else{
+                                echo "login";
+                            } ?>"><?php if (isset($_COOKIE['customer'])) {
+                                echo $_COOKIE['customer'];
+                            }else{
+                                echo "Đăng nhập";
+                            } ?></a></li>
+                            <li><a href="./?page=account&select=<?php if (isset($_COOKIE['customer'])) {
+                                echo "logout";
+                            }else{
+                                echo "registration";
+                            } ?>"><?php if (isset($_COOKIE['customer'])) {
+                                echo "Đăng xuất";
+                            }else{
+                                echo "Đăng ký";
+                            } ?></a></li>
                         </ul>
                     </li>
                 </ul>
@@ -125,7 +141,11 @@
                                 <a href="./?page=like" class="like-pd" title="Sản phẩm yêu thích">
                                     <i class="fa fa-heart-o" aria-hidden="true"></i>
                                     Yêu thích
-                                    <span id="numberLike" data-id="0">0</span>
+                                    <span id="numberLike" data-id="0"><?php if (isset($_COOKIE["like"])) {
+                                        echo $_COOKIE["like"];
+                                    }else{
+                                        echo "0";
+                                    }  ?></span>
                                 </a>
                             </li>
                             <li>

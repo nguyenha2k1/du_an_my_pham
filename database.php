@@ -75,8 +75,8 @@
 	//tạo bảng taikhoan
 	$sqlTAIKHOAN = "CREATE table if not exists taikhoan("; 
 	$sqlTAIKHOAN.= "id int(10) AUTO_INCREMENT PRIMARY KEY,";
-	$sqlTAIKHOAN.= "ten_tk varchar(20) NOT NULL,";
-	$sqlTAIKHOAN.= "mk varchar(20) NOT NULL,";
+	$sqlTAIKHOAN.= "ten_tk varchar(20) NULL,";
+	$sqlTAIKHOAN.= "mk varchar(20) NULL,";
 	$sqlTAIKHOAN.= "ngay_tao datetime NOT NULL,";
 	$sqlTAIKHOAN.= "hoat_dong tinyint(5) NOT NULL default 1,";
 	$sqlTAIKHOAN.= "cap int(1) NOT NULL );";
@@ -89,7 +89,7 @@
 	$sqlTTTK.= "id int(10) NOT NULL,";
 	$sqlTTTK.= "ho_va_ten varchar(30) NOT NULL,";
 	$sqlTTTK.= "gioi_tinh int(1) NOT NULL,";
-	$sqlTTTK.= "ngay_sinh date NOT NULL,";
+	$sqlTTTK.= "ngay_sinh date NULL,";
 	$sqlTTTK.= "sdt int(10) NOT NULL,";
 	$sqlTTTK.= "dia_chi varchar(70) NOT NULL,";
 	$sqlTTTK.= "email varchar(50) NOT NULL,";
@@ -100,17 +100,30 @@
 	//tạo bảng donhang
 	$sqlDONHANG = "CREATE table if not exists donhang("; 
 	$sqlDONHANG.= "ma_dh int(10) AUTO_INCREMENT PRIMARY KEY,";
-	$sqlDONHANG.= "ma_sp int(10) NOT NULL,";
-	$sqlDONHANG.= "so_luong int(3) NOT NULL,";
-	$sqlDONHANG.= "id_khach_hang int(10) NULL,";
+	$sqlDONHANG.= "id_khach_hang int(10) NOT NULL,";
+	$sqlDONHANG.= "ghi_chu varchar(255) NULL,";
+	$sqlDONHANG.= "phi_ship int(10) NOT NULL,";
 	$sqlDONHANG.= "tong_tien int(10) NOT NULL,";
 	$sqlDONHANG.= "ngay_tao datetime NOT NULL,";
-	$sqlDONHANG.= "ngay_ship datetime NOT NULL,";
+	$sqlDONHANG.= "ngay_ship datetime NULL,";
+	$sqlDONHANG.= "ngay_ship_ht datetime NULL,";
 	$sqlDONHANG.= "trang_thai tinyint(5) NOT NULL default 0,";
-	$sqlDONHANG.= "FOREIGN KEY (ma_sp) REFERENCES sanpham(ma_sp) ON DELETE CASCADE  ,";
 	$sqlDONHANG.= "FOREIGN KEY (id_khach_hang) REFERENCES taikhoan(id) ON DELETE CASCADE  );";
 
 	mysqli_query($conn,$sqlDONHANG) or die ("Lỗi tạo bảng donhang");
+
+
+	//tạo bảng chitietdonhang
+	$sqlchitietdh = "CREATE table if not exists chitietdonhang("; 
+	$sqlchitietdh.= "stt int(10) AUTO_INCREMENT PRIMARY KEY,";
+	$sqlchitietdh.= "ma_sp int(10) NOT NULL,";
+	$sqlchitietdh.= "so_luong int(3) NOT NULL,";
+	$sqlchitietdh.= "ma_dh int(10) NULL,";
+	$sqlchitietdh.= "gia_tien int(10) NOT NULL,";
+	$sqlchitietdh.= "FOREIGN KEY (ma_sp) REFERENCES sanpham(ma_sp)   ,";
+	$sqlchitietdh.= "FOREIGN KEY (ma_dh) REFERENCES donhang(ma_dh) ON DELETE CASCADE  );";
+
+	mysqli_query($conn,$sqlchitietdh) or die ("Lỗi tạo bảng chitietdonhang");
 
 
 
@@ -206,4 +219,13 @@
 	$sqlTTWeb.= "google varchar(250) NOT NULL );";
 
 	mysqli_query($conn,$sqlTTWeb) or die ("Lỗi tạo bảng thongtinweb");
+
+
+	//tạo bảng sp_like
+	$sqlsp_like = "CREATE table if not exists sp_like("; 
+	$sqlsp_like.= "stt int(10) AUTO_INCREMENT PRIMARY KEY,";
+	$sqlsp_like.= "id_tk int(10) NOT NULL ,";
+	$sqlsp_like.= "chuoi_ma_sp_like varchar(1000) NOT NULL ,";
+	$sqlsp_like.= "FOREIGN KEY (id_tk) REFERENCES taikhoan(id) ON DELETE CASCADE  );";
+	mysqli_query($conn,$sqlsp_like) or die ("Lỗi tạo bảng sp_like");
 ?>

@@ -45,7 +45,42 @@
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Họ tên</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="text" class="form-control opsize" id="txtName" placeholder="VD: N̴͈̩̤͉̊̀͗̃̏͌̀̄̕͝g̸̠͌́̌͒͑̋͐̑̒̊͑̓͗ǘ̵͖̹̰̣̹̦̀̅͒͌̀̚ỳ̷͖͔̘̗̣̞͙́͛͐̑͠ễ̵̡̥͙̦̳̝̝̟̰̟̓̓̐͘ͅn̶͕̫͔̙̠̩͇̩̂́̊̈́͊̃́̃͗͘͜͝͠ͅ H̸̡̨̢͓̼̥̻̙̖̜͉̫͙̒̈̀̃̀̚à̶̳̮̱͐̓̀͐͑͋͆̔̃̑͠ (*)" onchange="">
+	                            <input type="text" class="form-control opsize" name="name" id="txtName" placeholder="VD: N̴͈̩̤͉̊̀͗̃̏͌̀̄̕͝g̸̠͌́̌͒͑̋͐̑̒̊͑̓͗ǘ̵͖̹̰̣̹̦̀̅͒͌̀̚ỳ̷͖͔̘̗̣̞͙́͛͐̑͠ễ̵̡̥͙̦̳̝̝̟̰̟̓̓̐͘ͅn̶͕̫͔̙̠̩͇̩̂́̊̈́͊̃́̃͗͘͜͝͠ͅ H̸̡̨̢͓̼̥̻̙̖̜͉̫͙̒̈̀̃̀̚à̶̳̮̱͐̓̀͐͑͋͆̔̃̑͠ (*)" onchange="" value="<?php if(isset($result)){echo $result['ho_va_ten'];} ?>">
+	                            <div class="invalid-feedback" id="val-txtName">
+
+	                            </div>
+	                        </div>
+	                    </div>
+	                    <div class="form-group row">
+	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Giới tính</b></label>
+	                        <div class="col-sm-9">
+	                        	<?php 
+	                        		if(isset($result)){
+	                        			switch ($result['gioi_tinh']) {
+	                        				case '1':
+	                        					$checked1 = 'checked';
+	                        					$checked2 = '';
+	                        					break;
+	                        				case '0':
+	                        					$checked1 = '';
+	                        					$checked2 = 'checked';
+	                        					break;
+	                        				default:
+	                        					# code...
+	                        					break;
+	                        			}
+	                        		}else{
+	                        			$checked = 'checked';
+	                        		}
+	                        	?>
+	                            <label>Nam</label> <input <?php if (isset($checked1)) {
+	                            	echo $checked1;
+	                            }; if (isset($checked)) {
+	                            	echo $checked;
+	                            }?> type="radio" name="sex" value="1">
+	                            <label>Nữ</label> <input <?php if (isset($checked2)) {
+	                            	echo $checked2;
+	                            }?> type="radio" name="sex" value="0">
 	                            <div class="invalid-feedback" id="val-txtName">
 
 	                            </div>
@@ -54,7 +89,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Số điện thoại</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="text" class="form-control opsize" id="txtPhone" placeholder="VD: 0999 666 999 (*)" onchange="">
+	                            <input type="text" class="form-control opsize" id="txtPhone" placeholder="VD: 0999 666 999 (*)" onchange="" name="sdt" value="<?php if(isset($result)){echo '0'.$result['sdt'];} ?>">
 	                            <div class="invalid-feedback" id="val-txtPhone">
 
 	                            </div>
@@ -116,7 +151,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Địa chỉ</b></label>
 	                        <div class="col-sm-9">
-	                            <textarea id="txtAdress" class="form-control opsize" placeholder="Số nhà, đường, phường xã..." onchange=""></textarea>
+	                            <textarea id="txtAdress" class="form-control opsize" placeholder="Số nhà, đường, phường xã..." onchange="" name="address"><?php if(isset($result)){echo $result['dia_chi'];}?></textarea>
 	                            <div class="invalid-feedback" id="val-txtAdress">
 
 	                            </div>
@@ -125,7 +160,7 @@
 	                    <div class="form-group row">
 	                        <label for="staticEmail" class="col-sm-3 col-form-label text-rights opsize"><b>Email</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="email" class="form-control opsize " id="txtEmail" placeholder="VD: beautygirl@gmail.com" onchange="">
+	                            <input type="email" class="form-control opsize " id="txtEmail" placeholder="VD: beautygirl@gmail.com" onchange="" name="email" value="<?php if(isset($result)){echo $result['email'];} ?>">
 	                            <div class="invalid-feedback" id="val-txtEmail">
 
 	                            </div>
@@ -134,7 +169,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputPassword" class="col-sm-3 col-form-label text-rights opsize"><b>Ghi chú</b></label>
 	                        <div class="col-sm-9">
-	                            <textarea id="txtNote" class="form-control opsize" placeholder="VD: Giao hàng vào buổi sáng" onchange=""></textarea>
+	                            <textarea id="txtNote" class="form-control opsize" placeholder="VD: Giao hàng vào buổi sáng" onchange="" name="note"></textarea>
 	                        </div>
 	                    </div>
 	                    <div class="form-group row hidden-sm hidden-xs">
@@ -169,7 +204,7 @@
 			                        </figure>
 			                        <div class="list_content">
 			                            <h5>
-			                                <a href="" title="">
+			                                <a href="?page=product&id=<?php echo $array[$i]['ma_sp']; ?>" title="">
 			                                    <span class="name-ps"><?php echo $array[$i]['ten_sp']; ?> </span>
 			                                </a>
 

@@ -107,6 +107,7 @@ class loginAdmin extends disconnect
 		return $num_rows;
 		$this->disconnect_db();
 	}
+	
 }
 /**
  * 

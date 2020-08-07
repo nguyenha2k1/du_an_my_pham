@@ -28,6 +28,7 @@ function load_cart(query){
 	    setCookie('gio_hang',text,15);
     }
 }
+
 function deleteCart(query){
 	get = getCookie('gio_hang');
     for (var i = 0; i < 50; i++) {
@@ -135,7 +136,7 @@ function kiemtraFormdangky(){
 	var email = document.getElementById('txtEmail').value;
 	var user = document.getElementById('txtUser').value;
 	var pass1 = document.getElementById('txtPass1').value;
-	check_hoten = /^[a-zA-Z_ -]{5,30}$/;
+	// check_hoten = /^[a-zA-Z_ -]{5,30}$/;
 	check_sdt = /((09|03|07|08|05)+([0-9]{8})\b)/g;
 	check_email = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
 	// cehck email /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
@@ -147,15 +148,16 @@ function kiemtraFormdangky(){
 			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên không để trống!</p>" ;
 			return false;
 
-	}else{
-		if(check_hoten.test(hoten)){
-			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Hợp lệ!</p>" ;
-		}else{
-			alert("Họ tên không hợp lệ!(Viết không dấu, dài > 5 ký tự, không chứa ký tự đặc biệt,...)");
-			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên viết không dấu!</p>";
-			return false;
-		}
 	}
+	// else{
+	// 	if(check_hoten.test(hoten)){
+	// 		// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Hợp lệ!</p>" ;
+	// 	}else{
+	// 		alert("Họ tên không hợp lệ!(Viết không dấu, dài > 5 ký tự, không chứa ký tự đặc biệt,...)");
+	// 		// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên viết không dấu!</p>";
+	// 		return false;
+	// 	}
+	// }
 
 
 	if (sdt=="") {
@@ -269,7 +271,7 @@ function kiemtraFormdathang(){
 	var sdt = document.getElementById('txtPhone').value;
 	var adress = document.getElementById('txtAdress').value;
 	var email = document.getElementById('txtEmail').value;
-	check_hoten = /^[a-zA-Z_ -]{5,30}$/;
+	// check_hoten = /^[a-zA-Z_ -]{5,30}$/;
 	check_sdt = /((09|03|07|08|05)+([0-9]{8})\b)/g;
 	check_email = /[A-Z0-9._%+-]+@[A-Z0-9-]+.+.[A-Z]{2,4}/igm;
 	// cehck email /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/
@@ -279,15 +281,16 @@ function kiemtraFormdathang(){
 			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên không để trống!</p>" ;
 			return false;
 
-	}else{
-		if(check_hoten.test(hoten)){
-			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Hợp lệ!</p>" ;
-		}else{
-			alert("Họ tên không hợp lệ!(Viết không dấu, dài > 5 ký tự, không chứa ký tự đặc biệt,...)");
-			// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên viết không dấu!</p>";
-			return false;
-		}
 	}
+	// else{
+	// 	if(check_hoten.test(hoten)){
+	// 		// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Hợp lệ!</p>" ;
+	// 	}else{
+	// 		alert("Họ tên không hợp lệ!(Viết không dấu, dài > 5 ký tự, không chứa ký tự đặc biệt,...)");
+	// 		// document.getElementById('val-txtName').innerHTML = "<p style='color:red;'>Họ tên viết không dấu!</p>";
+	// 		return false;
+	// 	}
+	// }
 
 
 	if (sdt=="") {

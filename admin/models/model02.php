@@ -257,9 +257,9 @@ class order extends disconnect
 		global $conn;
 		$this->item_per_page=$item_per_page;
 		$this->offset=$offset;
-		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
 			FROM `donhang` 
-			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			-- INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
 			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
 			LIMIT $this->item_per_page OFFSET $this->offset ";
 		$query = mysqli_query($conn,$sql);
@@ -268,9 +268,9 @@ class order extends disconnect
 	public function getdetail($id){
 		global $conn;
 		$this->id=$id;
-		$sql = "SELECT thongtintk.id, donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+		$sql = "SELECT thongtintk.id, donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship,donhang.ngay_ship_ht,donhang.ghi_chu,donhang.tong_tien,donhang.phi_ship, donhang.trang_thai, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
 			FROM `donhang` 
-			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			-- INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
 			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
 			WHERE ma_dh = $this->id;
 			";
@@ -280,11 +280,11 @@ class order extends disconnect
 	public function getID($id){
 		global $conn;
 		$this->id=$id;
-		$sql = "SELECT   donhang.ma_sp,donhang.so_luong,sanpham.ma_sp,sanpham.ten_sp,sanpham.gia_ban,donhang.tong_tien
-			FROM `donhang` 
-			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
-			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
-			WHERE thongtintk.id = $this->id;
+		$sql = "SELECT   chitietdonhang.ma_sp,sanpham.ten_sp,chitietdonhang.gia_tien,chitietdonhang.so_luong
+			FROM `chitietdonhang` 
+			INNER JOIN donhang ON donhang.ma_dh = chitietdonhang.ma_dh
+			INNER JOIN sanpham ON sanpham.ma_sp = chitietdonhang.ma_sp
+			WHERE donhang.ma_dh = $this->id;
 			";
 		$query = mysqli_query($conn,$sql);
 		return $query;
@@ -293,9 +293,9 @@ class order extends disconnect
 		global $conn;
 		$this->column_name=$column_name;
 		$this->search=$search;
-		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, donhang.ma_sp,donhang.so_luong	, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
+		$sql = "SELECT donhang.ma_dh, thongtintk.ho_va_ten, donhang.ngay_tao,donhang.ngay_ship, donhang.trang_thai, thongtintk.sdt,thongtintk.dia_chi,thongtintk.sdt,thongtintk.email 
 			FROM `donhang` 
-			INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
+			-- INNER JOIN sanpham ON donhang.ma_sp = sanpham.ma_sp
 			INNER JOIN thongtintk ON donhang.id_khach_hang = thongtintk.id
 			WHERE $this->column_name LIKE $this->search 
 			LIMIT 20 ";
@@ -322,6 +322,14 @@ class order extends disconnect
 		$query = mysqli_query($conn,$sql);
 		return $query;
 		
+	}
+	public function updateN_ship($ma_dh,$ngay,$select){
+		global $conn;
+		$sql = "UPDATE `donhang`
+			SET `$select`='$ngay'
+			WHERE ma_dh = $ma_dh";
+		$query = mysqli_query($conn,$sql);
+		return $query;
 	}
 	public function delete($id){
 		global $conn;

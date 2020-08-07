@@ -16,13 +16,8 @@ switch ($select) {
 		$ma_dh = $_GET['id'];
 		$query = $order->getdetail($ma_dh);
 		$result = mysqli_fetch_assoc($query);
-		$query1 = $order->getID($result['id']);
-		$query2 = $order->getID($result['id']);
-		$tongtien = 0;
-		while ($result2 = mysqli_fetch_assoc($query2)) {
-			$tongtien= $tongtien + $result2['tong_tien'];
-		}
-		// echo $tongtien;
+		$query1 = $order->getID($result['ma_dh']);
+		
 		$_SESSION['page'] = 'main_chi_tiet_don_hang';
 		
 		break;
@@ -49,8 +44,21 @@ switch ($select) {
 		}
 		break;
 	case 'update':
+		// time
+		$tz = 'Asia/Ho_Chi_Minh';
+		$timestamp = time();
+		$dt = new DateTime("now", new DateTimeZone($tz)); 
+		$dt->setTimestamp($timestamp);
+		$ngay_tao=$dt->format('Y-m-d H:i:s');
+		// time
 		$ma_dh = $_GET['id'];
 		$trang_thai = $_POST['trangthai'];
+		if ($trang_thai==2) {
+			$result1 = $order->updateN_ship($ma_dh,$ngay_tao,'ngay_ship');
+		}
+		if ($trang_thai==3) {
+			$result1 = $order->updateN_ship($ma_dh,$ngay_tao,'ngay_ship_ht');
+		}
 		$result = $order->update($ma_dh,$trang_thai);
 		if ($result==true) {
 			header('Location: ?page=true&select=order');

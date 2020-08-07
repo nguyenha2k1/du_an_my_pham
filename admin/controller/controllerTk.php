@@ -6,7 +6,40 @@ $item_per_page = 10;
 $current_page = !empty($_GET['pagination'])?$_GET['pagination']:1; //Trang hiện tại
 $offset = ($current_page - 1) * $item_per_page;
 $account = new account();
-
+// 
+if (isset($_GET['account'])&&$_GET['account']=='current_customers') {
+	$cap = 4;
+	$user = 'current_customers';
+	$query = $account->get($item_per_page,$offset,$cap);
+	$totalRecords = $account->getNum_rows($cap);
+	$totalPages = ceil($totalRecords / $item_per_page);
+	switch ($select) {
+		case 'edit':
+			break;
+		case 'search':
+			$column_name = isset($_POST['sort'])?$_POST['sort']:'id';
+			$type = isset($_POST['search'])?$_POST['search']:'';
+			$search = "'%".$type."%'";
+			$query = $account->getSearch($column_name,$search,$cap);
+			$_SESSION['page'] = 'main_search_tk';
+			break;
+		case 'delete':
+			$id = $_GET['id'];
+			$result = $account->delete($id);
+			if ($result==true) {
+				header('Location: ?page=true&select=account&user=current_customers');
+			}else{
+				header('Location: ?page=false&select=account&user=current_customers');
+			}
+			break;
+		case '':
+			$_SESSION['page'] = 'main_tk_nguoi_dung_vang_lai';
+			break;
+		default:
+			# code...
+			break;
+	}
+}
 //
 if (isset($_GET['account'])&&$_GET['account']=='customer') {
 	$cap = 3;

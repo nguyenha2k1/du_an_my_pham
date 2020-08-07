@@ -257,4 +257,103 @@ class getData extends disconnect
 }
 
 
+
+
+/**
+ * 
+ */
+class pushdata extends disconnect
+{
+	public function updateTK($id,$name,$sex,$sdt,$address,$email)
+	{
+		global $conn;
+		$sql = "UPDATE `thongtintk` 
+		SET `ho_va_ten`='$name',`gioi_tinh`='$sex',`sdt`='$sdt',`dia_chi`='$address',`email`='$email'
+		WHERE id = $id";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	public function pushTK($ngay_tao,$cap,$name,$sex,$sdt,$address,$email)
+	{
+		global $conn;
+		$sqlTk = "INSERT INTO `taikhoan`(`ngay_tao`, `cap`) 
+					VALUES ('$ngay_tao','$cap')
+					";
+		$queryTk =  mysqli_query($conn,$sqlTk);
+
+		$sql = "SELECT id
+				FROM taikhoan
+				ORDER BY  id DESC
+				LIMIT 1
+				";
+		$query = mysqli_query($conn,$sql);
+		$result = mysqli_fetch_assoc($query);
+		$id=$result['id'];
+
+		$sqlTTtk = "INSERT INTO `thongtintk`( `id`, `ho_va_ten`, `gioi_tinh`, `sdt`, `dia_chi`, `email`) 
+		VALUES ('$id','$name','$sex','$sdt','$address','$email')
+		";
+		$queryTTtk = mysqli_query($conn, $sqlTTtk);
+		return $id;
+	}
+	public function pushOrder($id,$note,$ngay_tao,$phi_ship,$tong_tien,$trang_thai){
+		global $conn;
+		
+
+		$sqlDh = "INSERT INTO `donhang`( `id_khach_hang`, `ghi_chu`, `phi_ship`, `tong_tien`, `ngay_tao`, `trang_thai`) 
+		VALUES ('$id','$note','$phi_ship','$tong_tien','$ngay_tao','$trang_thai')
+		";
+
+		$queryDh = mysqli_query($conn, $sqlDh);
+		$sqlIDdh = "SELECT ma_dh
+				FROM donhang
+				ORDER BY  ma_dh DESC
+				LIMIT 1
+				";
+		$queryIDdh = mysqli_query($conn,$sqlIDdh);
+		$resultIDdh = mysqli_fetch_assoc($queryIDdh);
+		$ma_dh=$resultIDdh['ma_dh'];
+
+		return $ma_dh;
+
+	}
+	public function pushOrderCt($ma_sp,$soluong,$ma_dh,$gia_tien){
+		global $conn;
+		$sql = "INSERT INTO `chitietdonhang`(`ma_sp`, `so_luong`, `ma_dh`, `gia_tien`) 
+		VALUES ('$ma_sp','$soluong','$ma_dh','$gia_tien')
+		";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+}
+/**
+ * 
+ */
+class account extends disconnect
+{
+	
+	function login($user,$pass){
+		global $conn;
+		$sql = "Select * from taikhoan where ten_tk = '$user' and mk = '$pass' and cap = 3 ";
+		$query = mysqli_query($conn , $sql);
+		
+		return $query;
+	}
+	function getAccount($user){
+		global $conn;
+		$sql = "SELECT thongtintk.id, thongtintk.ho_va_ten,thongtintk.gioi_tinh,thongtintk.sdt,thongtintk.dia_chi,thongtintk.email 
+		FROM taikhoan INNER JOIN thongtintk ON taikhoan.id = thongtintk.id 
+		WHERE taikhoan.ten_tk = '$user'";
+		$query = mysqli_query($conn,$sql);
+		return $query;
+	}
+	function getName($user)
+	{
+		global $conn;
+		$sql = "SELECT thongtintk.ho_va_ten FROM taikhoan INNER JOIN thongtintk ON taikhoan.id =thongtintk.id WHERE taikhoan.ten_tk = '$user'";
+		$query = mysqli_query($conn, $sql);
+		return $query;
+	}
+}
+
 ?>

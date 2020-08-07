@@ -33,7 +33,11 @@
 				                if ($user=='staff') {
 				                	echo "Nhân viên";
 				                }else{
-				                	echo "Khách hàng";
+				                	if ($user=='current_customers') {
+				                		echo "Khách hàng vãng lai";
+				                	}else{
+				                		echo "Khách hàng";
+				                	}
 				                }
 			                	
 			                ?>
@@ -146,8 +150,12 @@
 							
 						</td>
 						<td><?php 
-							$date = date("d-m-Y", strtotime($result['ngay_sinh']));
+							if ($result['ngay_sinh']==NULL) {
+								echo "Không có";
+							}else{
+								$date = date("d-m-Y", strtotime($result['ngay_sinh']));
 								echo $date; 
+							}
 							?>
 							
 						</td>
@@ -165,8 +173,8 @@
 							<input type="checkbox" class="checkItem" name="" <?php if ($result['hoat_dong'] == 1) {echo "checked";} ?>>
 						</td>
 						<td>
-							<a href=""><i class="fas fa-edit"></i></a>
-							<a href=""><i class="fas fa-trash-alt"></i></a>
+							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
+							<a href="?page=account&account=customer&select=delete&id=<?php echo $result['id']; ?>"><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
 					<?php } ?>

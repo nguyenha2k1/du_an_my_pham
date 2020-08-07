@@ -86,10 +86,14 @@
 							<select class="select" name="trangthai" style="">
 								<option <?php if ($result['trang_thai'] == 3) {
 									echo "selected";
-								} ?> value="3">Đã giao</option>
+								} if ($result['trang_thai']==1) {
+									echo "disabled='disabled'";
+								}?> value="3">Đã giao</option>
 								<option <?php if ($result['trang_thai'] == 1) {
 									echo "selected";
-								} ?> value="1">Chưa giao</option>
+								}  if ($result['trang_thai']==2) {
+									echo "disabled='disabled'";
+								}?> value="1">Chưa giao</option>
 								<option <?php if ($result['trang_thai'] == 2) {
 									echo "selected";
 								} ?> value="2">Đang giao</option>

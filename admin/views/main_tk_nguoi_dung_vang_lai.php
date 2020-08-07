@@ -1,10 +1,13 @@
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" href="views/css/style.css">
-	<link rel="stylesheet" type="text/css" href="views/css/main_don_hang.css">
+	<link rel="stylesheet" type="text/css" href="views/css/san_pham.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
@@ -18,12 +21,17 @@
 			            </a>
 					</li>
 					<li>
-						<a href="?page=order">
+						<a href="?page=account&account=current_customers">
 			                <i class="fas fa-chevron-right"></i>
-			                Đơn hàng
+			                User
 			            </a>
 					</li>
-					
+					<li>
+						<a href="?page=account&account=current_customers">
+			                <i class="fas fa-chevron-right"></i>
+			                Khách hàng vãng lai
+			            </a>
+					</li>
 					
 				</ul>
 				<ul class="menu-right">
@@ -66,16 +74,18 @@
 			<div class="row">
 				<ul class="ul-search menu-action">
 					<li>
-						<form action="?page=order&select=search" method="post">
+						<form action="?page=account&account=current_customers&select=search" method="post">
 							<ul class="menu-form">
 								<li>
 									<input type="text" name="search" placeholder="Tìm kiếm">
 								</li>
 								<li>
 									<select name="sort">
-										<option value="donhang.ma_dh">Mã đơn hàng</option>
-										<option value="thongtintk.ho_va_ten">Tên khách hàng</option>
-										<option value="donhang.trang_thai">Trạng thái:-> 1:Chưa giao, 2:Đang giao, 3:Đã giao</option>
+										<option value="id">ID</option>
+										<option value="ho_va_ten">Họ và tên</option>
+										<option value="sdt">Số ĐT</option>
+										<option value="dia_chi">Địa chỉ</option>
+										<option value="email">Email</option>
 									</select>
 								</li>
 								<li>
@@ -86,12 +96,9 @@
 					</li>
 					<!-- <li>
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
-					</li>
-					<li>
-						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li> -->
 					<!-- <li>
-						<a><button><i class="fas fa-sync"></i> Update</button></a>
+						<a><button><i class="fas fa-plus"></i> Thêm mới</button></a>
 					</li> -->
 				</ul>
 				
@@ -99,67 +106,73 @@
 			<div class="row">
 				<table width="100%">
 					<tr>
-						<!-- <th width="30">
-							<input type="checkbox" id="checkAll" name="">
-						</th> -->
-						<th width="20">Mã đơn hàng</th>
-						<th width="90">Tên khách hàng</th>
-						<th width="60">Ngày đặt</th>
-						<th width="60">Trạng thái</th>
-						<th width="30">Xem chi tiết</th>
-						<th width="40">Tác vụ</th>
+						<th width="40">ID</th>
+						<th width="100">Họ và tên</th>
+						<th width="40">Giới tính</th>
+						<!-- <th width="60">Ngày sinh</th> -->
+						<th width="60">Số ĐT</th>
+						<th width="200">Địa chỉ</th>
+						<th width="120">Email</th>
+						<th width="50">Ngày tạo</th>
+						<!-- <th width="50">Hoạt động <input type="checkbox" id="checkAll" name=""></th> -->
+						<th width="70">Tác vụ</th>
 					</tr>
 					<?php while ($result = mysqli_fetch_assoc($query)) {
 						
 					?>
 					<tr>
-						<!-- <td>
-							<input type="checkbox" class="checkItem" name="">
+						<td><?php echo $result['id']; ?></td>
+						<td><?php echo $result['ho_va_ten']; ?></td>
+						<td><?php 
+							if ($result['gioi_tinh']==1) {
+								echo "Nam";
+							}else{
+								echo "Nữ";
+							}
+							?>
+							
+						</td>
+						<!-- <td><?php 
+							if ($result['ngay_sinh']==NULL) {
+								echo "";
+							}else{
+								$date = date("d-m-Y", strtotime($result['ngay_sinh']));
+									echo $date; 
+								
+							}
+							?>
+							
 						</td> -->
-						<td><?php echo $result['ma_dh']; ?></td>
-						<td style="text-align: left;padding-left: 15px;"><?php echo $result['ho_va_ten']; ?></td>
-						<td>
-							<?php
-								$date = date("d-m-Y g:i A", strtotime($result['ngay_tao']));
+						<td>0<?php echo $result['sdt']; ?></td>
+						<td><?php echo $result['dia_chi']; ?></td>
+						<td><?php echo $result['email']; ?></td>
+						<td><?php 
+							$date = date("d-m-Y g:i A", strtotime($result['ngay_tao']));
 								echo $date; 
-							?>
-						</td>
-						<?php 
-								switch ($result['trang_thai']) {
-									case '1':
-										$color = 'blue';
-										$trangthai = "Chưa giao";
-										break;
-									case '2':
-										$color = 'red';
-										$trangthai = "Đang giao";
-										break;
-									case '3':
-										$color = 'green';
-										$trangthai = "Đã giao";
-										break;
-									default:
-										break;
-								}
-						?>
-						<td style="color: <?php echo $color ?>">
-							<?php
-								echo $trangthai;
-							?>
-						</td>
-						<td><a href="?page=order&select=detail&id=<?php echo $result['ma_dh']; ?>">Xem chi tiết</a></td>
+						 	?>
+						 	
+						 </td>
+						
+						<!-- <td>
+							<input type="checkbox" class="checkItem" name="" <?php if ($result['hoat_dong'] == 1) {echo "checked";} ?>>
+						</td> -->
 						<td>
-							<a <?php 
-								if ($result['trang_thai']==3) {
-									echo "";
-								}else{
-									echo 'href="?page=order&select=edit&id='.$result["ma_dh"].'"';
-								}
-							 ?>><i class="fas fa-edit"></i></a>
-							<a href="?page=order&select=delete&id=<?php echo $result['ma_dh']; ?>"><i class="fas fa-trash-alt"></i></a>
+							<!-- <a href=""><i class="fas fa-edit"></i></a> -->
+							<a href="?page=account&account=current_customers&select=delete&id=<?php echo $result['id']; ?>" onclick=" return kiemTra()"><i class="fas fa-trash-alt"></i></a>
 						</td>
 					</tr>
-					<?php }?>
+					<?php } ?>
+<script type="text/javascript">
+	function kiemTra(){
+		if (confirm('Bạn thực sự muốn xóa tài khoản!!!')==true) {
+			return true;
+		} else {
+			return false;
+		}
+		
+	}
+</script>	
+
 					
 					
 				</table>
@@ -171,19 +184,19 @@
 						if ($current_page > 3) {
 						    $first_page = 1;
 						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
+						    <a class="page-item" href="?page=account&account=current_customers&pagination=<?= $first_page ?>"><i class="fas fa-fast-backward"></i></a>
 						    <?php
 						}
 						if ($current_page > 1) {
 						    $prev_page = $current_page - 1;
 						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
+						    <a class="page-item" href="?page=account&account=current_customers&pagination=<?= $prev_page ?>"><i class="fas fa-backward"></i></a>
 						<?php }
 						?>
 						<?php for ($num = 1; $num <= $totalPages; $num++) { ?>
 						    <?php if ($num != $current_page) { ?>
 						        <?php if ($num > $current_page - 3 && $num < $current_page + 3) { ?>
-						            <a class="page-item" href="?page=order&pagination=<?= $num ?>"><?= $num ?></a>
+						            <a class="page-item" href="?page=account&account=current_customers&pagination=<?= $num ?>"><?= $num ?></a>
 						        <?php } ?>
 						    <?php } else { ?>
 						        <a class="current-page page-item"><?= $num ?></a>
@@ -193,13 +206,13 @@
 						if ($current_page < $totalPages - 1) {
 						    $next_page = $current_page + 1;
 						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
+						    <a class="page-item" href="?page=account&account=current_customers&pagination=<?= $next_page ?>"><i class="fas fa-forward"></i></a>
 						<?php
 						}
 						if ($current_page < $totalPages - 3) {
 						    $end_page = $totalPages;
 						    ?>
-						    <a class="page-item" href="?page=order&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
+						    <a class="page-item" href="?page=account&account=current_customers&pagination=<?= $end_page ?>"><i class="fas fa-fast-forward"></i></a>
 						    <?php
 						}
 						?>

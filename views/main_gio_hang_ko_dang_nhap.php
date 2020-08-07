@@ -82,7 +82,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 c2 col-6">
 								<div class="name">
-                                    <a class="top_zindex" href="" title=""> <?php echo $array[$i]['ten_sp']; ?></a>
+                                    <a class="top_zindex" href="?page=product&id=<?php echo $array[$i]['ma_sp']; ?>" title=""> <?php echo $array[$i]['ten_sp']; ?></a>
 
                                 </div>
 

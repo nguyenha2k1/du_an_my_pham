@@ -81,6 +81,7 @@
 									<select name="sort">
 										<option value="ma_dh">Mã đơn hàng</option>
 										<option value="ho_va_ten">Tên khách hàng</option>
+										<option value="trang_thai">Trạng thái:-> 1:Chưa giao, 2:Đang giao, 3:Đã giao</option>
 									</select>
 								</li>
 								<li>
