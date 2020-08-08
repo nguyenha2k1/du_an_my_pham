@@ -139,7 +139,10 @@
 							?>
 							
 						</td>
-						<td>0<?php echo $result['sdt']; ?></td>
+						<td><?php 
+								$format_number = number_format($result['sdt'], 0, "",".") ;
+								echo '0'.$format_number;
+							?></td>
 						<td><?php echo $result['dia_chi']; ?></td>
 						<td><?php echo $result['email']; ?></td>
 						<td><?php 

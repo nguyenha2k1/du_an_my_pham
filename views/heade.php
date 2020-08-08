@@ -71,8 +71,18 @@
             </div>
             <div class="box-hotline">
                 <ul class="ul-non ul-hotline">
-                    <li><a href="tel:0989999111" class="just-hl"><span>Hotline:</span> <?php echo $resultInfor['hotline']; ?></a></li>
-                    <li class="hidden-xs"><a href="tel:19009198" class="just-hl"><span>Tổng đài tư vấn:</span> <?php echo $resultInfor['tongdTuvan']; ?></a></li>
+                    <li>
+                        <a href="tel:0989999111" class="just-hl"><span>Hotline:</span> <!-- <?php echo $resultInfor['hotline']; ?> -->
+                            <?php 
+                                $format_number = number_format($resultInfor['hotline'], 0, "",".") ;
+                                echo '0'.$format_number;
+                            ?>
+                        </a>
+                    </li>
+                    <li class="hidden-xs">
+                        <a href="tel:19009198" class="just-hl">
+                            <span>Tổng đài tư vấn:</span> <?php echo $resultInfor['tongdTuvan']; ?>
+                        </a></li>
                     <li class="hidden-xs">
                         <a href="#" class="pixen-lg">Tài khoản <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                         <ul class="ul-non ul-lg">
@@ -192,7 +202,7 @@
                             </ul>
                             <a href="tel:0911384114" class="hl-pd-mb" title="Tổng đài">
                                 <i class="fa fa-phone"></i>
-                                CSKH: 0911.384.114
+                                CSKH: 0999.777.222
                             </a>
                             <button type="button" class="btn-pd-mb hidden-xs" onclick="">
                                 Categories

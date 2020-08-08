@@ -108,8 +108,12 @@
 								<li>
 									<button><i class="fas fa-search"></i> Tìm kiếm</button>
 								</li>
+
 							</ul>
 						</form>
+					</li>
+					<li>
+						<a href="?page=account&account=customer"><button><i class="fas fa-step-backward"></i> Quay lại trang tài khoản</button></a>
 					</li>
 					<!-- <li>
 						<a href="?page=delete"><button><i class="fas fa-trash-alt"></i> Xóa</button></a>
@@ -159,7 +163,10 @@
 							?>
 							
 						</td>
-						<td>0<?php echo $result['sdt']; ?></td>
+						<td><?php 
+								$format_number = number_format($result['sdt'], 0, "",".") ;
+								echo '0'.$format_number;
+							?></td>
 						<td><?php echo $result['dia_chi']; ?></td>
 						<td><?php echo $result['email']; ?></td>
 						<td><?php 

@@ -67,11 +67,11 @@
 	            <div class="col-lg-7 m-auto">
 	                <div id="load-error"></div>
 	                <h2 class="h2-fiead">Thông tin tài khoản</h2>
-	                <form>
+	                <form action="?page=account&select=get_registration" method="post">
 	                    <div class="form-group row">
 	                        <label for="inputName" class="col-sm-3 col-form-label text-rights opsize"><b>Họ tên</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="text" class="form-control opsize" id="txtName" placeholder="VD: N̴͈̩̤͉̊̀͗̃̏͌̀̄̕͝g̸̠͌́̌͒͑̋͐̑̒̊͑̓͗ǘ̵͖̹̰̣̹̦̀̅͒͌̀̚ỳ̷͖͔̘̗̣̞͙́͛͐̑͠ễ̵̡̥͙̦̳̝̝̟̰̟̓̓̐͘ͅn̶͕̫͔̙̠̩͇̩̂́̊̈́͊̃́̃͗͘͜͝͠ͅ H̸̡̨̢͓̼̥̻̙̖̜͉̫͙̒̈̀̃̀̚à̶̳̮̱͐̓̀͐͑͋͆̔̃̑͠ (*)" onchange="" >
+	                            <input type="text" class="form-control opsize" id="txtName" placeholder="VD: N̴͈̩̤͉̊̀͗̃̏͌̀̄̕͝g̸̠͌́̌͒͑̋͐̑̒̊͑̓͗ǘ̵͖̹̰̣̹̦̀̅͒͌̀̚ỳ̷͖͔̘̗̣̞͙́͛͐̑͠ễ̵̡̥͙̦̳̝̝̟̰̟̓̓̐͘ͅn̶͕̫͔̙̠̩͇̩̂́̊̈́͊̃́̃͗͘͜͝͠ͅ H̸̡̨̢͓̼̥̻̙̖̜͉̫͙̒̈̀̃̀̚à̶̳̮̱͐̓̀͐͑͋͆̔̃̑͠ (*)" onchange="" name="name">
 	                            <div class="feedback" id="val-txtName">
 	                            </div>
 	                        </div>
@@ -80,11 +80,11 @@
 	                        <label for="inputSex" class="col-sm-3 col-form-label text-rights opsize"><b>Giới tính</b></label>
 	                        <div class="col-sm-9">
 	                            <div class="form-check form-check-inline" >
-						          	<input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Nam" checked>
+						          	<input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="1" checked>
   									<label class="form-check-label" for="inlineRadio2">Nam</label>
 						        </div>
 						        <div class="form-check form-check-inline" >
-							        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="Nữ">
+							        <input class="form-check-input" type="radio" name="sex" id="inlineRadio2" value="0">
   									<label class="form-check-label" for="inlineRadio2">Nữ</label>
 						        </div>
 	                        </div>
@@ -92,7 +92,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputDate" class="col-sm-3 col-form-label text-rights opsize"><b>Ngày sinh</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="date" class="form-control opsize" id="txtDate" value="2001-01-01" onchange="">
+	                            <input type="date" class="form-control opsize" id="txtDate" value="2001-01-01" onchange="" name="date">
 	                            <div class="feedback" id="val-txtName">
 
 	                            </div>
@@ -101,7 +101,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputPhone" class="col-sm-3 col-form-label text-rights opsize"><b>Số điện thoại</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="tel" class="form-control opsize" id="txtPhone" placeholder="VD: 0999 666 999 (*)" pattern="[0]{1}[0]-[0-9]{2}-[0-9]{3}" required onchange="">
+	                            <input type="tel" class="form-control opsize" id="txtPhone" placeholder="VD: 0999 666 999 (*)" required onchange="" name="sdt"><span style="color: red" id="sdt-result"></span>
 	                            <div class="feedback" id="val-txtPhone">
 
 	                            </div>
@@ -163,7 +163,7 @@
 	                    <div class="form-group row">
 	                        <label for="inputAdd" class="col-sm-3 col-form-label text-rights opsize"><b>Địa chỉ</b></label>
 	                        <div class="col-sm-9">
-	                            <textarea id="txtAdress" class="form-control opsize" placeholder="Số nhà, đường, phường xã..." onchange=""></textarea>
+	                            <textarea id="txtAdress" class="form-control opsize" placeholder="Số nhà, đường, phường xã..." onchange="" name="address"></textarea>
 	                            <div class="feedback" id="val-txtAdress">
 
 	                            </div>
@@ -172,7 +172,7 @@
 	                    <div class="form-group row">
 	                        <label for="staticEmail" class="col-sm-3 col-form-label text-rights opsize"><b>Email</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="email" class="form-control opsize " id="txtEmail" placeholder="VD: beautygirl@gmail.com" onchange="">
+	                            <input type="email" class="form-control opsize " id="txtEmail" placeholder="VD: beautygirl@gmail.com" onchange="" name="email"><span style="color: red" id="email-result"></span>
 	                            <div class="feedback" id="val-txtEmail">
 
 	                            </div>
@@ -181,7 +181,7 @@
 	                    <div class="form-group row">
 	                        <label for="" class="col-sm-3 col-form-label text-rights opsize"><b>Tên tài khoản</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="text" class="form-control opsize " id="txtUser" onchange="">
+	                            <input type="text" class="form-control opsize " id="user" onchange="" name="user"><span style="color: red;" id="user-result"></span>
 	                            <div class="feedback" id="val-txtUser">
 
 	                            </div>
@@ -190,7 +190,7 @@
 	                    <div class="form-group row">
 	                        <label for="" class="col-sm-3 col-form-label text-rights opsize"><b>Mật khẩu</b></label>
 	                        <div class="col-sm-9">
-	                            <input type="password" class="form-control opsize " id="txtPass1" onchange="">
+	                            <input type="password" class="form-control opsize " id="txtPass1" onchange="" name="pass">
 	                            <div class="feedback" id="val-txtPass1">
 
 	                            </div>
@@ -203,9 +203,7 @@
 	                            <input class="btn btn-light pull-right opsize" type="reset" value="VIẾT LẠI" name="">
 	                        </div>
 	                        <div class="col-sm-6 col-5">
-	                        	<a href="https://www.google.com/">
-	                        		<input type="button" name="" class="btn btn-light pull-right" value="TẠO TÀI KHOẢN" onclick="return kiemtraFormdangky()" >
-	                        	</a>
+	                        		<input id="butt" type="submit" name="" class="btn btn-light pull-right"  value="TẠO TÀI KHOẢN" onclick="return kiemtraFormdangky()" >
 	                        </div>
 	                    </div>
 	                </form>
@@ -215,14 +213,80 @@
 	                            <input class="btn btn-light pull-right opsize" type="reset" value="VIẾT LẠI" name="">
 	                        </div>
 	                        <div class="col-sm-6 col-5">
-	                            <a href="https://www.google.com/">
-	                        		<input type="button" name="" class="btn btn-light pull-right" value="TẠO TÀI KHOẢN" onclick="return kiemtraFormdangky()" >
-	                        	</a>
+	                        		<input id="butt" type="submit" name="" class="btn btn-light pull-right" value="TẠO TÀI KHOẢN" onclick="return kiemtraFormdangky()" >
 	                        </div>
 	                    </div>
 	                </form>
 	            </div>
 	            <!-- kết thúc -->
+<script type="text/javascript">
+// 
+$("#txtEmail").click(function (e) { 
+   var email = $(this).val();
+   $.post('check_username.php', {'email':email}, function(data) { 
+   $("#email-result").html(data); 
+   // alert(data);
+   if (data == 'Email đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }
+   });
+});
+$("#txtEmail").keyup(function (e) { 
+   var email = $(this).val();
+   $.post('check_username.php', {'email':email}, function(data) { 
+   $("#email-result").html(data); 
+   if (data == 'Email đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }
+   });
+});
+
+// 
+
+$("#txtPhone").click(function (e) { 
+   var sdt = $(this).val();
+   $.post('check_username.php', {'sdt':sdt}, function(data) { 
+   $("#sdt-result").html(data); 
+   // alert(data);
+   if (data == 'SĐT đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }
+   });
+});
+$("#txtPhone").keyup(function (e) { 
+   var emsdtail = $(this).val();
+   $.post('check_username.php', {'sdt':sdt}, function(data) { 
+   $("#sdt-result").html(data); 
+   if (data == 'SĐT đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }
+   });
+});
+$("#user").click(function (e) { 
+   var username = $(this).val();
+   $.post('check_username.php', {'username':username}, function(data) { 
+   $("#user-result").html(data); 
+   // alert(data);
+   if (data == 'Tài khoản đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }else{
+   		$('#butt').removeAttr('disabled');
+   }
+   });
+});
+$("#user").keyup(function (e) { 
+   var username = $(this).val();
+   $.post('check_username.php', {'username':username}, function(data) { 
+   $("#user-result").html(data); 
+   if (data == 'Tài khoản đã tồn tại!') {
+   		$("#butt").attr("disabled","disabled");
+   }else{
+   		$('#butt').removeAttr('disabled');
+   }
+   });
+});
+
+</script>
 	            
 	        </div>
 	    </div>

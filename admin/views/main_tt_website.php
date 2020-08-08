@@ -78,7 +78,10 @@
 						</div>	
 						<div class="item">
 							<label>Tel:</label>
-							<div class=""><?php echo $result['tel']; ?></div>
+							<div class=""> <?php 
+                                $format_number = number_format($result['tel'], 0, "",".") ;
+                                echo '0'.$format_number;
+                            ?></div>
 						</div>	
 						<div class="item">
 							<label>Email:</label>
@@ -91,7 +94,10 @@
 				
 						<div class="item">
 							<label>Hotline:</label>
-							<div class=""><?php echo $result['hotline']; ?></div>
+							<div class=""> <?php 
+                                $format_number = number_format($result['hotline'], 0, "",".") ;
+                                echo '0'.$format_number;
+                            ?></div>
 						</div>	
 						<div class="item">
 							<label>Tổng đài tư vấn:</label>

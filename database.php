@@ -90,7 +90,7 @@
 	$sqlTTTK.= "ho_va_ten varchar(30) NOT NULL,";
 	$sqlTTTK.= "gioi_tinh int(1) NOT NULL,";
 	$sqlTTTK.= "ngay_sinh date NULL,";
-	$sqlTTTK.= "sdt int(10) NOT NULL,";
+	$sqlTTTK.= "sdt varchar(10) NOT NULL,";
 	$sqlTTTK.= "dia_chi varchar(70) NOT NULL,";
 	$sqlTTTK.= "email varchar(50) NOT NULL,";
 	$sqlTTTK.= "FOREIGN KEY (id) REFERENCES taikhoan(id) ON DELETE CASCADE );";
@@ -152,7 +152,7 @@
 	$sqlHT = "CREATE table if not exists hethongch("; 
 	$sqlHT.= "stt int(10) AUTO_INCREMENT PRIMARY KEY,";
 	$sqlHT.= "dia_chi varchar(255) NOT NULL ,";
-	$sqlHT.= "sdt varchar(25) NOT NULL ,";
+	$sqlHT.= "sdt varchar(10) NOT NULL ,";
 	$sqlHT.= "hien_thi tinyint(5) NOT NULL default 1 ,";
 	$sqlHT.= "ngay_tao datetime NOT NULL );";
 

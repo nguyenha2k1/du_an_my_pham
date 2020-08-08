@@ -354,6 +354,28 @@ class account extends disconnect
 		$query = mysqli_query($conn, $sql);
 		return $query;
 	}
+	public function get_registration($name,$sex,$date,$sdt,$address,$email,$user,$pass,$cap,$ngay_tao)
+	{
+		global $conn;
+		$sqlTK = "INSERT INTO `taikhoan`( `ten_tk`, `mk`, `ngay_tao`, `cap`) 
+		VALUES ('$user','$pass','$ngay_tao','$cap')
+		";
+		$queryTK = mysqli_query($conn,$sqlTK);
+
+		$sql = "SELECT id
+				FROM taikhoan
+				ORDER BY  id DESC
+				LIMIT 1
+				";
+		$query = mysqli_query($conn,$sql);
+		$result = mysqli_fetch_assoc($query);
+		$id=$result['id'];
+		$sqlTTTK = "INSERT INTO `thongtintk`(`id`, `ho_va_ten`, `gioi_tinh`, `ngay_sinh`, `sdt`, `dia_chi`, `email`) 
+		VALUES ('$id','$name','$sex','$date','$sdt','$address','$email')
+		";
+		$queryTTTK = mysqli_query($conn,$sqlTTTK);
+		return $queryTTTK;
+	}
 }
 
 ?>

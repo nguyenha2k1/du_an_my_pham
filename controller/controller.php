@@ -213,7 +213,31 @@ class main
 				include('views/main_tao_tai_khoan.php');
 				break;
 			case 'get_registration':
-				
+				$account = new account();
+
+				$name = $_POST['name'];
+				$sex = $_POST['sex'];
+				$date = $_POST['date'];
+				$sdt = $_POST['sdt'];
+				$address = $_POST['address'];
+				$email = $_POST['email'];
+				$user = $_POST['user'];
+				$pass = $_POST['pass'];
+				$cap = 3;
+				// echo $date;
+				// time
+				$tz = 'Asia/Ho_Chi_Minh';
+				$timestamp = time();
+				$dt = new DateTime("now", new DateTimeZone($tz)); 
+				$dt->setTimestamp($timestamp);
+				$ngay_tao=$dt->format('Y-m-d H:i:s');
+				// time
+
+				$result = $account->get_registration($name,$sex,$date,$sdt,$address,$email,$user,$pass,$cap,$ngay_tao);
+				header("Location: ?page=account&select=get_registration_ok");
+				break;
+			case 'get_registration_ok':
+				include('views/tao_tk_thanh_cong.php');
 				break;
 			case 'infor':
 				echo "Thông tin tài khoản";

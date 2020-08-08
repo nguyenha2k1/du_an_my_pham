@@ -134,7 +134,7 @@ function kiemtraFormdangky(){
 	var sdt = document.getElementById('txtPhone').value;
 	var adress = document.getElementById('txtAdress').value;
 	var email = document.getElementById('txtEmail').value;
-	var user = document.getElementById('txtUser').value;
+	var user = document.getElementById('user').value;
 	var pass1 = document.getElementById('txtPass1').value;
 	// check_hoten = /^[a-zA-Z_ -]{5,30}$/;
 	check_sdt = /((09|03|07|08|05)+([0-9]{8})\b)/g;

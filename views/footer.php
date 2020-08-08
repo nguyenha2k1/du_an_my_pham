@@ -37,7 +37,10 @@
                                         <i class="fa fa-map-marker" aria-hidden="true"></i>
                                         <?php echo $resultHtCuahang['dia_chi'] ?>
                                     </b>
-                                    - <?php echo $resultHtCuahang['sdt'] ?>
+                                    -  <?php 
+                                $format_number = number_format($resultHtCuahang['sdt'], 0, "",".") ;
+                                echo '0'.$format_number;
+                            ?>
                                     <div class="map-mages img-luna"></div>
                                 </a>
                             </li>
@@ -114,7 +117,10 @@
                         <hr>
                         <ul class="ul-non ul-infos">
                             <li><a>Địa chỉ: <?php echo $resultInfor['dia_chi'] ?></a></li>
-                            <li><a>Tel: <?php echo $resultInfor['tel'] ?> - Email: <?php echo $resultInfor['email'] ?></a></li>
+                            <li><a>Tel:  <?php 
+                                $format_number = number_format($resultInfor['tel'], 0, "",".") ;
+                                echo '0'.$format_number;
+                            ?> - Email: <?php echo $resultInfor['email'] ?></a></li>
                             <li><a>Website: <?php echo $resultInfor['website'] ?></a></li>
                         </ul>
                     </div>
